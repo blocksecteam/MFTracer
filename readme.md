@@ -1,0 +1,1 @@
+This is the repository for the paper *Shedding Light on Shadows: Automatically Tracing Illicit Money Flows on EVM-Compatible Blockchains* accepted to SIGMETRICS 2026.
