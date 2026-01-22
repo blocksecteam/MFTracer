@@ -10,12 +10,96 @@ import (
 	"time"
 	"transfer-graph-evm/data"
 	"transfer-graph-evm/model"
+	"transfer-graph-evm/preprocess"
 	"transfer-graph-evm/pricedb"
-	"transfer-graph-evm/semantic"
 	"transfer-graph-evm/utils"
 
 	"github.com/ethereum/go-ethereum/log"
 )
+
+func SyncFromQresSimple(ctx context.Context, qres *model.QueryResult, blockID uint16, g *GraphDB, pdb *pricedb.PriceDB, pdbParallel int) error {
+	startTime := time.Now()
+	m := WriteMetrics{}
+	ctx = context.WithValue(ctx, WriteMetricsKey, &m)
+
+	txMap, tsMap, _, err := ConstructTxTss("", "", qres, blockID)
+	if err != nil {
+		utils.Logger.Error("ConstructTxTss failed", "blockID", blockID, "err", err.Error())
+		return err
+	}
+	utils.Logger.Info("{SyncFromQresSimple} Construct S finished", "blockID", blockID, "txMap", len(txMap), "tsMap", len(tsMap))
+	oDegreeAll, oDegreeToken := getOutDegrees(txMap, tsMap)
+	utils.Logger.Info("{SyncFromQresSimple} Get Out Degrees finished\n")
+	tsMapByPos := classTsByTx(qres.Transfers)
+	utils.Logger.Info("{SyncFromQresSimple} Class Ts by Tx finished\n")
+	tsMap, qres.Transfers, err = preprocess.AddWithinTx(txMap, tsMap, qres.Transfers, oDegreeAll, oDegreeToken, tsMapByPos, pdb, pdbParallel, ctx)
+	if err != nil {
+		utils.Logger.Error("AddWithinTx failed", "err", err.Error())
+		return err
+	}
+	qres.Transfers, tsMap = filterTss(qres.Transfers, tsMap)
+
+	subgraphMap, err := ConstructSubgraphs("", "", qres, blockID)
+	if err != nil {
+		utils.Logger.Error("ConstructSubgraphs failed", "blockID", blockID, "err", err.Error())
+		return err
+	}
+	utils.Logger.Info("{SyncFromQresSimple} Construct G finished", "blockID", blockID, "subgraphMap", len(subgraphMap))
+
+	greq := &GWriteRequest{
+		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
+		Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
+	}
+	for _, v := range subgraphMap {
+		greq.Contents = append(greq.Contents, v)
+	}
+	sreq := &SWriteRequest{
+		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
+		BlockID:  blockID,
+		Contents: make([]*SRecord, 0),
+	}
+	NativeTokenAddressStr := string(model.NativeTokenAddress.Bytes())
+	addrStrLength := len(NativeTokenAddressStr)
+	for k, v := range txMap {
+		src := k[:addrStrLength]
+		des := k[addrStrLength:]
+		sreq.Contents = append(sreq.Contents, &SRecord{
+			Token:     model.NativeTokenAddress,
+			SrcID:     subgraphMap[NativeTokenAddressStr].AddressMap[src],
+			DesID:     subgraphMap[NativeTokenAddressStr].AddressMap[des],
+			Transfers: nil,
+			Txs:       v,
+		})
+	}
+	for k, v := range tsMap {
+		token := k[:addrStrLength]
+		src := k[addrStrLength : addrStrLength*2]
+		des := k[addrStrLength*2:]
+		sreq.Contents = append(sreq.Contents, &SRecord{
+			Token:     v[0].Token,
+			SrcID:     subgraphMap[token].AddressMap[src],
+			DesID:     subgraphMap[token].AddressMap[des],
+			Transfers: v,
+			Txs:       nil,
+		})
+	}
+
+	constructTime := time.Now()
+	if err := g.GWrite(ctx, greq); err != nil {
+		utils.Logger.Error("SyncFromQresSimple GWrite() failed", "err", err.Error())
+		return err
+	}
+	gwriteTime := time.Now()
+
+	if err := g.SWrite(ctx, sreq); err != nil {
+		utils.Logger.Error("SyncFromQresSimple SWrite() failed", "err", err.Error())
+		return err
+	}
+	swriteTime := time.Now()
+
+	utils.Logger.Info("{SyncFromQresSimple} SyncFromQresSimple() done", "blockID", blockID, "construct", constructTime.Sub(startTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
+	return nil
+}
 
 func getBlockIDValid(fileName string) uint16 {
 	re := regexp.MustCompile(`(\d+)_(\d+).json.zst`)
@@ -50,7 +134,6 @@ func getBlockID(fileName string) uint16 {
 }
 
 func loadQueryResult(fileName, dataDir string) (*model.QueryResult, uint16, error) {
-	//blockID := getBlockIDValid(fileName)
 	blockID := getBlockID(fileName)
 
 	filePath := path.Join(dataDir, fileName)
@@ -157,35 +240,8 @@ func generateSubgraph(blockID uint16, token model.Address, txs []*model.Tx, tss 
 			ret.Columns = append(ret.Columns, v.column)
 			ret.Timestamps = append(ret.Timestamps, v.timestamp)
 		}
-		/*
-			row := make([]uint32, 0, len(row_map))
-			timestamps := make([]uint32, 0, len(row_map))
-			for k, v := range row_map {
-				row = append(row, k)
-				timestamps = append(timestamps, v)
-			}
-			sort.SliceStable(row, func(i, j int) bool {
-				return row[i] < row[j]
-			})
-			sort.SliceStable(timestamps, func(i, j int) bool {
-				return row[i] < row[j]
-			})
-			ret.Timestamps = append(ret.Timestamps, timestamps...)
-			ret.Columns = append(ret.Columns, row...)
-		*/
 		ret.NodePtrs[i+1] = ret.NodePtrs[i] + uint32(len(row))
 	}
-	/*
-		if len(ret.Columns) == 0 {
-			for _, v := range tss {
-				vv, _ := json.Marshal(v)
-				fmt.Print(string(vv))
-			}
-			fmt.Println(" ")
-			//generateSubgraphTest(blockID, token, tss)
-			//fmt.Println(" ")
-		}
-	*/
 	return ret
 }
 
@@ -404,88 +460,4 @@ func ConstructTxTss(fileName, dataDir string, qres *model.QueryResult, blockID u
 		tss[addrStr] = append(tss[addrStr], ts)
 	}
 	return txs, tss, blockID, nil
-}
-
-func SyncFromQresSimple(ctx context.Context, qres *model.QueryResult, blockID uint16, g *GraphDB, pdb *pricedb.PriceDB, pdbParallel int) error {
-	startTime := time.Now()
-	m := WriteMetrics{}
-	ctx = context.WithValue(ctx, WriteMetricsKey, &m)
-
-	txMap, tsMap, _, err := ConstructTxTss("", "", qres, blockID)
-	if err != nil {
-		utils.Logger.Error("ConstructTxTss failed", "blockID", blockID, "err", err.Error())
-		return err
-	}
-	utils.Logger.Info("{SyncFromQresSimple} Construct S finished", "blockID", blockID, "txMap", len(txMap), "tsMap", len(tsMap))
-	oDegreeAll, oDegreeToken := getOutDegrees(txMap, tsMap)
-	utils.Logger.Info("{SyncFromQresSimple} Get Out Degrees finished\n")
-	tsMapByPos := classTsByTx(qres.Transfers)
-	utils.Logger.Info("{SyncFromQresSimple} Class Ts by Tx finished\n")
-	tsMap, qres.Transfers, err = semantic.AddWithinTx(txMap, tsMap, qres.Transfers, oDegreeAll, oDegreeToken, tsMapByPos, pdb, pdbParallel, ctx)
-	if err != nil {
-		utils.Logger.Error("AddWithinTx failed", "err", err.Error())
-		return err
-	}
-	qres.Transfers, tsMap = filterTss(qres.Transfers, tsMap)
-
-	subgraphMap, err := ConstructSubgraphs("", "", qres, blockID)
-	if err != nil {
-		utils.Logger.Error("ConstructSubgraphs failed", "blockID", blockID, "err", err.Error())
-		return err
-	}
-	utils.Logger.Info("{SyncFromQresSimple} Construct G finished", "blockID", blockID, "subgraphMap", len(subgraphMap))
-
-	greq := &GWriteRequest{
-		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
-		Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
-	}
-	for _, v := range subgraphMap {
-		greq.Contents = append(greq.Contents, v)
-	}
-	sreq := &SWriteRequest{
-		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
-		BlockID:  blockID,
-		Contents: make([]*SRecord, 0),
-	}
-	NativeTokenAddressStr := string(model.NativeTokenAddress.Bytes())
-	addrStrLength := len(NativeTokenAddressStr)
-	for k, v := range txMap {
-		src := k[:addrStrLength]
-		des := k[addrStrLength:]
-		sreq.Contents = append(sreq.Contents, &SRecord{
-			Token:     model.NativeTokenAddress,
-			SrcID:     subgraphMap[NativeTokenAddressStr].AddressMap[src],
-			DesID:     subgraphMap[NativeTokenAddressStr].AddressMap[des],
-			Transfers: nil,
-			Txs:       v,
-		})
-	}
-	for k, v := range tsMap {
-		token := k[:addrStrLength]
-		src := k[addrStrLength : addrStrLength*2]
-		des := k[addrStrLength*2:]
-		sreq.Contents = append(sreq.Contents, &SRecord{
-			Token:     v[0].Token,
-			SrcID:     subgraphMap[token].AddressMap[src],
-			DesID:     subgraphMap[token].AddressMap[des],
-			Transfers: v,
-			Txs:       nil,
-		})
-	}
-
-	constructTime := time.Now()
-	if err := g.GWrite(ctx, greq); err != nil {
-		utils.Logger.Error("SyncFromQresSimple GWrite() failed", "err", err.Error())
-		return err
-	}
-	gwriteTime := time.Now()
-
-	if err := g.SWrite(ctx, sreq); err != nil {
-		utils.Logger.Error("SyncFromQresSimple SWrite() failed", "err", err.Error())
-		return err
-	}
-	swriteTime := time.Now()
-
-	utils.Logger.Info("{SyncFromQresSimple} SyncFromQresSimple() done", "blockID", blockID, "construct", constructTime.Sub(startTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-	return nil
 }

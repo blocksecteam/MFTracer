@@ -7,12 +7,6 @@ import (
 )
 
 const (
-	//RPFlowDecayFactor = 0.1 //note: in range [0, 1)
-
-	// LabelSRPFlowAgeLimit         int = 10
-	// LabelSRPFlowLabelLengthLimit int = 2000
-	// LabelSRPFlowActiveThreshold  float64 = 0.00000001
-	// LabelSRPFlowActiveThreshold float64 = 1
 	ONLY_EDGE = false
 )
 
@@ -458,11 +452,6 @@ func (n *ThresholdAgeLabelFlowNode) in(value flow) {
 }
 
 func (n *ThresholdAgeLabelFlowNode) out(value float64) flow {
-	/*
-		if n.age+1 > n.Config.AgeLimit {
-			n.bucket = 0
-		}
-	*/
 	rvalue := math.Min(n.bucket, value)
 	if rvalue < n.Config.Threshold || n.age+1 > n.Config.AgeLimit {
 		return ThresholdAgeLabelFlow(make([]byte, 16))

@@ -269,25 +269,6 @@ func (p *PriceDB) TokensWithBlocks(tokens []model.Address, blocks []uint64, para
 	if len(tokens) != len(blocks) {
 		return nil, fmt.Errorf("mis-matched tokens[] and blocks[]")
 	}
-	/*
-		readReq := &ReadRequest{
-			Contents: make([]*ReadRecord, 0, len(tokens)),
-			Parallel: parallel,
-		}
-		for i := range tokens {
-			readReq.Contents = append(readReq.Contents, &ReadRecord{
-				BlockID: GetBlockID(blocks[i]),
-				Token:   tokens[i],
-			})
-		}
-		if err := p.Read(readReq, ctx); err != nil {
-			return nil, err
-		}
-		ret := make([]float64, 0, len(tokens))
-		for _, record := range readReq.Contents {
-			ret = append(ret, record.Price)
-		}
-	*/
 	pids := make(map[string]struct{}, len(tokens))
 	pidsSorted := make([]string, 0, len(tokens))
 	for i := range tokens {
@@ -337,7 +318,6 @@ func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []model.Addre
 			}
 			qres, err = opensearch.QueryOpenSearch(tb, tb+1, 1, config)
 		}
-		//r := rand.New(rand.NewSource(time.Now().UnixNano()))
 		t, err := time.Parse(timeLayout, qres[0].Txs[0].Time)
 		if err != nil {
 			return err
@@ -346,7 +326,6 @@ func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []model.Addre
 			block:     tb,
 			timestamp: uint64(t.Unix()),
 		})
-		//fmt.Println("[Debug] opensearch block done:", b)
 	}
 
 	writeReq := &WriteRequest{
@@ -356,8 +335,6 @@ func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []model.Addre
 	}
 	for i := range btimes {
 		fmt.Println("[Debug] FetchPrice block start:", btimes[i].block)
-		//prices, err := FetchPrice(btimes[i].block, btimes[i].timestamp, tokenList)
-		//prices, err := FetchPriceMultiReq(btimes[i].block, btimes[i].timestamp, tokenList, 10, time.Duration(100)*time.Millisecond)
 		prices, err := FetchPriceRetry(btimes[i].block, btimes[i].timestamp, tokenList, 5, time.Duration(100)*time.Millisecond)
 		if err != nil {
 			return err

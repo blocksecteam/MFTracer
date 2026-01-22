@@ -388,14 +388,6 @@ func (g *GraphDB) BlockIDsWithTokensToSubgraphs(ctx context.Context, blockIDs []
 		return nil, err
 	}
 	ret := make([]*model.Subgraph, 0, len(m))
-	// @@ [Lagency]
-	// @ The result is not sorted by blockIDs->tokens by iterating on the map m.
-	// @ We rather iterate on gidsSorted to obatin a sorted slice.
-	/*
-		for _, v := range m {
-			ret = append(ret, v)
-		}
-	*/
 	for i := range gidsSorted {
 		ret = append(ret, m[gidsSorted[i]])
 	}
@@ -916,7 +908,6 @@ func (g *GraphDB) BlockIDWithTokenToTxTs(ctx context.Context, blockID uint16, to
 			return nil, nil, err
 		}
 		if err != nil && errors.Is(err, pebble.ErrNotFound) {
-			//return nil, nil, fmt.Errorf("txs with blockID=%d, token=%s, srcID=%d, desID=%d does not exist", blockID, token.Hex(), srcID, desID)
 			return nil, nil, err
 		}
 		tss = nil
@@ -927,13 +918,11 @@ func (g *GraphDB) BlockIDWithTokenToTxTs(ctx context.Context, blockID uint16, to
 			return nil, nil, err
 		}
 		if err != nil && errors.Is(err, pebble.ErrNotFound) {
-			//return nil, nil, fmt.Errorf("tss with blockID=%d, token=%s, srcID=%d, desID=%d does not exist", blockID, token.Hex(), srcID, desID)
 			return nil, nil, err
 		}
 		txs = nil
 	}
 
-	//fmt.Println(hexutil.Encode(sid))
 	return txs, tss, nil
 }
 

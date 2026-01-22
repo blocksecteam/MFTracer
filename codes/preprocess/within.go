@@ -1,8 +1,7 @@
-package semantic
+package preprocess
 
 import (
 	"context"
-	"math"
 	"math/big"
 	"transfer-graph-evm/model"
 	"transfer-graph-evm/pricedb"
@@ -13,12 +12,100 @@ import (
 	"gonum.org/v1/gonum/mat"
 )
 
-var superNodeOutDegreeLimit = model.GetConfigOutDegreeLimit()
+func AddWithinTx(
+	txMap map[string][]*model.Tx,
+	tsMap map[string][]*model.Transfer,
+	tsSlice []*model.Transfer,
+	outDegreeAll, outDegreeToken map[string]int,
+	tsMapByPos map[uint64][]*model.Transfer,
+	pdb *pricedb.PriceDB,
+	pdbParallel int,
+	ctx context.Context,
+) (map[string][]*model.Transfer, []*model.Transfer, error) {
 
-var superTxTransferLimit = 5
+	rTss := make([]*model.Transfer, 0)
+	fTxs := make([]*model.Tx, 0)
+	fTss := make([]*model.Transfer, 0)
+	fTsMapByPos := make(map[uint64][]*model.Transfer)
+	for _, txs := range txMap {
+		for _, tx := range txs {
+			tss, ok := tsMapByPos[tx.Pos()]
+			if !(!ok || isSemanticProcessed(tss) || (len(tss) == 1 && tss[0].Type == uint16(model.TransferTypeExternal))) && hasUnreachableNode(tx, tss, outDegreeAll) {
+				fTxs = append(fTxs, tx)
+				fTss = append(fTss, tss...)
+				fTsMapByPos[tx.Pos()] = make([]*model.Transfer, 0, len(tss))
+				// WETH patched here
+				for _, ts := range tss {
+					if !(ts.From.Cmp(utils.WETHAddress) == 0 || ts.To.Cmp(utils.WETHAddress) == 0) {
+						fTsMapByPos[tx.Pos()] = append(fTsMapByPos[tx.Pos()], ts)
+					}
+				}
+			} else {
+				rTss = append(rTss, tss...)
+			}
+		}
+	}
+	pCache, err := pricedb.NewPriceCache(fTxs, fTss, pdb, pdbParallel, ctx)
+	if err != nil {
+		return nil, nil, err
+	}
+	defer pCache.FlashCache()
+	for _, tx := range fTxs {
+		txPos := tx.Pos()
+		tss := fTsMapByPos[txPos]
+		g := newTxGraph(tx, tss, pCache)
+		if len(g.edges) == 0 || len(g.addressMap) == 0 {
+			continue
+		}
+		balanceList := g.computeBalance()
+		maxFlowList := g.computeMaxFlow()
+		contribution := make([]int64, len(g.addressMap))
+		for i := range balanceList {
+			if balanceList[i] < 0 {
+				continue
+			}
+			if balanceList[i] < maxFlowList[i] {
+				contribution[i] = balanceList[i]
+			} else {
+				contribution[i] = maxFlowList[i]
+			}
+		}
+		var txidCounter uint16 = 0
+		for id := range contribution {
+			if contribution[id] < int64(DollarActivateThreshold) {
+				continue
+			}
+			desAddress := model.BytesToAddress([]byte(g.rMap[id]))
+			for _, token := range g.tokenSet {
+				virtualTs := &model.Transfer{
+					Pos:   txPos,
+					Txid:  txidCounter,
+					Type:  uint16(model.TransferVirtualTypeWithinTx),
+					From:  tx.From,
+					To:    desAddress,
+					Token: token,
+					Value: (*hexutil.Big)(big.NewInt(contribution[id])),
+				}
+				tsMapKey := makeTsMapKey(virtualTs.From, virtualTs.To, virtualTs.Token)
+				if _, ok := tsMap[tsMapKey]; !ok {
+					tsMap[tsMapKey] = make([]*model.Transfer, 0, 1)
+				}
+				rTss = append(rTss, virtualTs)
+			}
+			txidCounter++
+		}
+	}
 
-// an virtual edge with value < this won't be considered
-var DollarActivateThreshold = uint64(10 * math.Pow10(model.DollarDecimals))
+	rTsMap := make(map[string][]*model.Transfer)
+	for _, ts := range rTss {
+		tsMapKey := makeTsMapKey(ts.From, ts.To, ts.Token)
+		if _, ok := rTsMap[tsMapKey]; !ok {
+			rTsMap[tsMapKey] = make([]*model.Transfer, 0, 1)
+		}
+		rTsMap[tsMapKey] = append(rTsMap[tsMapKey], ts)
+	}
+	return rTsMap, rTss, nil
+}
 
 type txGraph struct {
 	txFrom     string                 // tx.From address as string
@@ -128,108 +215,6 @@ func hasUnreachableNode(tx *model.Tx, tss []*model.Transfer, outDegreeAll map[st
 		}
 	}
 	return false
-}
-
-func AddWithinTx(
-	txMap map[string][]*model.Tx,
-	tsMap map[string][]*model.Transfer,
-	tsSlice []*model.Transfer,
-	//inDegreeAll, inDegreeToken map[string]int,
-	outDegreeAll, outDegreeToken map[string]int,
-	tsMapByPos map[uint64][]*model.Transfer,
-	pdb *pricedb.PriceDB,
-	pdbParallel int,
-	ctx context.Context,
-) (map[string][]*model.Transfer, []*model.Transfer, error) {
-
-	rTss := make([]*model.Transfer, 0)
-	fTxs := make([]*model.Tx, 0)
-	fTss := make([]*model.Transfer, 0)
-	fTsMapByPos := make(map[uint64][]*model.Transfer)
-	for _, txs := range txMap {
-		for _, tx := range txs {
-			tss, ok := tsMapByPos[tx.Pos()]
-			if !(!ok || isSemanticProcessed(tss) || (len(tss) == 1 && tss[0].Type == uint16(model.TransferTypeExternal))) && hasUnreachableNode(tx, tss, outDegreeAll) {
-				fTxs = append(fTxs, tx)
-				fTss = append(fTss, tss...)
-				fTsMapByPos[tx.Pos()] = make([]*model.Transfer, 0, len(tss))
-				// WETH patched here
-				for _, ts := range tss {
-					if !(ts.From.Cmp(utils.WETHAddress) == 0 || ts.To.Cmp(utils.WETHAddress) == 0) {
-						fTsMapByPos[tx.Pos()] = append(fTsMapByPos[tx.Pos()], ts)
-					}
-				}
-			} else {
-				rTss = append(rTss, tss...)
-			}
-		}
-	}
-	pCache, err := pricedb.NewPriceCache(fTxs, fTss, pdb, pdbParallel, ctx)
-	if err != nil {
-		return nil, nil, err
-	}
-	defer pCache.FlashCache()
-	for _, tx := range fTxs {
-		txPos := tx.Pos()
-		tss := fTsMapByPos[txPos]
-		g := newTxGraph(tx, tss, pCache)
-		if len(g.edges) == 0 || len(g.addressMap) == 0 {
-			continue
-		}
-		balanceList := g.computeBalance()
-		maxFlowList := g.computeMaxFlow()
-		contribution := make([]int64, len(g.addressMap))
-		for i := range balanceList {
-			if balanceList[i] < 0 {
-				continue
-			}
-			if balanceList[i] < maxFlowList[i] {
-				contribution[i] = balanceList[i]
-			} else {
-				contribution[i] = maxFlowList[i]
-			}
-		}
-		var txidCounter uint16 = 0
-		for id := range contribution {
-			if contribution[id] < int64(DollarActivateThreshold) {
-				continue
-			}
-			desAddress := model.BytesToAddress([]byte(g.rMap[id]))
-			for _, token := range g.tokenSet {
-				virtualTs := &model.Transfer{
-					Pos:   txPos,
-					Txid:  txidCounter,
-					Type:  uint16(model.TransferVirtualTypeWithinTx),
-					From:  tx.From,
-					To:    desAddress,
-					Token: token,
-					Value: (*hexutil.Big)(big.NewInt(contribution[id])),
-				}
-				tsMapKey := makeTsMapKey(virtualTs.From, virtualTs.To, virtualTs.Token)
-				if _, ok := tsMap[tsMapKey]; !ok {
-					tsMap[tsMapKey] = make([]*model.Transfer, 0, 1)
-				}
-				rTss = append(rTss, virtualTs)
-				/*
-					tsMap[tsMapKey] = append(tsMap[tsMapKey], virtualTs)
-					tsSlice = append(tsSlice, virtualTs)
-					tsMapByPos[txPos] = append(tsMapByPos[txPos], virtualTs)
-				*/
-			}
-			txidCounter++
-		}
-	}
-	//return tsMap, tsSlice, nil
-
-	rTsMap := make(map[string][]*model.Transfer)
-	for _, ts := range rTss {
-		tsMapKey := makeTsMapKey(ts.From, ts.To, ts.Token)
-		if _, ok := rTsMap[tsMapKey]; !ok {
-			rTsMap[tsMapKey] = make([]*model.Transfer, 0, 1)
-		}
-		rTsMap[tsMapKey] = append(rTsMap[tsMapKey], ts)
-	}
-	return rTsMap, rTss, nil
 }
 
 func calculateTxClosure(tss []*model.Transfer, txToAddress string) (map[string]struct{}, map[string]struct{}) {

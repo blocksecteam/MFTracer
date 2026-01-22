@@ -44,8 +44,7 @@ const (
 )
 
 func IsVirualTransfer(tsType uint16) bool {
-	return false
-	//return tsType >= uint16(TransferVirtualTypeSwap)
+	return tsType >= uint16(TransferVirtualTypeSwap)
 }
 
 var (
@@ -298,7 +297,6 @@ func (tx *Tx) GetTimeU64() uint64 {
 
 type RawMessage []byte
 
-// MarshalJSON returns m as the JSON encoding of m.
 func (m RawMessage) MarshalJSON() ([]byte, error) {
 	if m == nil {
 		return []byte("null"), nil
@@ -306,7 +304,6 @@ func (m RawMessage) MarshalJSON() ([]byte, error) {
 	return m, nil
 }
 
-// UnmarshalJSON sets *m to a copy of data.
 func (m *RawMessage) UnmarshalJSON(data []byte) error {
 	if m == nil {
 		return errors.New("json.RawMessage: UnmarshalJSON on nil pointer")

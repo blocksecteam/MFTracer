@@ -452,7 +452,6 @@ func Query_TokenTransaction_BlockBatch(config *TokenTransaction_BatchConfig) ([]
 			ret = append(ret, cachedTransfers...)
 			cache = make([]*Res_Transaction, 0) // Clear cache after processing
 		}
-		//fmt.Println("Processed block:", block, "Total transfers in cache:", len(cache))
 	}
 	if len(cache) > 0 {
 		// Process any remaining transfers in the cache
@@ -461,7 +460,6 @@ func Query_TokenTransaction_BlockBatch(config *TokenTransaction_BatchConfig) ([]
 			return nil, err
 		}
 		ret = append(ret, cachedTransfers...)
-		//fmt.Println("Processed remaining transfers in cache, total:", len(cachedTransfers))
 		cache = make([]*Res_Transaction, 0) // Clear cache after processing
 	}
 	return ret, nil
@@ -530,12 +528,9 @@ func convertConditionTokenTransaction(rt []*Res_Transaction, tokenFilter map[str
 		if value, success := big.NewInt(0).SetString(tx.Value, 10); success {
 			transfer.Value = (*hexutil.Big)(value)
 		} else {
-			//return nil, fmt.Errorf("invalid value: %s", tx.Value)
 			continue
 		}
 		if transfer.TxHash, err = common.HexToHash(tx.TxHash); err != nil {
-			//fmt.Println("Error converting TxHash:", tx.TxHash, "Error:", err)
-			//return nil, err
 			continue
 		}
 		transfers = append(transfers, transfer)

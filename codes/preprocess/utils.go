@@ -1,4 +1,4 @@
-package semantic
+package preprocess
 
 import (
 	"context"
@@ -9,6 +9,13 @@ import (
 
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
+
+var superNodeOutDegreeLimit = model.GetConfigOutDegreeLimit()
+
+var superTxTransferLimit = 5
+
+// an virtual edge with value < this won't be considered
+var DollarActivateThreshold = uint64(10 * math.Pow10(model.DollarDecimals))
 
 func getFromAddressOfTxMapKey(txMapKey string) model.Address {
 	return model.BytesToAddress([]byte(txMapKey[:len(txMapKey)/2]))

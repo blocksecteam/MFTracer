@@ -197,7 +197,6 @@ func MergeSubgraphs(subgraphs []*Subgraph) (*Subgraph, error) {
 				}
 			}
 		}
-		//fmt.Printf("[Debug] {MergeSubgraphs} core iter finished: %f\n", time.Since(start).Seconds())
 	}
 	fmt.Printf("[Debug] {MergeSubgraphs} merge core finished: %f\n", time.Since(start).Seconds())
 
@@ -207,7 +206,6 @@ func MergeSubgraphs(subgraphs []*Subgraph) (*Subgraph, error) {
 		cMapsSorted[k] = v
 		itemCount += len(v)
 	}
-	//fmt.Printf("[Debug] {MergeSubgraphs} cmaps sort finished: %f\n", time.Since(start).Seconds())
 
 	start = time.Now()
 	timestamps := make([][2]uint32, 0, itemCount)

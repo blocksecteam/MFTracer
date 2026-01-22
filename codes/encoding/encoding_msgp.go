@@ -192,23 +192,6 @@ func EncodeTransferMsgp(t *model.Transfer) ([]byte, error) {
 	o = msgp.AppendUint16(o, t.Txid)
 	o = msgp.AppendUint16(o, t.Type)
 
-	/*
-		a := []byte{}
-		if !model.EmptyAddress.Equal(t.From) {
-			a = common.TrimLeftZeroes(t.From[:])
-		}
-		o = msgp.AppendBytes(o, a)
-		a = []byte{}
-		if !model.EmptyAddress.Equal(t.To) {
-			a = common.TrimLeftZeroes(t.To[:])
-		}
-		o = msgp.AppendBytes(o, a)
-		a = []byte{}
-		if !model.NativeTokenAddress.Equal(t.Token) {
-			a = common.TrimLeftZeroes(t.Token[:])
-		}
-		o = msgp.AppendBytes(o, a)
-	*/
 	o = msgp.AppendBytes(o, t.From.Bytes())
 	o = msgp.AppendBytes(o, t.To.Bytes())
 	o = msgp.AppendBytes(o, t.Token.Bytes())
@@ -246,7 +229,6 @@ func DecodeTransferMsgp(b []byte) (t *model.Transfer, o []byte, err error) {
 	t.Type, o, err = msgp.ReadUint16Bytes(o)
 	if err != nil {
 		err = msgp.WrapError(err, "Type")
-		//err = msgp.WrapError(err, fmt.Sprintf("Type[%x, %x, %s]", t.Pos, t.Txid, hexutil.Encode(b)))
 		return
 	}
 	v, o, err = msgp.ReadBytesZC(o)
@@ -267,15 +249,6 @@ func DecodeTransferMsgp(b []byte) (t *model.Transfer, o []byte, err error) {
 		return
 	}
 	t.Token = model.BytesToAddress(v)
-	//if t.Token.Cmp(model.EmptyAddress) == 0 && t.Type == uint16(model.TransferTypeExternal) {
-	/*
-		if t.Token.Cmp(model.EmptyAddress) == 0 &&
-			(t.Type == uint16(model.TransferTypeExternal) ||
-				t.Type == uint16(model.TransferTypeInternal) ||
-				model.IsVirualTransfer(t.Type)) {
-			t.Token = model.NativeTokenAddress
-		}
-	*/
 	v, o, err = msgp.ReadBytesZC(o)
 	if err != nil {
 		err = msgp.WrapError(err, "Value")
@@ -385,14 +358,6 @@ func DecodeTxMsgp(b []byte) (tx *model.Tx, o []byte, err error) {
 	}
 	tx.Value = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
 	// Fee
-	/*
-			v, o, err = msgp.ReadBytesZC(o)
-			if err != nil {
-				err = msgp.WrapError(err, "Fee")
-				return
-			}
-		tx.Fee = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
-	*/
 	// Func
 	tx.Func, o, err = msgp.ReadStringBytes(o)
 	if err != nil {
