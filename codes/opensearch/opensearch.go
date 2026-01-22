@@ -8,8 +8,8 @@ import (
 	"os"
 	"path"
 	"time"
-	"transfer-graph/model"
-	"transfer-graph/utils"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/utils"
 
 	"github.com/ethereum/go-ethereum/log"
 	jsoniter "github.com/json-iterator/go"
@@ -126,20 +126,6 @@ func queryOpenSearch(ctx context.Context, body string, config *OpenSearchConfig)
 	}
 	result := r.Aggregations.Transfer.Value
 
-	// Process ERC1155
-	for _, t := range result.Transfers {
-		if t.Type == uint16(model.TransferTypeERC1155Single) || t.Type == uint16(model.TransferTypeERC1155Batch) {
-			data := t.Extras["data"].(string)
-			operator := t.Extras["operator"].(string)
-			m, err := model.TransformERC1155(t.Type, operator, data)
-			if err == nil {
-				t.Extras = m
-			} else {
-				log.Info("decode ERC-1155 failed", "block", t.Block(), "index", t.Index(), "err", err.Error())
-				t.Extras = make(map[string]interface{})
-			}
-		}
-	}
 	return result, nil
 }
 
@@ -206,7 +192,6 @@ func DumpDataFromOpenSearch(startBlock, endBlock, step uint64, datadir string, c
 		if err != nil {
 			log.Crit("dump failed", "err", err.Error())
 		}
-		stats.Dump(s)
 	}
 }
 

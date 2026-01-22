@@ -3,9 +3,8 @@ package search
 import (
 	"math"
 	"sync"
-	"transfer-graph/model"
+	"transfer-graph-evm/model"
 
-	"github.com/ethereum/go-ethereum/common"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -104,7 +103,7 @@ func getNextHopBack(thisHop HopResultBack, clsgraph HopResultBack, preHops HopRe
 		if t, ok := alterVisitedMap[src]; ok && t.hopLength <= v.hopLength && (!isBackward && t.timestampConstrain <= v.timestampConstrain || isBackward && t.timestampConstrain >= v.timestampConstrain) {
 			continue
 		}
-		if v.hopLength >= model.MaxHopLimit {
+		if v.hopLength >= uint8(model.SearchDepth) {
 			continue
 		}
 		var srcInfo *NodeResultBack
@@ -254,8 +253,41 @@ func hopsInClsgraphsParallel(clsgraphs []HopResultBack, subgraphs []*model.Subgr
 	return resultSync.hopsSlice, resultSync.closureSlice
 }
 
-func getClosuresBack(clsgraphs []HopResultBack, subgraphs []*model.Subgraph, srcAddresses []common.Address, rMaps [][]string, parallel int, isBackward, bySubgraph bool) []HopResultBack {
-	stepClosures := make([][]HopResultBack, 0, 1)
+func closuresInClsgraphsParallel(clsgraphs []HopResultBack, subgraphs []*model.Subgraph, visitedMaps []HopResultBack, firstAddresses []string, firstHopLengths []uint8, parallel int, isBackward, bySubgraph bool) []HopResultBack {
+	resultSync := struct {
+		sync.Mutex
+		closureSlice []HopResultBack
+	}{
+		closureSlice: make([]HopResultBack, len(clsgraphs)),
+	}
+	search := func(i int) {
+		firstHop := NormalizeAddressesToHopResultBack(firstAddresses, firstHopLengths, clsgraphs[i], subgraphs[i], visitedMaps[i], isBackward, bySubgraph)
+		_, closure := closureInClsgraph(clsgraphs[i], subgraphs[i], firstHop, visitedMaps[i], isBackward, bySubgraph)
+		resultSync.Lock()
+		(resultSync.closureSlice)[i] = closure
+		resultSync.Unlock()
+	}
+	eg := errgroup.Group{}
+	eg.SetLimit(parallel)
+	for i := range subgraphs {
+		s := i
+		eg.Go(func() error {
+			search(s)
+			return nil
+		})
+	}
+	eg.Wait()
+	return resultSync.closureSlice
+}
+
+func getClosuresBack(clsgraphs []HopResultBack, subgraphs []*model.Subgraph, srcAddresses []model.Address, rMaps [][]string, parallel int, isBackward, bySubgraph bool) []HopResultBack {
+	if len(clsgraphs) == 0 && bySubgraph {
+		clsgraphs = make([]HopResultBack, len(subgraphs))
+		for i := range clsgraphs {
+			clsgraphs[i] = make(HopResultBack)
+		}
+	}
+	//[CRITICAL LEGACY] stepClosures := make([][]HopResultBack, 0, 1)
 	conClosures := make([]HopResultBack, len(subgraphs))
 	for i := range conClosures {
 		conClosures[i] = make(HopResultBack)
@@ -279,10 +311,11 @@ func getClosuresBack(clsgraphs []HopResultBack, subgraphs []*model.Subgraph, src
 		} else {
 			firstAddresses, _, firstHopLengths = NormalizeHopResultBackToAddresses(conClosures[i-1], subgraphs[i-1], rMaps[i-1])
 		}
-		_, stepClosureRPart := hopsInClsgraphsParallel(clsgraphs[i:], subgraphs[i:], conClosures[i:], firstAddresses, firstHopLengths, parallel, isBackward, bySubgraph)
-		stepClosures = append(stepClosures, append(make([]HopResultBack, i), stepClosureRPart...))
+		stepClosureRPart := closuresInClsgraphsParallel(clsgraphs[i:], subgraphs[i:], conClosures[i:], firstAddresses, firstHopLengths, parallel, isBackward, bySubgraph)
+		//[CRITICAL LEGACY] stepClosures = append(stepClosures, append(make([]HopResultBack, i), stepClosureRPart...))
 		for j := i; j < len(subgraphs); j++ {
-			conClosures[j] = appendHopResultBack(conClosures[j], stepClosures[i][j], isBackward)
+			//[CRITICAL LEGACY 0] conClosures[j] = appendHopResultBack(conClosures[j], stepClosures[i][j], isBackward)
+			conClosures[j] = appendHopResultBack(conClosures[j], stepClosureRPart[j-i], isBackward) //[CRITICAL UPDATE 0]
 		}
 	}
 	return conClosures
@@ -297,7 +330,7 @@ func getNextHopBackBySubgraph(thisHop HopResultBack, subgraph *model.Subgraph, p
 		if t, ok := alterVisitedMap[src]; ok && t.hopLength <= v.hopLength && (!isBackward && t.timestampConstrain <= v.timestampConstrain || isBackward && t.timestampConstrain >= v.timestampConstrain) {
 			continue
 		}
-		if v.hopLength >= model.MaxHopLimit {
+		if v.hopLength >= uint8(model.SearchDepth) {
 			continue
 		}
 
@@ -305,7 +338,7 @@ func getNextHopBackBySubgraph(thisHop HopResultBack, subgraph *model.Subgraph, p
 		rowE := subgraph.NodePtrs[src+1]
 		_, aok := allowedMap[src]
 		_, fok := forbiddenMap[src]
-		if !aok && rowE-rowS > model.SuperNodeOutDegreeLimitLevel5 || fok {
+		if !aok && rowE-rowS > uint32(model.SearchOutDegreeLimit) || fok {
 			continue
 		}
 		columns := subgraph.Columns[rowS:rowE]

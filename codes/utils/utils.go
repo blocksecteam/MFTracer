@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"github.com/ethereum/go-ethereum/common"
+	"transfer-graph-evm/model"
 )
 
 func MinU64(a, b uint64) uint64 {
@@ -18,14 +18,14 @@ func MaxU64(a, b uint64) uint64 {
 	return a
 }
 
-func AddrStringToHex(addr string) string {
-	return common.BytesToAddress([]byte(addr)).Hex()
+func AddrStringToStr(addr string) string {
+	return model.BytesToAddress([]byte(addr)).String()
 }
 
-func AddrStringToAddr(addr string) common.Address {
-	return common.BytesToAddress([]byte(addr))
+func AddrStringToAddr(addr string) model.Address {
+	return model.BytesToAddress([]byte(addr))
 }
 
-func AddrToAddrString(addr common.Address) string {
+func AddrToAddrString(addr model.Address) string {
 	return string(addr.Bytes())
 }

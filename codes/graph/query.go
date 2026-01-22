@@ -9,14 +9,13 @@ import (
 	"strings"
 	"sync"
 	"time"
-	"transfer-graph/encoding"
-	"transfer-graph/model"
-	"transfer-graph/search"
+	"transfer-graph-evm/encoding"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/search"
 
 	"github.com/cockroachdb/pebble"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
-	"github.com/ethereum/go-ethereum/log"
 	cmap "github.com/orcaman/concurrent-map/v2"
 	"golang.org/x/sync/errgroup"
 )
@@ -288,7 +287,7 @@ func (g *GraphDB) gidsToSubgraphsParallel(ctx context.Context, gids map[string]s
 	return ret.Items(), nil
 }
 
-func (g *GraphDB) BlockIDWithTokenToSubgraph(ctx context.Context, blockID uint16, token common.Address, config *QueryConfig) (*model.Subgraph, error) {
+func (g *GraphDB) BlockIDWithTokenToSubgraph(ctx context.Context, blockID uint16, token model.Address, config *QueryConfig) (*model.Subgraph, error) {
 	gid := model.MakeGIDWithBlockIDPack(blockID, token)
 	ret, err := g.gidToSubgraph(ctx, gid, config)
 	if err != nil && !errors.Is(err, pebble.ErrNotFound) {
@@ -300,7 +299,7 @@ func (g *GraphDB) BlockIDWithTokenToSubgraph(ctx context.Context, blockID uint16
 	return ret, nil
 }
 
-func (g *GraphDB) BlockIDWithTokensToSubgraphs(ctx context.Context, blockID uint16, tokens []common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+func (g *GraphDB) BlockIDWithTokensToSubgraphs(ctx context.Context, blockID uint16, tokens []model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
 	blockIDs := make([]uint16, 1)
 	blockIDs[0] = blockID
 	return g.BlockIDsWithTokensToSubgraphs(ctx, blockIDs, tokens, config)
@@ -361,13 +360,13 @@ func (g *GraphDB) BlockIDScanAllTokensToSubgraphs(ctx context.Context, blockID u
 	return ret, nil
 }
 
-func (g *GraphDB) BlockIDsWithTokenToSubgraphs(ctx context.Context, blockIDs []uint16, token common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
-	tokens := make([]common.Address, 1)
+func (g *GraphDB) BlockIDsWithTokenToSubgraphs(ctx context.Context, blockIDs []uint16, token model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+	tokens := make([]model.Address, 1)
 	tokens[0] = token
 	return g.BlockIDsWithTokensToSubgraphs(ctx, blockIDs, tokens, config)
 }
 
-func (g *GraphDB) BlockIDsWithTokensToSubgraphs(ctx context.Context, blockIDs []uint16, tokens []common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+func (g *GraphDB) BlockIDsWithTokensToSubgraphs(ctx context.Context, blockIDs []uint16, tokens []model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
 	gids := make(map[string]struct{}, len(blockIDs)*len(tokens))
 	gidsSorted := make([]string, 0, len(blockIDs)*len(tokens))
 	for _, blockID := range blockIDs {
@@ -403,7 +402,7 @@ func (g *GraphDB) BlockIDsWithTokensToSubgraphs(ctx context.Context, blockIDs []
 	return ret, nil
 }
 
-func (g *GraphDB) BlockIDsWithTokensToCompositeSubgraphs(ctx context.Context, blockIDs []uint16, tokens []common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+func (g *GraphDB) BlockIDsWithTokensToCompositeSubgraphs(ctx context.Context, blockIDs []uint16, tokens []model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
 	gids := make(map[string]struct{}, len(blockIDs))
 	gidsSorted := make([]string, 0, len(blockIDs))
 	for _, blockID := range blockIDs {
@@ -429,7 +428,7 @@ func (g *GraphDB) BlockIDsWithTokensToCompositeSubgraphs(ctx context.Context, bl
 	return ret, nil
 }
 
-func (g *GraphDB) BlockIDRangeWithTokensToSubgraphs(ctx context.Context, start, end uint16, tokens []common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+func (g *GraphDB) BlockIDRangeWithTokensToSubgraphs(ctx context.Context, start, end uint16, tokens []model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
 	blockIDs := make([]uint16, 0, int(end-start))
 	for blockID := start; blockID < end; blockID++ {
 		blockIDs = append(blockIDs, blockID)
@@ -437,12 +436,12 @@ func (g *GraphDB) BlockIDRangeWithTokensToSubgraphs(ctx context.Context, start, 
 	return g.BlockIDsWithTokensToSubgraphs(ctx, blockIDs, tokens, config)
 }
 
-func (g *GraphDB) BlockIDRangeWithTokenToSubgraphs(ctx context.Context, start, end uint16, token common.Address, config *QueryConfig) ([]*model.Subgraph, error) {
+func (g *GraphDB) BlockIDRangeWithTokenToSubgraphs(ctx context.Context, start, end uint16, token model.Address, config *QueryConfig) ([]*model.Subgraph, error) {
 	blockIDs := make([]uint16, 0, int(end-start))
 	for blockID := start; blockID < end; blockID++ {
 		blockIDs = append(blockIDs, blockID)
 	}
-	tokens := make([]common.Address, 1)
+	tokens := make([]model.Address, 1)
 	tokens[0] = token
 	return g.BlockIDsWithTokensToSubgraphs(ctx, blockIDs, tokens, config)
 }
@@ -453,8 +452,8 @@ func (g *GraphDB) sidToTxTs(ctx context.Context, sid []byte, config *QueryConfig
 
 	totalSize := uint64(0)
 	startTime := time.Now()
-	txs := make([]*model.Tx, 0, encoding.MaxTPerRecord)
-	tss := make([]*model.Transfer, 0, encoding.MaxTPerRecord)
+	txs := make([]*model.Tx, 0)
+	tss := make([]*model.Transfer, 0)
 	defer func(start time.Time) {
 		d := time.Since(startTime)
 		if recordMetrics {
@@ -464,7 +463,7 @@ func (g *GraphDB) sidToTxTs(ctx context.Context, sid []byte, config *QueryConfig
 	}(startTime)
 
 	//fmt.Println(hexutil.Encode(sid))
-	isETHTx := model.SIDTypeIsETHTx(sid)
+	isNativeTokenTx := model.SIDTypeIsNativeTokenTx(sid)
 	countUB := config.GetCountUpperBound()
 	sizeLimit := config.GetSizeLimit()
 	timeLimit := config.GetTimeout()
@@ -478,7 +477,7 @@ func (g *GraphDB) sidToTxTs(ctx context.Context, sid []byte, config *QueryConfig
 		metrics.AddDBGet(time.Since(start), len(v))
 	}
 
-	if isETHTx {
+	if isNativeTokenTx {
 		t, err := encoding.DefaultEncoding.DecodeTxs(v)
 		if err != nil {
 			err = fmt.Errorf("decode txs sid=%s failed: %s", hexutil.Encode(sid), err.Error())
@@ -491,36 +490,38 @@ func (g *GraphDB) sidToTxTs(ctx context.Context, sid []byte, config *QueryConfig
 				totalSize, sizeLimit, len(txs))
 		}
 
-		iter := g.db.NewIterator(sid, model.GetSIDPluralSuffix(1))
-		defer iter.Release()
-		for uint64(len(txs)) < countUB && iter.Next() {
-			if err := iter.Error(); err != nil {
-				return nil, nil, err
-			}
-			select {
-			case <-ctx.Done():
-				return nil, nil, fmt.Errorf("interrupted")
-			default:
-			}
-			if time.Now().After(startTime.Add(timeLimit)) {
-				return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txs = %d, total size = %d",
-					common.PrettyDuration(timeLimit).String(), len(txs), totalSize)
-			}
+		if len(t) >= encoding.MaxTPerRecord {
+			iter := g.db.NewIterator(sid, model.GetSIDPluralSuffix(1))
+			defer iter.Release()
+			for uint64(len(txs)) < countUB && iter.Next() {
+				if err := iter.Error(); err != nil {
+					return nil, nil, err
+				}
+				select {
+				case <-ctx.Done():
+					return nil, nil, fmt.Errorf("interrupted")
+				default:
+				}
+				if time.Now().After(startTime.Add(timeLimit)) {
+					return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txs = %d, total size = %d",
+						common.PrettyDuration(timeLimit).String(), len(txs), totalSize)
+				}
 
-			v := iter.Value()
-			if recordMetrics {
-				metrics.AddDBRangeScan(len(v))
-			}
-			t, err := encoding.DefaultEncoding.DecodeTxs(v)
-			if err != nil {
-				err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-				return nil, nil, err
-			}
-			txs = append(txs, t...)
-			totalSize += uint64(len(v))
-			if totalSize > sizeLimit {
-				return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txs = %d",
-					totalSize, sizeLimit, len(txs))
+				v := iter.Value()
+				if recordMetrics {
+					metrics.AddDBRangeScan(len(v))
+				}
+				t, err := encoding.DefaultEncoding.DecodeTxs(v)
+				if err != nil {
+					err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+					return nil, nil, err
+				}
+				txs = append(txs, t...)
+				totalSize += uint64(len(v))
+				if totalSize > sizeLimit {
+					return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txs = %d",
+						totalSize, sizeLimit, len(txs))
+				}
 			}
 		}
 
@@ -538,36 +539,38 @@ func (g *GraphDB) sidToTxTs(ctx context.Context, sid []byte, config *QueryConfig
 				totalSize, sizeLimit, len(tss))
 		}
 
-		iter := g.db.NewIterator(sid, model.GetSIDPluralSuffix(1))
-		defer iter.Release()
-		for uint64(len(tss)) < countUB && iter.Next() {
-			if err := iter.Error(); err != nil {
-				return nil, nil, err
-			}
-			select {
-			case <-ctx.Done():
-				return nil, nil, fmt.Errorf("interrupted")
-			default:
-			}
-			if time.Now().After(startTime.Add(timeLimit)) {
-				return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total tss = %d, total size = %d",
-					common.PrettyDuration(timeLimit).String(), len(tss), totalSize)
-			}
+		if len(t) >= encoding.MaxTPerRecord {
+			iter := g.db.NewIterator(sid, model.GetSIDPluralSuffix(1))
+			defer iter.Release()
+			for uint64(len(tss)) < countUB && iter.Next() {
+				if err := iter.Error(); err != nil {
+					return nil, nil, err
+				}
+				select {
+				case <-ctx.Done():
+					return nil, nil, fmt.Errorf("interrupted")
+				default:
+				}
+				if time.Now().After(startTime.Add(timeLimit)) {
+					return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total tss = %d, total size = %d",
+						common.PrettyDuration(timeLimit).String(), len(tss), totalSize)
+				}
 
-			v := iter.Value()
-			if recordMetrics {
-				metrics.AddDBRangeScan(len(v))
-			}
-			t, err := encoding.DefaultEncoding.DecodeTransfers(v)
-			if err != nil {
-				err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-				return nil, nil, err
-			}
-			tss = append(tss, t...)
-			totalSize += uint64(len(v))
-			if totalSize > sizeLimit {
-				return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total tss = %d",
-					totalSize, sizeLimit, len(tss))
+				v := iter.Value()
+				if recordMetrics {
+					metrics.AddDBRangeScan(len(v))
+				}
+				t, err := encoding.DefaultEncoding.DecodeTransfers(v)
+				if err != nil {
+					err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+					return nil, nil, err
+				}
+				tss = append(tss, t...)
+				totalSize += uint64(len(v))
+				if totalSize > sizeLimit {
+					return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total tss = %d",
+						totalSize, sizeLimit, len(tss))
+				}
 			}
 		}
 
@@ -614,8 +617,8 @@ func (g *GraphDB) sidsToTxTs(ctx context.Context, sids map[string]struct{}, conf
 		}
 		sidBytes := []byte(sid)
 
-		isETHTx := model.SIDTypeIsETHTx(sidBytes)
-		if isETHTx {
+		isNativeTokenTx := model.SIDTypeIsNativeTokenTx(sidBytes)
+		if isNativeTokenTx {
 			if _, ok := txs[sid]; ok {
 				continue
 			}
@@ -629,7 +632,7 @@ func (g *GraphDB) sidsToTxTs(ctx context.Context, sids map[string]struct{}, conf
 			if recordMetrics {
 				metrics.AddDBGet(time.Since(start), len(v))
 			}
-			txs[sid] = make([]*model.Tx, 0, encoding.MaxTPerRecord)
+			txs[sid] = make([]*model.Tx, 0)
 
 			t, err := encoding.DefaultEncoding.DecodeTxs(v)
 			if err != nil {
@@ -643,36 +646,38 @@ func (g *GraphDB) sidsToTxTs(ctx context.Context, sids map[string]struct{}, conf
 					totalSize, sizeLimit, len(txs), len(tss))
 			}
 
-			iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
-			defer iter.Release()
-			for uint64(len(txs[sid])) < countUB && iter.Next() {
-				if err := iter.Error(); err != nil {
-					return nil, nil, err
-				}
-				select {
-				case <-ctx.Done():
-					return nil, nil, fmt.Errorf("interrupted")
-				default:
-				}
-				if time.Now().After(startTime.Add(timeLimit)) {
-					return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txsid = %d, total tssid = %d, total size = %d",
-						common.PrettyDuration(timeLimit).String(), len(txs), len(tss), totalSize)
-				}
+			if len(t) >= encoding.MaxTPerRecord {
+				iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
+				defer iter.Release()
+				for uint64(len(txs[sid])) < countUB && iter.Next() {
+					if err := iter.Error(); err != nil {
+						return nil, nil, err
+					}
+					select {
+					case <-ctx.Done():
+						return nil, nil, fmt.Errorf("interrupted")
+					default:
+					}
+					if time.Now().After(startTime.Add(timeLimit)) {
+						return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txsid = %d, total tssid = %d, total size = %d",
+							common.PrettyDuration(timeLimit).String(), len(txs), len(tss), totalSize)
+					}
 
-				v := iter.Value()
-				if recordMetrics {
-					metrics.AddDBRangeScan(len(v))
-				}
-				t, err := encoding.DefaultEncoding.DecodeTxs(v)
-				if err != nil {
-					err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-					return nil, nil, err
-				}
-				txs[sid] = append(txs[sid], t...)
-				totalSize += uint64(len(v))
-				if totalSize > sizeLimit {
-					return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txsid = %d, total tssid = %d",
-						totalSize, sizeLimit, len(txs), len(tss))
+					v := iter.Value()
+					if recordMetrics {
+						metrics.AddDBRangeScan(len(v))
+					}
+					t, err := encoding.DefaultEncoding.DecodeTxs(v)
+					if err != nil {
+						err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+						return nil, nil, err
+					}
+					txs[sid] = append(txs[sid], t...)
+					totalSize += uint64(len(v))
+					if totalSize > sizeLimit {
+						return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txsid = %d, total tssid = %d",
+							totalSize, sizeLimit, len(txs), len(tss))
+					}
 				}
 			}
 		} else {
@@ -689,7 +694,7 @@ func (g *GraphDB) sidsToTxTs(ctx context.Context, sids map[string]struct{}, conf
 			if recordMetrics {
 				metrics.AddDBGet(time.Since(start), len(v))
 			}
-			tss[sid] = make([]*model.Transfer, 0, encoding.MaxTPerRecord)
+			tss[sid] = make([]*model.Transfer, 0)
 
 			t, err := encoding.DefaultEncoding.DecodeTransfers(v)
 			if err != nil {
@@ -703,36 +708,38 @@ func (g *GraphDB) sidsToTxTs(ctx context.Context, sids map[string]struct{}, conf
 					totalSize, sizeLimit, len(txs), len(tss))
 			}
 
-			iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
-			defer iter.Release()
-			for uint64(len(tss[sid])) < countUB && iter.Next() {
-				if err := iter.Error(); err != nil {
-					return nil, nil, err
-				}
-				select {
-				case <-ctx.Done():
-					return nil, nil, fmt.Errorf("interrupted")
-				default:
-				}
-				if time.Now().After(startTime.Add(timeLimit)) {
-					return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txsid = %d, total tssid = %d, total size = %d",
-						common.PrettyDuration(timeLimit).String(), len(txs), len(tss), totalSize)
-				}
+			if len(t) >= encoding.MaxTPerRecord {
+				iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
+				defer iter.Release()
+				for uint64(len(tss[sid])) < countUB && iter.Next() {
+					if err := iter.Error(); err != nil {
+						return nil, nil, err
+					}
+					select {
+					case <-ctx.Done():
+						return nil, nil, fmt.Errorf("interrupted")
+					default:
+					}
+					if time.Now().After(startTime.Add(timeLimit)) {
+						return nil, nil, fmt.Errorf("time limit exceeded in sidsToTxTs: %s, total txsid = %d, total tssid = %d, total size = %d",
+							common.PrettyDuration(timeLimit).String(), len(txs), len(tss), totalSize)
+					}
 
-				v := iter.Value()
-				if recordMetrics {
-					metrics.AddDBRangeScan(len(v))
-				}
-				t, err := encoding.DefaultEncoding.DecodeTransfers(v)
-				if err != nil {
-					err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-					return nil, nil, err
-				}
-				tss[sid] = append(tss[sid], t...)
-				totalSize += uint64(len(v))
-				if totalSize > sizeLimit {
-					return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txsid = %d, total tssid = %d",
-						totalSize, sizeLimit, len(txs), len(tss))
+					v := iter.Value()
+					if recordMetrics {
+						metrics.AddDBRangeScan(len(v))
+					}
+					t, err := encoding.DefaultEncoding.DecodeTransfers(v)
+					if err != nil {
+						err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+						return nil, nil, err
+					}
+					tss[sid] = append(tss[sid], t...)
+					totalSize += uint64(len(v))
+					if totalSize > sizeLimit {
+						return nil, nil, fmt.Errorf("size limit exceeded: %d > %d, total txsid = %d, total tssid = %d",
+							totalSize, sizeLimit, len(txs), len(tss))
+					}
 				}
 			}
 		}
@@ -777,8 +784,8 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 		}
 		sidBytes := []byte(sid)
 
-		isETHTx := model.SIDTypeIsETHTx(sidBytes)
-		if isETHTx {
+		isNativeTokenTx := model.SIDTypeIsNativeTokenTx(sidBytes)
+		if isNativeTokenTx {
 			start := time.Now()
 			v, err := g.db.Get(sidBytes)
 			if err != nil && !errors.Is(err, pebble.ErrNotFound) {
@@ -791,7 +798,7 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 				metrics.AddDBGet(time.Since(start), len(v))
 			}
 			txs.Set(sid, nil)
-			txList := make([]*model.Tx, 0, encoding.MaxTPerRecord)
+			txList := make([]*model.Tx, 0)
 
 			t, err := encoding.DefaultEncoding.DecodeTxs(v)
 			if err != nil {
@@ -801,30 +808,32 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 			txList = append(txList, t...)
 			txs.Set(sid, txList)
 
-			iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
-			defer iter.Release()
-			for uint64(len(txList)) < countUB && iter.Next() {
-				if err := iter.Error(); err != nil {
-					return err
-				}
-				select {
-				case <-ctx.Done():
-					return fmt.Errorf("interrupted")
-				default:
-				}
+			if len(t) >= encoding.MaxTPerRecord {
+				iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
+				defer iter.Release()
+				for uint64(len(txList)) < countUB && iter.Next() {
+					if err := iter.Error(); err != nil {
+						return err
+					}
+					select {
+					case <-ctx.Done():
+						return fmt.Errorf("interrupted")
+					default:
+					}
 
-				v := iter.Value()
-				if recordMetrics {
-					metrics.AddDBRangeScan(len(v))
+					v := iter.Value()
+					if recordMetrics {
+						metrics.AddDBRangeScan(len(v))
+					}
+					t, err := encoding.DefaultEncoding.DecodeTxs(v)
+					if err != nil {
+						err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+						return err
+					}
+					txList = append(txList, t...)
 				}
-				t, err := encoding.DefaultEncoding.DecodeTxs(v)
-				if err != nil {
-					err = fmt.Errorf("decode txs sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-					return err
-				}
-				txList = append(txList, t...)
+				txs.Set(sid, txList)
 			}
-			txs.Set(sid, txList)
 		} else {
 			start := time.Now()
 			v, err := g.db.Get(sidBytes)
@@ -838,7 +847,7 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 				metrics.AddDBGet(time.Since(start), len(v))
 			}
 			tss.Set(sid, nil)
-			tsList := make([]*model.Transfer, 0, encoding.MaxTPerRecord)
+			tsList := make([]*model.Transfer, 0)
 
 			t, err := encoding.DefaultEncoding.DecodeTransfers(v)
 			if err != nil {
@@ -848,30 +857,32 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 			tsList = append(tsList, t...)
 			tss.Set(sid, tsList)
 
-			iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
-			defer iter.Release()
-			for uint64(len(tsList)) < countUB && iter.Next() {
-				if err := iter.Error(); err != nil {
-					return err
-				}
-				select {
-				case <-ctx.Done():
-					return fmt.Errorf("interrupted")
-				default:
-				}
+			if len(t) >= encoding.MaxTPerRecord {
+				iter := g.db.NewIterator(sidBytes, model.GetSIDPluralSuffix(1))
+				defer iter.Release()
+				for uint64(len(tsList)) < countUB && iter.Next() {
+					if err := iter.Error(); err != nil {
+						return err
+					}
+					select {
+					case <-ctx.Done():
+						return fmt.Errorf("interrupted")
+					default:
+					}
 
-				v := iter.Value()
-				if recordMetrics {
-					metrics.AddDBRangeScan(len(v))
+					v := iter.Value()
+					if recordMetrics {
+						metrics.AddDBRangeScan(len(v))
+					}
+					t, err := encoding.DefaultEncoding.DecodeTransfers(v)
+					if err != nil {
+						err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
+						return err
+					}
+					tsList = append(tsList, t...)
 				}
-				t, err := encoding.DefaultEncoding.DecodeTransfers(v)
-				if err != nil {
-					err = fmt.Errorf("decode tss sidp=%s failed: %s", hexutil.Encode(iter.Key()), err.Error())
-					return err
-				}
-				tsList = append(tsList, t...)
+				tss.Set(sid, tsList)
 			}
-			tss.Set(sid, tsList)
 		}
 		return nil
 	}
@@ -879,8 +890,8 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 	eg.SetLimit(parallel)
 	for sid := range sids {
 		s := string(sid)
-		isETHTx := model.SIDTypeIsETHTx([]byte(s))
-		if isETHTx && txs.Has(s) || !isETHTx && tss.Has(s) {
+		isNativeTokenTx := model.SIDTypeIsNativeTokenTx([]byte(s))
+		if isNativeTokenTx && txs.Has(s) || !isNativeTokenTx && tss.Has(s) {
 			continue
 		}
 		eg.Go(func() error {
@@ -894,11 +905,11 @@ func (g *GraphDB) sidsToTxTsParallel(ctx context.Context, sids map[string]struct
 	return txs.Items(), tss.Items(), nil
 }
 
-func (g *GraphDB) BlockIDWithTokenToTxTs(ctx context.Context, blockID uint16, token common.Address, srcID, desID uint32, getTx bool, config *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
+func (g *GraphDB) BlockIDWithTokenToTxTs(ctx context.Context, blockID uint16, token model.Address, srcID, desID uint32, getTx bool, config *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
 	var txs []*model.Tx
 	var tss []*model.Transfer
 	var err error
-	if model.TokenIsETH(token) && getTx {
+	if model.IsNativeToken(token) && getTx {
 		sid := model.MakeSIDWithBlockIDPack(blockID, token, srcID, desID, true)
 		txs, _, err = g.sidToTxTs(ctx, sid, config)
 		if err != nil && !errors.Is(err, pebble.ErrNotFound) {
@@ -926,11 +937,11 @@ func (g *GraphDB) BlockIDWithTokenToTxTs(ctx context.Context, blockID uint16, to
 	return txs, tss, nil
 }
 
-func (g *GraphDB) BlockIDWithTokenWithNodeIDsToTxTs(ctx context.Context, blockID uint16, token common.Address, nodeIDs [][2]uint32, getTx bool, config *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
+func (g *GraphDB) BlockIDWithTokenWithNodeIDsToTxTs(ctx context.Context, blockID uint16, token model.Address, nodeIDs [][2]uint32, getTx bool, config *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
 	var txs []*model.Tx
 	var tss []*model.Transfer
 	var err error
-	if model.TokenIsETH(token) && getTx {
+	if model.IsNativeToken(token) && getTx {
 		sidsSorted := make([]string, 0, len(nodeIDs))
 		sids := make(map[string]struct{}, len(nodeIDs))
 		for _, nodeID := range nodeIDs {
@@ -984,11 +995,11 @@ func QueryMGEdgesParallel(g *GraphDB, mg search.MainGraph, mergedSubgraph *model
 	if mergedRMap == nil {
 		mergedRMap = model.ReverseAddressMap(mergedSubgraph.AddressMap)
 	}
-	var ETHSubgraph *model.Subgraph = nil
+	var nativeTokenSubgraph *model.Subgraph = nil
 	tokenSubgraphs := make([]*model.Subgraph, 0, len(originSubgraphs))
 	for _, originSubgraph := range originSubgraphs {
-		if originSubgraph.Token.Cmp(model.EtherAddress) == 0 {
-			ETHSubgraph = originSubgraph
+		if originSubgraph.Token.Cmp(model.NativeTokenAddress) == 0 {
+			nativeTokenSubgraph = originSubgraph
 		} else {
 			tokenSubgraphs = append(tokenSubgraphs, originSubgraph)
 		}
@@ -998,31 +1009,31 @@ func QueryMGEdgesParallel(g *GraphDB, mg search.MainGraph, mergedSubgraph *model
 		sync.Mutex
 		tss []*model.Transfer
 	}{
-		tss: make([]*model.Transfer, 0, len(mg)*8),
+		tss: make([]*model.Transfer, 0),
 	}
-	iterETHSubgraph := func() error {
-		srcDesPairs := make([][2]uint32, 0, len(mg)*8)
+	iterNativeTokenSubgraph := func() error {
+		srcDesPairs := make([][2]uint32, 0)
 		for src, desMap := range mg {
-			srcID, ok := ETHSubgraph.AddressMap[mergedRMap[src]]
+			srcID, ok := nativeTokenSubgraph.AddressMap[mergedRMap[src]]
 			if !ok {
 				continue
 			}
 			for des := range desMap {
-				desID, ok := ETHSubgraph.AddressMap[mergedRMap[des]]
+				desID, ok := nativeTokenSubgraph.AddressMap[mergedRMap[des]]
 				if !ok {
 					continue
 				}
-				if ETHSubgraph.IsLinked(srcID, desID) {
+				if nativeTokenSubgraph.IsLinked(srcID, desID) {
 					srcDesPairs = append(srcDesPairs, [2]uint32{srcID, desID})
 				}
 			}
 		}
-		txs, _, err := g.BlockIDWithTokenWithNodeIDsToTxTs(ctx, ETHSubgraph.BlockID, ETHSubgraph.Token, srcDesPairs, true, qconfig)
+		txs, _, err := g.BlockIDWithTokenWithNodeIDsToTxTs(ctx, nativeTokenSubgraph.BlockID, nativeTokenSubgraph.Token, srcDesPairs, true, qconfig)
 		if err != nil {
 			return err
 		}
 		retTxs = txs
-		_, tss, err := g.BlockIDWithTokenWithNodeIDsToTxTs(ctx, ETHSubgraph.BlockID, ETHSubgraph.Token, srcDesPairs, false, qconfig)
+		_, tss, err := g.BlockIDWithTokenWithNodeIDsToTxTs(ctx, nativeTokenSubgraph.BlockID, nativeTokenSubgraph.Token, srcDesPairs, false, qconfig)
 		if err != nil {
 			return err
 		}
@@ -1033,7 +1044,7 @@ func QueryMGEdgesParallel(g *GraphDB, mg search.MainGraph, mergedSubgraph *model
 	}
 	iterTokenSubgraph := func(i int) error {
 		tokenSubgraph := tokenSubgraphs[i]
-		srcDesPairs := make([][2]uint32, 0, len(mg)*8)
+		srcDesPairs := make([][2]uint32, 0)
 		for src, desMap := range mg {
 			srcID, ok := tokenSubgraph.AddressMap[mergedRMap[src]]
 			if !ok {
@@ -1060,9 +1071,9 @@ func QueryMGEdgesParallel(g *GraphDB, mg search.MainGraph, mergedSubgraph *model
 	}
 	eg := errgroup.Group{}
 	eg.SetLimit(parallel)
-	if ETHSubgraph != nil {
+	if nativeTokenSubgraph != nil {
 		eg.Go(func() error {
-			return iterETHSubgraph()
+			return iterNativeTokenSubgraph()
 		})
 	}
 	for i := range tokenSubgraphs {
@@ -1077,7 +1088,7 @@ func QueryMGEdgesParallel(g *GraphDB, mg search.MainGraph, mergedSubgraph *model
 	return retTxs, retTss.tss, nil
 }
 
-func QueryMGEdgesParallelBatch(g *GraphDB, mgs []search.MainGraph, mergedSubgraphs []*model.Subgraph, mergedRMaps [][]string, originSubgraphss [][]*model.Subgraph, parallel int, ctx context.Context, qconfig *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
+func QueryMGEdgesParallelBatch(g *GraphDB, mgs []search.MainGraph, mergedSubgraphs []*model.Subgraph, mergedRMaps [][]string, originSubgraphss [][]*model.Subgraph, ctx context.Context, qconfig *QueryConfig) ([]*model.Tx, []*model.Transfer, error) {
 	txs := make([]*model.Tx, 0)
 	tss := make([]*model.Transfer, 0)
 	for i := 0; i < len(mergedSubgraphs); i++ {
@@ -1093,15 +1104,18 @@ func QueryMGEdgesParallelBatch(g *GraphDB, mgs []search.MainGraph, mergedSubgrap
 
 func (g *GraphDB) LatestBlockID() uint16 {
 	return 0
-	snap, err := g.db.NewSnapshot()
-	if err != nil {
-		log.Error("read LatestBlock: create snapshot failed", "err", err.Error())
-		return 0
-	}
-	defer snap.Release()
+}
 
-	iter := g.db.NewIterator(model.SubgraphPrefix, nil)
-	defer iter.Release()
-	return 0
-	//return binary.BigEndian.Uint16(iter.Key()[len(model.SubgraphPrefix) : len(model.SubgraphPrefix)+2])
+func QueryMGEdgesSimple(g *GraphDB, mg search.MainGraph, blockID uint16, token model.Address, ctx context.Context, qconfig *QueryConfig) ([]*model.Transfer, error) {
+	srcDesPairs := make([][2]uint32, 0)
+	for srcID, desMap := range mg {
+		for desID := range desMap {
+			srcDesPairs = append(srcDesPairs, [2]uint32{srcID, desID})
+		}
+	}
+	_, tss, err := g.BlockIDWithTokenWithNodeIDsToTxTs(ctx, blockID, token, srcDesPairs, false, qconfig)
+	if err != nil {
+		return nil, err
+	}
+	return tss, nil
 }

@@ -2,32 +2,30 @@ package semantic
 
 import (
 	"context"
-	"fmt"
 	"math"
 	"math/big"
-	"transfer-graph/model"
-	"transfer-graph/pricedb"
-	"transfer-graph/utils"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/pricedb"
+	"transfer-graph-evm/utils"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	fgraph "github.com/yourbasic/graph"
 	"gonum.org/v1/gonum/mat"
 )
 
-var superNodeOutDegreeLimit = model.SuperNodeOutDegreeLimitLevel4
+var superNodeOutDegreeLimit = model.GetConfigOutDegreeLimit()
 
 var superTxTransferLimit = 5
 
 // an virtual edge with value < this won't be considered
-var DollarActivateThreshold = uint64(10 * math.Pow10(model.DollarDeciamls))
+var DollarActivateThreshold = uint64(10 * math.Pow10(model.DollarDecimals))
 
 type txGraph struct {
 	txFrom     string                 // tx.From address as string
 	edges      map[uint64][][2]uint64 // from -> {{to, value}}
 	addressMap map[string]uint64      // address -> id
 	rMap       []string               // id -> address
-	tokenSet   []common.Address
+	tokenSet   []model.Address
 }
 
 func newTxGraph(
@@ -76,9 +74,9 @@ func newTxGraph(
 	for k, v := range addressMap {
 		g.rMap[v] = k
 	}
-	g.tokenSet = make([]common.Address, 0, len(tokenSet))
+	g.tokenSet = make([]model.Address, 0, len(tokenSet))
 	for k := range tokenSet {
-		g.tokenSet = append(g.tokenSet, common.BytesToAddress([]byte(k)))
+		g.tokenSet = append(g.tokenSet, model.BytesToAddress([]byte(k)))
 	}
 	return g
 }
@@ -149,12 +147,6 @@ func AddWithinTx(
 	fTss := make([]*model.Transfer, 0)
 	fTsMapByPos := make(map[uint64][]*model.Transfer)
 	for _, txs := range txMap {
-		/*
-			toAddressString := txMapKey[len(txMapKey)/2:]
-			if outDegreeAll[toAddressString] < superNodeOutDegreeLimit {
-				continue
-			}
-		*/
 		for _, tx := range txs {
 			tss, ok := tsMapByPos[tx.Pos()]
 			if !(!ok || isSemanticProcessed(tss) || (len(tss) == 1 && tss[0].Type == uint16(model.TransferTypeExternal))) && hasUnreachableNode(tx, tss, outDegreeAll) {
@@ -197,20 +189,12 @@ func AddWithinTx(
 				contribution[i] = maxFlowList[i]
 			}
 		}
-		if tx.TxHash.Cmp(common.HexToHash("0x329fcf3060886020e19c00481602d26627175f1cf2d00189266baab46643f5e9")) == 0 {
-			for _, ts := range tss {
-				fmt.Println(ts.From.Hex(), ts.To.Hex(), ts.Value, ts.Token)
-			}
-			for i := range balanceList {
-				fmt.Println(utils.AddrStringToHex(g.rMap[i]), balanceList[i], maxFlowList[i], contribution[i])
-			}
-		}
 		var txidCounter uint16 = 0
 		for id := range contribution {
 			if contribution[id] < int64(DollarActivateThreshold) {
 				continue
 			}
-			desAddress := common.BytesToAddress([]byte(g.rMap[id]))
+			desAddress := model.BytesToAddress([]byte(g.rMap[id]))
 			for _, token := range g.tokenSet {
 				virtualTs := &model.Transfer{
 					Pos:   txPos,

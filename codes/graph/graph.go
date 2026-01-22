@@ -11,14 +11,14 @@ import (
 	"path"
 	"sync"
 	"time"
-	"transfer-graph/encoding"
-	"transfer-graph/model"
+	"transfer-graph-evm/encoding"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/utils"
 
 	"github.com/cockroachdb/pebble"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/fdlimit"
 	"github.com/ethereum/go-ethereum/ethdb"
-	"github.com/ethereum/go-ethereum/log"
 )
 
 const SubgraphWRDescPrefix = "SUBGRAPH WRITE: "
@@ -146,7 +146,7 @@ func (m *DBMetadata) Write(b ethdb.Batch) (int, error) {
 }
 
 func NewGraphDB(datadir string, readonly bool) (*GraphDB, error) {
-	startTime := time.Now()
+	//startTime := time.Now()
 
 	maxFd, err := fdlimit.Maximum()
 	if err != nil {
@@ -156,14 +156,14 @@ func NewGraphDB(datadir string, readonly bool) (*GraphDB, error) {
 
 	fd := maxFd
 	cache := 2048
-	db, err := New(path.Join(datadir, "db"), cache, fd, "", false, false)
+	db, err := New(path.Join(datadir, "db"), cache, fd, "", false)
 	if err != nil {
 		return nil, fmt.Errorf("NewGraphDB: %s", err.Error())
 	}
 
 	metaCache := 128
 	metaFd := 128
-	metaDB, err := New(path.Join(datadir, "metadata"), metaCache, metaFd, "", false, false)
+	metaDB, err := New(path.Join(datadir, "metadata"), metaCache, metaFd, "", false)
 	if err != nil {
 		return nil, fmt.Errorf("NewGraphDB: %s", err.Error())
 	}
@@ -174,7 +174,7 @@ func NewGraphDB(datadir string, readonly bool) (*GraphDB, error) {
 
 		parallelLimit: uint64(ParallelPoolSize),
 	}
-	log.Info("load graph db finished", "datadir", datadir, "duration", time.Since(startTime), "latestBlock", g.LatestBlockID())
+	//log.Info("load graph db finished", "datadir", datadir, "duration", time.Since(startTime), "latestBlock", g.LatestBlockID())
 	return g, nil
 }
 
@@ -195,7 +195,7 @@ func (g *GraphDB) GetMetadata() (*DBMetadata, error) {
 }
 
 type SRecord struct {
-	Token     common.Address    `json:"token"`
+	Token     model.Address     `json:"token"`
 	SrcID     uint32            `json:"srcID"`
 	DesID     uint32            `json:"desID"`
 	Transfers []*model.Transfer `json:"transfers"`
@@ -209,8 +209,8 @@ type SWriteRequest struct {
 }
 
 type CompositeGRecord struct {
-	Subgraph *model.Subgraph  `json:"subgraph"`
-	Tokens   []common.Address `json:"tokens"`
+	Subgraph *model.Subgraph `json:"subgraph"`
+	Tokens   []model.Address `json:"tokens"`
 }
 
 type GWriteRequest struct {
@@ -218,134 +218,6 @@ type GWriteRequest struct {
 	Contents          []*model.Subgraph            `json:"contents"`
 	CompositeContents map[string]*CompositeGRecord `json:"compositeContents"`
 }
-
-/*
-func (g *GraphDB) SWrite(ctx context.Context, req *SWriteRequest) error {
-	g.Lock()
-	defer g.Unlock()
-
-	if len(req.Contents) == 0 && len(req.Contents) == 0 {
-		return fmt.Errorf("empty request: %s", req.Desc)
-	}
-	wrapError := func(msg string, e error) error {
-		return fmt.Errorf("%s: %s", msg, e)
-	}
-
-	m := getWriteMetrics(ctx)
-	metadata, err := g.GetMetadata()
-	if err != nil {
-		return wrapError("cannot load metadata", err)
-	}
-	writeRecord := newWriteRecord(req.Desc)
-
-	batch := g.db.NewBatch()
-	isETH := (req.Token.Cmp(model.EtherAddress) == 0)
-	if isETH {
-		for _, record := range req.Contents {
-			if record.Txs != nil {
-				values, err := encoding.DefaultEncoding.EncodeTxs(record.Txs)
-				if err != nil {
-					return wrapError("encode ETH txs", err)
-				}
-				vLen := len(values)
-				sid := model.MakeETHSIDWithBlockID(req.BlockID, true, record.SrcID, record.DesID)
-				if err := batch.Put(sid, values[0]); err != nil {
-					return wrapError("put txs content", err)
-				}
-				txAmount := int(binary.BigEndian.Uint16(values[0][:2]))
-				writeRecord.AddTx(len(values[0])+len(sid), txAmount)
-				if m != nil {
-					m.AddTx(len(values[0])+len(sid), txAmount)
-				}
-				for i := 1; i < vLen; i++ {
-					sidp := model.MakeSIDPlural(sid, uint16(i))
-					if err := batch.Put(sidp, values[i]); err != nil {
-						return wrapError("put txs content", err)
-					}
-					txAmount := int(binary.BigEndian.Uint16(values[i][:2]))
-					writeRecord.AddTx(len(values[i])+len(sidp), txAmount)
-					if m != nil {
-						m.AddTx(len(values[i])+len(sid), txAmount)
-					}
-				}
-			}
-			if record.Transfers != nil {
-				values, err := encoding.DefaultEncoding.EncodeTransfers(record.Transfers)
-				if err != nil {
-					return wrapError("encode ETH tsfs", err)
-				}
-				vLen := len(values)
-				sid := model.MakeETHSIDWithBlockID(req.BlockID, false, record.SrcID, record.DesID)
-				if err := batch.Put(sid, values[0]); err != nil {
-					return wrapError("put tss content", err)
-				}
-				tsAmount := int(binary.BigEndian.Uint16(values[0][:2]))
-				writeRecord.AddTransfer(len(values[0])+len(sid), tsAmount)
-				if m != nil {
-					m.AddTransfer(len(values[0])+len(sid), tsAmount)
-				}
-				for i := 1; i < vLen; i++ {
-					sidp := model.MakeSIDPlural(sid, uint16(i))
-					if err := batch.Put(sidp, values[i]); err != nil {
-						return wrapError("put tss content", err)
-					}
-					tsAmount := int(binary.BigEndian.Uint16(values[i][:2]))
-					writeRecord.AddTransfer(len(values[i])+len(sidp), tsAmount)
-					if m != nil {
-						m.AddTransfer(len(values[i])+len(sid), tsAmount)
-					}
-				}
-			}
-		}
-	} else {
-		for _, record := range req.Contents {
-			values, err := encoding.DefaultEncoding.EncodeTransfers(record.Transfers)
-			if err != nil {
-				return wrapError("encode token tsfs", err)
-			}
-			vLen := len(values)
-			sid := model.MakeSIDWithBlockID(req.BlockID, req.Token, record.SrcID, record.DesID)
-			if err := batch.Put(sid, values[0]); err != nil {
-				return wrapError("put tss content", err)
-			}
-			tsAmount := int(binary.BigEndian.Uint16(values[0][:2]))
-			writeRecord.AddTransfer(len(values[0])+len(sid), tsAmount)
-			if m != nil {
-				m.AddTransfer(len(values[0])+len(sid), tsAmount)
-			}
-			for i := 1; i < vLen; i++ {
-				sidp := model.MakeSIDPlural(sid, uint16(i))
-				if err := batch.Put(sidp, values[i]); err != nil {
-					return wrapError("put txs content", err)
-				}
-				tsAmount := int(binary.BigEndian.Uint16(values[i][:2]))
-				writeRecord.AddTransfer(len(values[i])+len(sidp), tsAmount)
-				if m != nil {
-					m.AddTransfer(len(values[i])+len(sid), tsAmount)
-				}
-			}
-		}
-	}
-
-	if WriteMetadata {
-		metaBatch := g.metaDB.NewBatch()
-		writeRecord.EndTime = time.Now()
-		metadata.AppendWriteRecords(writeRecord)
-		_, err := metadata.Write(metaBatch)
-		if err != nil {
-			return wrapError("write metadata", err)
-		}
-		if err := metaBatch.Write(); err != nil {
-			return wrapError("metaDB batch write", err)
-		}
-	}
-
-	if err := batch.Write(); err != nil {
-		return wrapError("batch write", err)
-	}
-	return nil
-}
-*/
 
 func (g *GraphDB) SWrite(ctx context.Context, req *SWriteRequest) error {
 	g.Lock()
@@ -366,29 +238,29 @@ func (g *GraphDB) SWrite(ctx context.Context, req *SWriteRequest) error {
 	writeRecord := newWriteRecord(req.Desc)
 
 	batch := g.db.NewBatch()
-	fmt.Printf("[Debug] {SWrite} batch put start, req.Cotents: %d\n", len(req.Contents))
+	utils.Logger.Info("{SWrite} batch put start", "req.Contents", len(req.Contents))
 
 	for _, record := range req.Contents {
 
 		if batch.ValueSize() > math.MaxUint32*3/4 {
-			fmt.Println("[Debug] {SWrite} batch > 3GB, inter swrite start")
+			utils.Logger.Info("{SWrite} batch > 3GB, inter swrite start", "size", batch.ValueSize())
 			if err := batch.Write(); err != nil {
-				fmt.Println(err)
+				utils.Logger.Error("{SWrite} batch write failed", "err", err.Error())
 				return wrapError("batch write", err)
 			}
-			fmt.Println("[Debug] {SWrite} inter swrite finished")
+			utils.Logger.Info("{SWrite} batch > 3GB, inter swrite finished", "size", batch.ValueSize())
 			batch.Reset()
 		}
 
-		isETH := (record.Token.Cmp(model.EtherAddress) == 0)
-		if isETH {
+		isNativeToken := (model.IsNativeToken(record.Token))
+		if isNativeToken {
 			if record.Txs != nil {
 				values, err := encoding.DefaultEncoding.EncodeTxs(record.Txs)
 				if err != nil {
 					return wrapError("encode ETH txs", err)
 				}
 				vLen := len(values)
-				sid := model.MakeETHSIDWithBlockID(req.BlockID, true, record.SrcID, record.DesID)
+				sid := model.MakeNativeTokenSIDWithBlockID(req.BlockID, true, record.SrcID, record.DesID)
 				if err := batch.Put(sid, values[0]); err != nil {
 					return wrapError("put txs content", err)
 				}
@@ -415,7 +287,7 @@ func (g *GraphDB) SWrite(ctx context.Context, req *SWriteRequest) error {
 					return wrapError("encode ETH tsfs", err)
 				}
 				vLen := len(values)
-				sid := model.MakeETHSIDWithBlockID(req.BlockID, false, record.SrcID, record.DesID)
+				sid := model.MakeNativeTokenSIDWithBlockID(req.BlockID, false, record.SrcID, record.DesID)
 				if err := batch.Put(sid, values[0]); err != nil {
 					return wrapError("put tss content", err)
 				}
@@ -477,12 +349,12 @@ func (g *GraphDB) SWrite(ctx context.Context, req *SWriteRequest) error {
 			return wrapError("metaDB batch write", err)
 		}
 	}
-	fmt.Println("[Debug] {SWrite} swrite start")
+	utils.Logger.Info("{SWrite} swrite start")
 	if err := batch.Write(); err != nil {
-		fmt.Println(err)
+		utils.Logger.Error("{SWrite} swrite failed", "err", err.Error())
 		return wrapError("batch write", err)
 	}
-	fmt.Println("[Debug] {SWrite} swrite finished")
+	utils.Logger.Info("{SWrite} swrite finished")
 	return nil
 }
 

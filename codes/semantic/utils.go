@@ -4,38 +4,29 @@ import (
 	"context"
 	"math"
 	"math/big"
-	sparser "topswap/parser"
-	"transfer-graph/model"
-	"transfer-graph/pricedb"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/pricedb"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 )
 
-func getFromAddressOfTxMapKey(txMapKey string) common.Address {
-	return common.BytesToAddress([]byte(txMapKey[:len(txMapKey)/2]))
+func getFromAddressOfTxMapKey(txMapKey string) model.Address {
+	return model.BytesToAddress([]byte(txMapKey[:len(txMapKey)/2]))
 }
 
-func getToAddressOfTxMapKey(txMapKey string) common.Address {
-	return common.BytesToAddress([]byte(txMapKey[len(txMapKey)/2:]))
+func getToAddressOfTxMapKey(txMapKey string) model.Address {
+	return model.BytesToAddress([]byte(txMapKey[len(txMapKey)/2:]))
 }
 
-func makeTsMapKey(from, to, token common.Address) string {
+func makeTsMapKey(from, to, token model.Address) string {
 	return string(token.Bytes()) + string(from.Bytes()) + string(to.Bytes())
 }
 
-func getTwoTokenGidAsString(tokenA, tokenB common.Address, blockID uint16) (string, []common.Address) {
-	tokens := make([]common.Address, 2)
+func getTwoTokenGidAsString(tokenA, tokenB model.Address, blockID uint16) (string, []model.Address) {
+	tokens := make([]model.Address, 2)
 	tokens[0] = tokenA
 	tokens[1] = tokenB
 	return string(model.MakeCompositeGIDWithBlockID(blockID, tokens)), tokens
-}
-
-func topswapParse(tx *model.Tx) ([]*sparser.ParseResult, bool) {
-	if len(tx.Func) != 10 {
-		return nil, false
-	}
-	return topswapParser.ParseIgnore(common.Hex2Bytes(tx.Func[2:]), tx.Param, (*big.Int)(tx.Value), tx.From)
 }
 
 func isSemanticProcessed(tss []*model.Transfer) bool {
@@ -55,11 +46,11 @@ func computeValue(amount *hexutil.Big, price float64, decimals uint8) uint64 {
 	famount := big.NewFloat(0).SetInt(amount.ToInt())
 	value, _ := fprice.Mul(fprice, famount).Int(nil)
 	pfactor := big.NewInt(int64(pricedb.PriceFactor))
-	if model.DollarDeciamls > decimals {
-		dfactor := big.NewInt(0).Exp(big.NewInt(10), big.NewInt(int64(model.DollarDeciamls-decimals)), nil)
+	if model.DollarDecimals > decimals {
+		dfactor := big.NewInt(0).Exp(big.NewInt(10), big.NewInt(int64(model.DollarDecimals-decimals)), nil)
 		value = value.Mul(value, dfactor)
-	} else if model.DollarDeciamls < decimals {
-		dfactor := big.NewInt(0).Exp(big.NewInt(10), big.NewInt(int64(decimals-model.DollarDeciamls)), nil)
+	} else if model.DollarDecimals < decimals {
+		dfactor := big.NewInt(0).Exp(big.NewInt(10), big.NewInt(int64(decimals-model.DollarDecimals)), nil)
 		value = value.Div(value, dfactor)
 	}
 	value = value.Div(value, pfactor)
@@ -79,7 +70,7 @@ func fetchPrice(
 	ctx context.Context,
 ) (map[string]float64, error) {
 
-	tokens := make([]common.Address, len(tss)+1)
+	tokens := make([]model.Address, len(tss)+1)
 	blocks := make([]uint64, len(tss)+1)
 	for i, ts := range tss {
 		tokens[i] = ts.Token

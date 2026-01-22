@@ -11,10 +11,10 @@ import (
 	"strings"
 	"sync"
 	"time"
-	"transfer-graph/opensearch"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/opensearch"
 
 	"github.com/cockroachdb/pebble"
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/fdlimit"
 	"github.com/ethereum/go-ethereum/common/hexutil"
 	cmap "github.com/orcaman/concurrent-map/v2"
@@ -45,7 +45,7 @@ func NewPriceDB(datadir string, readonly bool) (*PriceDB, error) {
 	}
 	maxFd -= reservedFds
 	cache := 2048
-	db, err := New(path.Join(datadir, "db"), cache, maxFd, "", false, false)
+	db, err := New(path.Join(datadir, "db"), cache, maxFd, "", false)
 	if err != nil {
 		return nil, err
 	}
@@ -58,7 +58,7 @@ func NewPriceDB(datadir string, readonly bool) (*PriceDB, error) {
 
 type WriteRecord struct {
 	BlockID uint16
-	Token   common.Address
+	Token   model.Address
 	Price   float64
 }
 
@@ -231,7 +231,7 @@ func (p *PriceDB) pidsToPrices(pids map[string]struct{}, ctx context.Context) (m
 
 type ReadRecord struct {
 	BlockID uint16
-	Token   common.Address
+	Token   model.Address
 	Price   float64
 }
 
@@ -265,7 +265,7 @@ func (p *PriceDB) Read(req *ReadRequest, ctx context.Context) error {
 	return nil
 }
 
-func (p *PriceDB) TokensWithBlocks(tokens []common.Address, blocks []uint64, parallel int, ctx context.Context) ([]float64, error) {
+func (p *PriceDB) TokensWithBlocks(tokens []model.Address, blocks []uint64, parallel int, ctx context.Context) ([]float64, error) {
 	if len(tokens) != len(blocks) {
 		return nil, fmt.Errorf("mis-matched tokens[] and blocks[]")
 	}
@@ -312,7 +312,7 @@ func (p *PriceDB) TokensWithBlocks(tokens []common.Address, blocks []uint64, par
 	return ret, nil
 }
 
-func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []common.Address, parallel int, ctx context.Context, config *opensearch.OpenSearchConfig) error {
+func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []model.Address, parallel int, ctx context.Context, config *opensearch.OpenSearchConfig) error {
 	type btime struct {
 		block     uint64
 		timestamp uint64
@@ -377,7 +377,7 @@ func SyncByOpenSearch(p *PriceDB, sBlock, eBlock uint64, tokenList []common.Addr
 	return nil
 }
 
-func (p *PriceDB) SimpleWriteDecimals(tokens []common.Address, decimals []uint8) error {
+func (p *PriceDB) SimpleWriteDecimals(tokens []model.Address, decimals []uint8) error {
 	p.Lock()
 	defer p.Unlock()
 
@@ -403,7 +403,7 @@ func (p *PriceDB) SimpleWriteDecimals(tokens []common.Address, decimals []uint8)
 	return nil
 }
 
-func (p *PriceDB) SimpleReadDecimals(tokens []common.Address) ([]uint8, map[string]uint8, error) {
+func (p *PriceDB) SimpleReadDecimals(tokens []model.Address) ([]uint8, map[string]uint8, error) {
 	decimals := make([]uint8, len(tokens))
 	decimalsMap := make(map[string]uint8, len(tokens))
 	for i, token := range tokens {
@@ -453,7 +453,7 @@ func SimpleSyncDecimals(p *PriceDB, dataDir, fileName string) error {
 		return err
 	}
 	records := strings.Split(string(file), "\n")
-	tokens := make([]common.Address, 0, len(records))
+	tokens := make([]model.Address, 0, len(records))
 	decimalss := make([]uint8, 0, len(records))
 	for _, record := range records {
 		items := strings.Split(record, ",")
@@ -461,7 +461,7 @@ func SimpleSyncDecimals(p *PriceDB, dataDir, fileName string) error {
 		if err != nil || len(items[0]) != 20*2+2 || decimals < 0 || decimals > math.MaxUint8 {
 			continue
 		}
-		tokens = append(tokens, common.HexToAddress(items[0]))
+		tokens = append(tokens, model.HexToAddress(items[0]))
 		decimalss = append(decimalss, uint8(decimals))
 	}
 	if err := p.SimpleWriteDecimals(tokens, decimalss); err != nil {

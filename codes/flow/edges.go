@@ -4,9 +4,9 @@ import (
 	"context"
 	"math"
 	"sort"
-	"transfer-graph/model"
-	"transfer-graph/pricedb"
-	"transfer-graph/utils"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/pricedb"
+	"transfer-graph-evm/utils"
 )
 
 // WETH patched here
@@ -250,4 +250,73 @@ func (se *EgdesSortedByTime) Free() {
 	se.Txs = nil
 	se.Tss = nil
 	se.PriceCache.Free()
+}
+
+type TransfersSortedByTime struct {
+	Tss        []*model.Transfer
+	Length     int
+	Index      int
+	PriceCache *pricedb.PriceCache
+	reverse    bool
+}
+
+func NewTransfersSortedByTime(tss []*model.Transfer, reverse bool, pdb *pricedb.PriceDB, pdbParallel int, pdbCtx context.Context) *TransfersSortedByTime {
+	if reverse {
+		sort.Slice(tss, func(i, j int) bool {
+			return tss[i].Pos > tss[j].Pos
+		})
+	} else {
+		sort.Slice(tss, func(i, j int) bool {
+			return tss[i].Pos < tss[j].Pos
+		})
+	}
+	ret := &TransfersSortedByTime{
+		Tss:     tss,
+		Length:  len(tss),
+		Index:   0,
+		reverse: reverse,
+	}
+	/*
+		var err error
+		ret.PriceCache, err = pricedb.NewPriceCache(nil, tss, pdb, pdbParallel, pdbCtx)
+		if err != nil {
+			panic(err)
+		}
+	*/
+	ret.PriceCache = pricedb.NewPriceCacheHooked()
+	return ret
+}
+
+func (st *TransfersSortedByTime) flowAt(i int, _ flowActivity) []*FlowDigest {
+	price := st.PriceCache.Price(st.Tss[i].Block(), st.Tss[i].Token)
+	decimals, ok := st.PriceCache.Decimals(st.Tss[i].Token)
+	if !ok {
+		return nil
+	}
+	if edgeDi := flowTs(st.Tss[i], price, decimals); edgeDi != nil {
+		edgeDi.EdgePointer = uint64(i)
+		return []*FlowDigest{edgeDi}
+	}
+	return nil
+}
+
+func (st *TransfersSortedByTime) flow(_ flowActivity) []*FlowDigest {
+	if st.Index >= st.Length {
+		return nil
+	}
+	st.Index++
+	return st.flowAt(st.Index-1, nil)
+}
+
+func (st *TransfersSortedByTime) Finished() bool {
+	return st.Index >= st.Length
+}
+
+func (st *TransfersSortedByTime) AtPointer(pointer uint64) (*model.Tx, *model.Transfer) {
+	return nil, st.Tss[pointer]
+}
+
+func (st *TransfersSortedByTime) Free() {
+	st.Tss = nil
+	st.PriceCache.Free()
 }

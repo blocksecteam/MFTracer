@@ -1,11 +1,10 @@
 package flow
 
 import (
+	"math"
 	"sort"
-	"transfer-graph/model"
-	"transfer-graph/search"
-
-	"github.com/ethereum/go-ethereum/common"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/search"
 )
 
 type FlowDigest struct {
@@ -13,6 +12,8 @@ type FlowDigest struct {
 	To          string
 	Value       float64
 	EdgePointer uint64
+	UsedValue   float64
+	Age         int
 }
 
 type FlowEdges interface {
@@ -23,6 +24,7 @@ type FlowEdges interface {
 
 type flow interface {
 	fValue() float64
+	fAge() int
 }
 
 type FlowNode interface {
@@ -37,12 +39,12 @@ type FlowNode interface {
 
 type flowActivity map[string]struct{}
 
-func (fa flowActivity) check(addr common.Address) bool {
+func (fa flowActivity) check(addr model.Address) bool {
 	_, ok := fa[string(addr.Bytes())]
 	return ok
 }
 
-func (fa flowActivity) add(addr common.Address) {
+func (fa flowActivity) add(addr model.Address) {
 	fa[string(addr.Bytes())] = struct{}{}
 }
 
@@ -54,7 +56,7 @@ type FlowGraph struct {
 	srcs         map[string]struct{}
 	dess         map[string]struct{}
 	activity     flowActivity
-	leachDigests []*FlowDigest
+	LeachDigests []*FlowDigest
 }
 
 func NewFlowGraph(motherNode FlowNode, edges FlowEdges, srcs, dess []string) *FlowGraph {
@@ -65,7 +67,7 @@ func NewFlowGraph(motherNode FlowNode, edges FlowEdges, srcs, dess []string) *Fl
 		srcs:         make(map[string]struct{}, len(srcs)),
 		dess:         make(map[string]struct{}, len(dess)),
 		activity:     make(flowActivity),
-		leachDigests: make([]*FlowDigest, 0),
+		LeachDigests: make([]*FlowDigest, 0),
 	}
 	for _, src := range srcs {
 		ret.activate(src)
@@ -82,6 +84,50 @@ func (fg *FlowGraph) activate(address string) {
 	fg.activity[address] = struct{}{}
 }
 
+func (fg *FlowGraph) ResetEdges(newEdges FlowEdges) {
+	fg.Edges = newEdges
+	fg.LeachDigests = nil
+}
+
+func (fg *FlowGraph) WhatIsMotherNode() FlowNode {
+	switch t := fg.motherNode.(type) {
+	case *ThresholdFlowNode:
+		return &ThresholdFlowNode{
+			Config: t.Config,
+		}
+	case *ThresholdAgeFlowNode:
+		return &ThresholdAgeFlowNode{
+			Config: t.Config,
+		}
+	case *ThresholdAgeLabelFlowNode:
+		return &ThresholdAgeLabelFlowNode{
+			Config: &ThresholdAgeLabelFlowNodeConfig{
+				Threshold:  t.Config.Threshold,
+				AgeLimit:   t.Config.AgeLimit,
+				LabelLimit: t.Config.LabelLimit,
+			},
+		}
+	default:
+		return nil
+	}
+}
+
+func (fg *FlowGraph) SrcAddresses() []string {
+	srcAddrs := make([]string, 0, len(fg.srcs))
+	for addr := range fg.srcs {
+		srcAddrs = append(srcAddrs, addr)
+	}
+	return srcAddrs
+}
+
+func (fg *FlowGraph) DesAddresses() []string {
+	desAddrs := make([]string, 0, len(fg.dess))
+	for addr := range fg.dess {
+		desAddrs = append(desAddrs, addr)
+	}
+	return desAddrs
+}
+
 func (fg *FlowGraph) FlowByStep(step int) {
 	for i := 0; !fg.Edges.Finished() && i < step; i++ {
 		ds := fg.Edges.flow(fg.activity)
@@ -89,17 +135,22 @@ func (fg *FlowGraph) FlowByStep(step int) {
 			if _, ok := fg.activity[d.From]; !ok {
 				continue
 			}
+			var fvalue flow
+			if _, isSrc := fg.srcs[d.From]; isSrc {
+				fvalue = fg.Nodes[d.From].source(d.Value)
+			} else {
+				fvalue = fg.Nodes[d.From].out(d.Value)
+			}
+			if fvalue.fValue() == 0 {
+				continue
+			}
 			if _, ok := fg.Nodes[d.To]; !ok {
 				fg.activate(d.To)
 			}
-			if _, isSrc := fg.srcs[d.From]; isSrc {
-				fvalue := fg.Nodes[d.From].source(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			} else {
-				fvalue := fg.Nodes[d.From].out(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			}
-			fg.leachDigests = append(fg.leachDigests, d)
+			fg.Nodes[d.To].in(fvalue)
+			d.UsedValue = fvalue.fValue()
+			d.Age = fvalue.fAge()
+			fg.LeachDigests = append(fg.LeachDigests, d)
 		}
 	}
 }
@@ -108,83 +159,55 @@ func (fg *FlowGraph) FlowToEnd() {
 	for !fg.Edges.Finished() {
 		ds := fg.Edges.flow(fg.activity)
 		for _, d := range ds {
-			/*
-				if strings.Compare(d.To, utils.AddrToAddrString(utils.WETHAddress)) == 0 {
-					continue
-				}
-				if strings.Compare(d.To, utils.AddrToAddrString(common.HexToAddress("0x0000000000000000000000000000000000000002"))) == 0 ||
-					strings.Compare(d.To, utils.AddrToAddrString(common.HexToAddress("0x0000000000000000000000000000000000000001"))) == 0 {
-					continue
-				}
-			*/
 			if _, ok := fg.activity[d.From]; !ok {
+				continue
+			}
+			var fvalue flow
+			if _, isSrc := fg.srcs[d.From]; isSrc {
+				fvalue = fg.Nodes[d.From].source(d.Value)
+			} else {
+				fvalue = fg.Nodes[d.From].out(d.Value)
+			}
+			if fvalue.fValue() == 0 {
 				continue
 			}
 			if _, ok := fg.Nodes[d.To]; !ok {
 				fg.activate(d.To)
 			}
-			if _, isSrc := fg.srcs[d.From]; isSrc {
-				fvalue := fg.Nodes[d.From].source(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			} else {
-				fvalue := fg.Nodes[d.From].out(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			}
-			fg.leachDigests = append(fg.leachDigests, d)
+			fg.Nodes[d.To].in(fvalue)
+			d.UsedValue = fvalue.fValue()
+			d.Age = fvalue.fAge()
+			fg.LeachDigests = append(fg.LeachDigests, d)
 		}
 	}
 }
 
-func (fg *FlowGraph) FlowTillDes() {
-	for !fg.Edges.Finished() {
-		ds := fg.Edges.flow(fg.activity)
-		for _, d := range ds {
-			if _, ok := fg.activity[d.From]; !ok {
-				continue
-			}
-			if _, ok := fg.Nodes[d.To]; !ok {
-				fg.activate(d.To)
-			}
-			if _, isSrc := fg.srcs[d.From]; isSrc {
-				fvalue := fg.Nodes[d.From].source(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			} else {
-				fvalue := fg.Nodes[d.From].out(d.Value)
-				fg.Nodes[d.To].in(fvalue)
-			}
-			fg.leachDigests = append(fg.leachDigests, d)
-			if _, isDes := fg.dess[d.To]; isDes {
-				break
-			}
-		}
-	}
-}
-
-func (fg *FlowGraph) TopNodes(top int) map[string]FlowNode {
-	allForI := make([]FlowNode, 0, len(fg.Nodes))
-	allForO := make([]FlowNode, 0, len(fg.Nodes))
+func (fg *FlowGraph) TotalVolume() float64 {
+	var total float64
 	for _, node := range fg.Nodes {
-		allForI = append(allForI, node)
-		allForO = append(allForO, node)
+		if _, isSrc := fg.srcs[node.Address()]; isSrc {
+			total += node.TotalO()
+		}
 	}
-	sort.Slice(allForI, func(i, j int) bool {
-		return allForI[i].TotalI() > allForI[j].TotalI()
-	})
-	sort.Slice(allForO, func(i, j int) bool {
-		return allForO[i].TotalO() > allForO[j].TotalO()
-	})
-	ret := make(map[string]FlowNode)
-	for i := 0; i < top && i < len(fg.Nodes); i++ {
-		ret[allForI[i].Address()] = allForI[i]
-		ret[allForO[i].Address()] = allForO[i]
+	return total
+}
+
+func (fg *FlowGraph) TopNodes(top int, compare func(a, b FlowNode) bool) []FlowNode {
+	nodes := make([]FlowNode, 0, len(fg.Nodes))
+	for _, node := range fg.Nodes {
+		nodes = append(nodes, node)
 	}
-	return ret
+	sort.Slice(nodes, func(i, j int) bool {
+		return compare(nodes[i], nodes[j])
+	})
+	return nodes[:int(math.Min(float64(top), float64(len(nodes))))] // Fix the slice bounds
 }
 
 type ValueEdge struct {
-	Tx  *model.Tx
-	Ts  *model.Transfer
-	Val float64
+	Tx      *model.Tx
+	Ts      *model.Transfer
+	Val     float64
+	UsedVal float64
 }
 
 func (ve *ValueEdge) FlowDigest() FlowDigest {
@@ -313,84 +336,37 @@ func (ve *ValueEdge) Type() uint16 {
 	}
 }
 
-func (fg *FlowGraph) Leach(addrFilterS []string, addrFilterM map[string]struct{}, addrFilterN map[string]FlowNode, additional []string) ([]search.MEdge, map[string]FlowNode) {
+func (fg *FlowGraph) Leach() []search.MEdge {
 	retEdges := make([]search.MEdge, 0)
-	retNodes := make(map[string]FlowNode)
-	var addrFilter map[string]struct{}
-	if addrFilterS != nil {
-		addrFilter = make(map[string]struct{}, len(addrFilterS))
-		for _, addr := range addrFilterS {
-			addrFilter[addr] = struct{}{}
-		}
-	} else if addrFilterM != nil {
-		addrFilter = addrFilterM
-	} else if addrFilterN != nil {
-		addrFilter = make(map[string]struct{}, len(addrFilterN))
-		for addr := range addrFilterN {
-			addrFilter[addr] = struct{}{}
-		}
-	} else {
-		addrFilter = fg.activity
-	}
-	/*
-		// fg.srcs and fg.dess should be added to addrFilter
-		for addr := range fg.srcs {
-			addrFilter[addr] = struct{}{}
-		}
-		for addr := range fg.dess {
-			addrFilter[addr] = struct{}{}
-		}
-	*/
-	for _, addr := range additional {
-		addrFilter[addr] = struct{}{}
-	}
-	for _, d := range fg.leachDigests {
+	for _, d := range fg.LeachDigests {
 		tx, ts := fg.Edges.AtPointer(d.EdgePointer)
 		if tx != nil {
-			_, okf := addrFilter[string(tx.From.Bytes())]
-			_, okt := addrFilter[string(tx.To.Bytes())]
-			if okf && okt {
-				/*
-					if fNode, ok := fg.Nodes[string(tx.From.Bytes())]; !ok || (fNode.TotalI() == 0 && fNode.TotalO() == 0) {
-						if tNode, ok := fg.Nodes[string(tx.To.Bytes())]; !ok || (tNode.TotalI() == 0 && tNode.TotalO() == 0) {
-							continue
-						}
-					}
-				*/
-				retEdges = append(retEdges, &ValueEdge{
-					Tx:  tx,
-					Val: d.Value,
-				})
-				retNodes[string(tx.From.Bytes())] = fg.Nodes[string(tx.From.Bytes())]
-				retNodes[string(tx.To.Bytes())] = fg.Nodes[string(tx.To.Bytes())]
-			}
+			retEdges = append(retEdges, &ValueEdge{
+				Tx:      tx,
+				Val:     d.Value,
+				UsedVal: d.UsedValue,
+			})
 		} else if ts != nil {
-			_, okf := addrFilter[string(ts.From.Bytes())]
-			_, okt := addrFilter[string(ts.To.Bytes())]
-			if okf && okt {
-				/*
-					if fNode, ok := fg.Nodes[string(ts.From.Bytes())]; !ok || (fNode.TotalI() == 0 && fNode.TotalO() == 0) {
-						if tNode, ok := fg.Nodes[string(ts.To.Bytes())]; !ok || (tNode.TotalI() == 0 && tNode.TotalO() == 0) {
-							continue
-						}
-					}
-				*/
-				retEdges = append(retEdges, &ValueEdge{
-					Ts:  ts,
-					Val: d.Value,
-				})
-				retNodes[string(ts.From.Bytes())] = fg.Nodes[string(ts.From.Bytes())]
-				retNodes[string(ts.To.Bytes())] = fg.Nodes[string(ts.To.Bytes())]
-			}
+			retEdges = append(retEdges, &ValueEdge{
+				Ts:      ts,
+				Val:     d.Value,
+				UsedVal: d.UsedValue,
+			})
 		}
 	}
-	return retEdges, retNodes
+	return retEdges
+}
+
+func (fg *FlowGraph) LeachOneTransferNative(i int) (*model.Transfer, float64, int) {
+	d := fg.LeachDigests[i]
+	_, ts := fg.Edges.AtPointer(d.EdgePointer)
+	return ts, d.UsedValue, d.Age
 }
 
 func (fg *FlowGraph) Free() {
 	fg.Nodes = nil
 	fg.activity = nil
-	fg.leachDigests = nil
+	fg.LeachDigests = nil
 	fg.srcs = nil
 	fg.dess = nil
 	fg.Edges = nil

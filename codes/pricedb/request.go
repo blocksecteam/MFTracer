@@ -8,8 +8,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/ethereum/go-ethereum/common"
+	"transfer-graph-evm/model"
 )
 
 const priceServiceUrl string = "http://localhost:7001/api/tokenpricebulkV2"
@@ -46,7 +45,7 @@ type responseBody struct {
 	Message string          `json:"message"`
 }
 
-func FetchPrice(block, timestamp uint64, tokens []common.Address) ([]float64, error) {
+func FetchPrice(block, timestamp uint64, tokens []model.Address) ([]float64, error) {
 	dataStruct := requestBody{
 		ChainId:     1,
 		Tokens:      make([]requestToken, len(tokens)),
@@ -98,7 +97,7 @@ func FetchPrice(block, timestamp uint64, tokens []common.Address) ([]float64, er
 	return ret, nil
 }
 
-func FetchPriceMultiReq(block, timestamp uint64, tokens []common.Address, tries int, ceaseTime time.Duration) ([]float64, error) {
+func FetchPriceMultiReq(block, timestamp uint64, tokens []model.Address, tries int, ceaseTime time.Duration) ([]float64, error) {
 	dataStructs := make([]*requestBody, len(tokens))
 	for i, token := range tokens {
 		dataStruct := &requestBody{
@@ -165,7 +164,7 @@ func FetchPriceMultiReq(block, timestamp uint64, tokens []common.Address, tries 
 	return ret, nil
 }
 
-func FetchPriceRetry(block, timestamp uint64, tokens []common.Address, tries int, ceaseTime time.Duration) ([]float64, error) {
+func FetchPriceRetry(block, timestamp uint64, tokens []model.Address, tries int, ceaseTime time.Duration) ([]float64, error) {
 	type indexedToken struct {
 		address string
 		index   int

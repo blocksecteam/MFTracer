@@ -4,10 +4,10 @@ import (
 	"encoding/json"
 	"math/big"
 	"time"
-	"transfer-graph/model"
+	"transfer-graph-evm/model"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/common/hexutil"
+	"github.com/fbsobreira/gotron-sdk/pkg/common"
 	"github.com/tinylib/msgp/msgp"
 )
 
@@ -113,7 +113,7 @@ func DecodeSubgraphMsgp(b []byte) (g *model.Subgraph, o []byte, err error) {
 		err = msgp.WrapError(err, "Token")
 		return
 	}
-	g.Token = common.BytesToAddress(v)
+	g.Token = model.BytesToAddress(v)
 
 	vi2, o, err := msgp.ReadIntfBytes(o)
 	if err != nil {
@@ -192,22 +192,30 @@ func EncodeTransferMsgp(t *model.Transfer) ([]byte, error) {
 	o = msgp.AppendUint16(o, t.Txid)
 	o = msgp.AppendUint16(o, t.Type)
 
-	a := []byte{}
-	if t.From != model.EmptyAddress {
-		a = common.TrimLeftZeroes(t.From[:])
-	}
-	o = msgp.AppendBytes(o, a)
-	a = []byte{}
-	if t.To != model.EmptyAddress {
-		a = common.TrimLeftZeroes(t.To[:])
-	}
-	o = msgp.AppendBytes(o, a)
-	a = []byte{}
-	if t.Token != model.EtherAddress {
-		a = common.TrimLeftZeroes(t.Token[:])
-	}
-	o = msgp.AppendBytes(o, a)
+	/*
+		a := []byte{}
+		if !model.EmptyAddress.Equal(t.From) {
+			a = common.TrimLeftZeroes(t.From[:])
+		}
+		o = msgp.AppendBytes(o, a)
+		a = []byte{}
+		if !model.EmptyAddress.Equal(t.To) {
+			a = common.TrimLeftZeroes(t.To[:])
+		}
+		o = msgp.AppendBytes(o, a)
+		a = []byte{}
+		if !model.NativeTokenAddress.Equal(t.Token) {
+			a = common.TrimLeftZeroes(t.Token[:])
+		}
+		o = msgp.AppendBytes(o, a)
+	*/
+	o = msgp.AppendBytes(o, t.From.Bytes())
+	o = msgp.AppendBytes(o, t.To.Bytes())
+	o = msgp.AppendBytes(o, t.Token.Bytes())
+
 	o = msgp.AppendBytes(o, t.Value.ToInt().Bytes())
+	o = msgp.AppendBytes(o, []byte(t.Timestamp))
+	o = msgp.AppendBytes(o, t.TxHash[:])
 
 	// extras
 	if len(t.Extras) > 0 {
@@ -246,32 +254,46 @@ func DecodeTransferMsgp(b []byte) (t *model.Transfer, o []byte, err error) {
 		err = msgp.WrapError(err, "From")
 		return
 	}
-	t.From = common.BytesToAddress(v)
+	t.From = model.BytesToAddress(v)
 	v, o, err = msgp.ReadBytesZC(o)
 	if err != nil {
 		err = msgp.WrapError(err, "To")
 		return
 	}
-	t.To = common.BytesToAddress(v)
+	t.To = model.BytesToAddress(v)
 	v, o, err = msgp.ReadBytesZC(o)
 	if err != nil {
 		err = msgp.WrapError(err, "Token")
 		return
 	}
-	t.Token = common.BytesToAddress(v)
+	t.Token = model.BytesToAddress(v)
 	//if t.Token.Cmp(model.EmptyAddress) == 0 && t.Type == uint16(model.TransferTypeExternal) {
-	if t.Token.Cmp(model.EmptyAddress) == 0 &&
-		(t.Type == uint16(model.TransferTypeExternal) ||
-			t.Type == uint16(model.TransferTypeInternal) ||
-			model.IsVirualTransfer(t.Type)) {
-		t.Token = model.EtherAddress
-	}
+	/*
+		if t.Token.Cmp(model.EmptyAddress) == 0 &&
+			(t.Type == uint16(model.TransferTypeExternal) ||
+				t.Type == uint16(model.TransferTypeInternal) ||
+				model.IsVirualTransfer(t.Type)) {
+			t.Token = model.NativeTokenAddress
+		}
+	*/
 	v, o, err = msgp.ReadBytesZC(o)
 	if err != nil {
 		err = msgp.WrapError(err, "Value")
 		return
 	}
 	t.Value = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
+	v, o, err = msgp.ReadBytesZC(o)
+	if err != nil {
+		err = msgp.WrapError(err, "Timestamp")
+		return
+	}
+	t.Timestamp = string(v)
+	v, o, err = msgp.ReadBytesZC(o)
+	if err != nil {
+		err = msgp.WrapError(err, "TxHash")
+		return
+	}
+	t.TxHash = common.BytesToHash(v)
 
 	// extras
 	if supportExtras {
@@ -299,7 +321,7 @@ func EncodeTxMsgp(tx *model.Tx) ([]byte, error) {
 	o = msgp.AppendBytes(o, tx.To[:])
 	o = msgp.AppendBool(o, tx.IsCreation)
 	o = msgp.AppendBytes(o, tx.Value.ToInt().Bytes())
-	o = msgp.AppendBytes(o, tx.GetFee(model.Ethereum).Bytes())
+	//o = msgp.AppendBytes(o, tx.GetFee(model.Ethereum).Bytes())
 	o = msgp.AppendString(o, tx.Func)
 	return o, nil
 }
@@ -341,14 +363,14 @@ func DecodeTxMsgp(b []byte) (tx *model.Tx, o []byte, err error) {
 		err = msgp.WrapError(err, "From")
 		return
 	}
-	tx.From = common.BytesToAddress(v)
+	tx.From = model.BytesToAddress(v)
 	// To
 	v, o, err = msgp.ReadBytesZC(o)
 	if err != nil {
 		err = msgp.WrapError(err, "To")
 		return
 	}
-	tx.To = common.BytesToAddress(v)
+	tx.To = model.BytesToAddress(v)
 	// IsCreation
 	tx.IsCreation, o, err = msgp.ReadBoolBytes(o)
 	if err != nil {
@@ -363,12 +385,14 @@ func DecodeTxMsgp(b []byte) (tx *model.Tx, o []byte, err error) {
 	}
 	tx.Value = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
 	// Fee
-	v, o, err = msgp.ReadBytesZC(o)
-	if err != nil {
-		err = msgp.WrapError(err, "Fee")
-		return
-	}
-	tx.Fee = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
+	/*
+			v, o, err = msgp.ReadBytesZC(o)
+			if err != nil {
+				err = msgp.WrapError(err, "Fee")
+				return
+			}
+		tx.Fee = (*hexutil.Big)(big.NewInt(0).SetBytes(v))
+	*/
 	// Func
 	tx.Func, o, err = msgp.ReadStringBytes(o)
 	if err != nil {

@@ -6,17 +6,24 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ethereum/go-ethereum/common"
+	"github.com/fbsobreira/gotron-sdk/pkg/address"
 	"golang.org/x/sync/errgroup"
 )
 
 type Subgraph struct {
 	BlockID    uint16            `json:"blockID"`
-	Token      common.Address    `json:"token"`
+	Token      Address           `json:"token"`
 	Timestamps [][2]uint32       `json:"timestamps"` //[2]uint32{minTimestamp, maxTimestamp}
 	Columns    []uint32          `json:"columns"`
 	NodePtrs   []uint32          `json:"nodePtrs"`
 	AddressMap map[string]uint32 `json:"addressMap"`
+}
+
+func (subgraph *Subgraph) Free() {
+	subgraph.Timestamps = nil
+	subgraph.Columns = nil
+	subgraph.NodePtrs = nil
+	subgraph.AddressMap = nil
 }
 
 func (subgraph *Subgraph) IsLinked(src, des uint32) bool {
@@ -33,7 +40,7 @@ func (subgraph *Subgraph) IsLinked(src, des uint32) bool {
 	}
 }
 
-func (subgraph *Subgraph) AddressIsLinked(src, des common.Address) bool {
+func (subgraph *Subgraph) AddressIsLinked(src, des address.Address) bool {
 	var srcID, desID uint32
 	if id, ok := subgraph.AddressMap[string(src.Bytes())]; ok {
 		srcID = id
@@ -48,11 +55,31 @@ func (subgraph *Subgraph) AddressIsLinked(src, des common.Address) bool {
 	return subgraph.IsLinked(srcID, desID)
 }
 
-func (subgraph *Subgraph) ODegree(address common.Address) int {
+func (subgraph *Subgraph) ODegree(address address.Address) int {
 	if id, ok := subgraph.AddressMap[string(address.Bytes())]; ok {
 		return int(subgraph.NodePtrs[id+1] - subgraph.NodePtrs[id])
 	} else {
 		return 0
+	}
+}
+
+func (subgraph *Subgraph) ONeighbors(address Address, rMap []string) ([]Address, []uint32) {
+	if id, ok := subgraph.AddressMap[string(address.Bytes())]; ok {
+		if rMap == nil {
+			rMap = ReverseAddressMap(subgraph.AddressMap)
+		}
+		rowS := subgraph.NodePtrs[id]
+		rowE := subgraph.NodePtrs[id+1]
+		columns := subgraph.Columns[rowS:rowE]
+		retI := make([]uint32, len(columns))
+		copy(retI, columns)
+		retA := make([]Address, len(columns))
+		for i, column := range columns {
+			retA[i] = BytesToAddress([]byte(rMap[column]))
+		}
+		return retA, retI
+	} else {
+		return nil, nil
 	}
 }
 

@@ -2,7 +2,7 @@ package opensearch_test
 
 import (
 	"testing"
-	"transfer-graph/opensearch"
+	"transfer-graph-evm/opensearch"
 
 	"github.com/stretchr/testify/require"
 )

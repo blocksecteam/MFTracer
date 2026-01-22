@@ -1,6 +1,7 @@
 package search
 
 import (
+	"context"
 	"sort"
 	"time"
 
@@ -358,4 +359,76 @@ func (mg MultiGraph) SubgraphBySrcDes(srcs, dess []string, maxDepth int, minValu
 		}
 	}
 	return ret
+}
+
+func (mg MultiGraph) FindTimeSpanPathRetByChan(ctx context.Context, src, des string, maxDepth int, minValue float64, count int) <-chan *TimeSpanPath {
+	retChan := make(chan *TimeSpanPath, 16)
+	go func() {
+		defer close(retChan)
+		timeSpanGraph := mg.timeSpanGraph()
+		normalizePath := func(path *TimeSpanPath) *TimeSpanPath {
+			path.computeTimeSpan()
+			path.Edges = make([]MEdges, len(path.TimeSpans))
+			for i, timeSpan := range path.TimeSpans {
+				path.Edges[i] = mg[path.Addresses[i]][path.Addresses[i+1]].filterByTimeSpan(timeSpan)
+				if len(path.Edges[i]) == 0 {
+					return nil
+				}
+			}
+			path.definiteTimeSpan()
+			return path
+		}
+
+		visited := make(map[string]struct{})
+		retCount := 0
+		var dfs func(*TimeSpanPath, string)
+		dfs = func(thisPath *TimeSpanPath, this string) {
+			select {
+			case <-ctx.Done():
+				return
+			default:
+			}
+
+			if len(thisPath.TimeSpans) > maxDepth || retCount >= count {
+				return
+			}
+			if this == des {
+				if np := normalizePath(thisPath); np != nil {
+					select {
+					case <-ctx.Done():
+						return
+					case retChan <- np:
+						retCount++
+					}
+					return
+				}
+			}
+			visited[this] = struct{}{}
+			for next, timeSpan := range timeSpanGraph[this] {
+				select {
+				case <-ctx.Done():
+					return
+				default:
+				}
+				if timeSpan[1] < thisPath.supMinTime || mg[this][next].maxValue() < minValue {
+					continue
+				}
+				if _, ok := visited[next]; !ok {
+					nextPath := thisPath.deepCopy()
+					nextPath.addEdge(this, next, timeSpan)
+					dfs(nextPath, next)
+					if retCount >= count {
+						break
+					}
+				}
+			}
+			delete(visited, this)
+		}
+		dfs(&TimeSpanPath{
+			Addresses: []string{src},
+		}, src)
+
+		return
+	}()
+	return retChan
 }

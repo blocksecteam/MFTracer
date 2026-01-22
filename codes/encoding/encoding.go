@@ -5,11 +5,11 @@ import (
 	"encoding/binary"
 	"encoding/json"
 	"fmt"
-	"transfer-graph/model"
-	"transfer-graph/utils"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/utils"
 )
 
-const MaxTPerRecord = 64
+const MaxTPerRecord = 1024
 
 func MetadataToStorage(t *model.Metadata) ([]byte, error) {
 	m, err := json.Marshal(t)

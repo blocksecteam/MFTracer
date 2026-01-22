@@ -3,20 +3,18 @@ package graph
 import (
 	"context"
 	"fmt"
-	"os"
 	"path"
 	"regexp"
 	"sort"
 	"strconv"
 	"time"
-	"transfer-graph/model"
-	"transfer-graph/opensearch"
-	"transfer-graph/pricedb"
-	"transfer-graph/semantic"
+	"transfer-graph-evm/data"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/pricedb"
+	"transfer-graph-evm/semantic"
+	"transfer-graph-evm/utils"
 
-	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/log"
-	"golang.org/x/sync/errgroup"
 )
 
 func getBlockIDValid(fileName string) uint16 {
@@ -56,18 +54,18 @@ func loadQueryResult(fileName, dataDir string) (*model.QueryResult, uint16, erro
 	blockID := getBlockID(fileName)
 
 	filePath := path.Join(dataDir, fileName)
-	qres, err := opensearch.LoadQueryResult(filePath)
+	qres, err := data.LoadQueryResult(filePath)
 	if err != nil {
 		return nil, 0, fmt.Errorf("opensearch LoadQueryResult fail, file:%s, error:%s", filePath, err.Error())
 	}
 	return qres, blockID, nil
 }
 
-func GenerateSubgraphByTransfers(blockID uint16, token common.Address, tss []*model.Transfer) *model.Subgraph {
+func GenerateSubgraphByTransfers(blockID uint16, token model.Address, tss []*model.Transfer) *model.Subgraph {
 	return generateSubgraph(blockID, token, nil, tss)
 }
 
-func generateSubgraph(blockID uint16, token common.Address, txs []*model.Tx, tss []*model.Transfer) *model.Subgraph {
+func generateSubgraph(blockID uint16, token model.Address, txs []*model.Tx, tss []*model.Transfer) *model.Subgraph {
 	ret := &model.Subgraph{
 		BlockID: blockID,
 		Token:   token,
@@ -194,7 +192,7 @@ func generateSubgraph(blockID uint16, token common.Address, txs []*model.Tx, tss
 func getInDegrees(txMap map[string][]*model.Tx, tsMap map[string][]*model.Transfer) (map[string]int, map[string]int) {
 	allDegrees := make(map[string]int)
 	tokenDegrees := make(map[string]int)
-	EtherAddress := string(model.EtherAddress.Bytes())
+	NativeTokenAddress := string(model.NativeTokenAddress.Bytes())
 	for txMapKey := range txMap {
 		toAddress := txMapKey[len(txMapKey)/2:]
 		if _, ok := allDegrees[toAddress]; !ok {
@@ -202,7 +200,7 @@ func getInDegrees(txMap map[string][]*model.Tx, tsMap map[string][]*model.Transf
 		} else {
 			allDegrees[toAddress] += 1
 		}
-		tokenKey := EtherAddress + toAddress
+		tokenKey := NativeTokenAddress + toAddress
 		if _, ok := tokenDegrees[tokenKey]; !ok {
 			tokenDegrees[tokenKey] = 1
 		} else {
@@ -229,7 +227,7 @@ func getInDegrees(txMap map[string][]*model.Tx, tsMap map[string][]*model.Transf
 func getOutDegrees(txMap map[string][]*model.Tx, tsMap map[string][]*model.Transfer) (map[string]int, map[string]int) {
 	allDegrees := make(map[string]int)
 	tokenDegrees := make(map[string]int)
-	EtherAddress := string(model.EtherAddress.Bytes())
+	NativeTokenAddress := string(model.NativeTokenAddress.Bytes())
 	for k := range txMap {
 		fromAddress := k[:len(k)/2]
 		if _, ok := allDegrees[fromAddress]; !ok {
@@ -237,7 +235,7 @@ func getOutDegrees(txMap map[string][]*model.Tx, tsMap map[string][]*model.Trans
 		} else {
 			allDegrees[fromAddress] += 1
 		}
-		tokenKey := EtherAddress + fromAddress
+		tokenKey := NativeTokenAddress + fromAddress
 		if _, ok := tokenDegrees[tokenKey]; !ok {
 			tokenDegrees[tokenKey] = 1
 		} else {
@@ -276,12 +274,12 @@ func filterTss(tss []*model.Transfer, tsMap map[string][]*model.Transfer) ([]*mo
 	rTss := make([]*model.Transfer, 0, len(tss))
 	rTsMap := make(map[string][]*model.Transfer)
 	for _, ts := range tss {
-		if _, ok := model.SupportTokenMap[string(ts.Token.Bytes())]; ok {
+		if model.IsSupportToken(ts.Token) {
 			rTss = append(rTss, ts)
 		}
 	}
 	for tsMapKey, transfers := range tsMap {
-		if _, ok := model.SupportTokenMap[tsMapKey[:len(tsMapKey)/3]]; ok {
+		if model.IsSupportToken(model.BytesToAddress([]byte(tsMapKey[:len(tsMapKey)/3]))) {
 			rTsMap[tsMapKey] = transfers
 		}
 	}
@@ -303,7 +301,7 @@ func ConstructCompositeSubgraphs(subgraphs []*model.Subgraph, subgraphMap map[st
 		subgraphsPrevailing := subgraphsSorted[:compConfig.PrevailingNumber]
 		for _, comp := range compConfig.PrevailingComposition {
 			subgraphsSelected := make([]*model.Subgraph, len(comp))
-			tokens := make([]common.Address, len(comp))
+			tokens := make([]model.Address, len(comp))
 			for i, idx := range comp {
 				subgraphsSelected[i] = subgraphsPrevailing[idx]
 				tokens[i] = subgraphsPrevailing[idx].Token
@@ -344,7 +342,7 @@ func ConstructSubgraphs(fileName, dataDir string, qres *model.QueryResult, block
 		}
 	}
 	transferMap := make(map[string][]*model.Transfer)
-	tokenMap := make(map[string]common.Address)
+	tokenMap := make(map[string]model.Address)
 	for _, ts := range qres.Transfers {
 		//tokenStr := ts.Token.Hex()
 		tokenStr := string(ts.Token.Bytes())
@@ -362,7 +360,7 @@ func ConstructSubgraphs(fileName, dataDir string, qres *model.QueryResult, block
 	*/
 	ret := make(map[string]*model.Subgraph, len(tokenMap))
 	for k, v := range transferMap {
-		if k == string(model.EtherAddress.Bytes()) {
+		if k == string(model.NativeTokenAddress.Bytes()) {
 			ret[k] = generateSubgraph(blockID, tokenMap[k], qres.Txs, v)
 		} else {
 			ret[k] = generateSubgraph(blockID, tokenMap[k], nil, v)
@@ -408,431 +406,86 @@ func ConstructTxTss(fileName, dataDir string, qres *model.QueryResult, blockID u
 	return txs, tss, blockID, nil
 }
 
-func SyncFromCache(dataDir string, sBlockID, eBlockID uint16, g *GraphDB, pdb *pricedb.PriceDB, pdbParallel int, compConfig *model.CompositeConfiguration, stats *opensearch.Statistics) {
+func SyncFromQresSimple(ctx context.Context, qres *model.QueryResult, blockID uint16, g *GraphDB, pdb *pricedb.PriceDB, pdbParallel int) error {
+	startTime := time.Now()
 	m := WriteMetrics{}
-	entries, err := os.ReadDir(dataDir)
+	ctx = context.WithValue(ctx, WriteMetricsKey, &m)
+
+	txMap, tsMap, _, err := ConstructTxTss("", "", qres, blockID)
 	if err != nil {
-		log.Crit("read datadir failed", "datadir", dataDir, "err", err.Error())
+		utils.Logger.Error("ConstructTxTss failed", "blockID", blockID, "err", err.Error())
+		return err
 	}
-	ctx := context.WithValue(context.Background(), WriteMetricsKey, &m)
-
-	if compConfig == nil {
-		compConfig = model.EmptyCompositeConfiguration()
-	}
-
-	sort.SliceStable(entries, func(i, j int) bool {
-		fileStartI := getBlockID(entries[i].Name())
-		fileStartJ := getBlockID(entries[j].Name())
-		return fileStartI < fileStartJ
-	})
-
-	for _, f := range entries {
-		if f.IsDir() {
-			continue
-		}
-
-		startTime := time.Now()
-		fileName := f.Name()
-		filePath := path.Join(dataDir, fileName)
-		fileBID := getBlockID(fileName)
-		if fileBID < sBlockID || fileBID >= eBlockID {
-			//fmt.Println("[Debug] {SyncFromCache} skip file out of range", f.Name())
-			log.Info("SyncFromCache skip", "path", filePath)
-			continue
-		}
-		fmt.Println("[Debug] {SyncFromCache} iterate file", f.Name())
-		qres, fileBID, err := loadQueryResult(fileName, dataDir)
-		if err != nil {
-			fmt.Println("SyncFromCache: loadQueryResult fail", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache: loadQueryResult fail", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} load finished, file: %s, tx: %d, ts: %d\n", f.Name(), len(qres.Txs), len(qres.Transfers))
-
-		loadTime := time.Now()
-
-		txMap, tsMap, _, err := ConstructTxTss(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			fmt.Println("ConstructTxTss failed", "path", filePath, "err", err.Error())
-			return
-			//log.Crit("ConstructTxTss failed", "path", filePath, "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} Construct S finished, file: %s, txMap: %d, tsMap:%d\n", f.Name(), len(txMap), len(tsMap))
-
-		tsMap, qres.Transfers, err = semantic.AddTopswap(txMap, tsMap, qres.Transfers, pdb, pdbParallel, ctx)
-		if err != nil {
-			fmt.Println("AddTopswap failed", "err", err.Error())
-			return
-			//log.Crit("AddTopswap failed", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} AddTopswap finished, tsMap: %d, tss: %d\n", len(tsMap), len(qres.Transfers))
-		oDegreeAll, oDegreeToken := getOutDegrees(txMap, tsMap)
-		fmt.Printf("[Debug] {SyncFromCache} Get Out Degrees finished\n")
-		tsMapByPos := classTsByTx(qres.Transfers) // re-generate this every time after semantic.AddXxx(tsMapByPos) is called!
-		fmt.Printf("[Debug] {SyncFromCache} Class Ts by Tx finished\n")
-		tsMap, qres.Transfers, err = semantic.AddWithinTx(txMap, tsMap, qres.Transfers, oDegreeAll, oDegreeToken, tsMapByPos, pdb, pdbParallel, ctx)
-		if err != nil {
-			fmt.Println("AddWithinTx failed", "err", err.Error())
-			return
-			//log.Crit("AddWithinTx failed", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} AddWithinTx finished, tsMap: %d, tss: %d\n", len(tsMap), len(qres.Transfers))
-		qres.Transfers, tsMap = filterTss(qres.Transfers, tsMap)
-
-		subgraphMap, err := ConstructSubgraphs(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			fmt.Println("ConstructSubgraphs failed", "path", filePath, "err", err.Error())
-			return
-			//log.Crit("ConstructSubgraphs failed", "path", filePath, "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} Construct G finished, file: %s, GMap: %d\n", f.Name(), len(subgraphMap))
-		greq := &GWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
-		}
-		for _, v := range subgraphMap {
-			greq.Contents = append(greq.Contents, v)
-		}
-		//subgraphsComposite, err := ConstructCompositeSubgraphs(greq.Contents, subgraphMap, compConfig)
-		compositeSubgraphsMap, err := ConstructCompositeSubgraphs(greq.Contents, subgraphMap, compConfig, fileBID)
-		if err != nil {
-			fmt.Println("ConstructCompositeSubgraphs failed", "err", err.Error())
-			return
-			//log.Crit("ConstructCompositeSubgraphs failed", "err", err.Error())
-		}
-		greq.CompositeContents = compositeSubgraphsMap
-		fmt.Printf("[Debug] {SyncFromCache} Construct CG finished, len(CGs): %d\n", len(compositeSubgraphsMap))
-		sreq := &SWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			BlockID:  fileBID,
-			Contents: make([]*SRecord, 0, len(txMap)+len(tsMap)),
-		}
-		//ETHAddressHex := model.EtherAddress.Hex()
-		ETHAddressHex := string(model.EtherAddress.Bytes())
-		addrStrLength := len(ETHAddressHex)
-		for k, v := range txMap {
-			src := k[:addrStrLength]
-			des := k[addrStrLength:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     model.EtherAddress,
-				SrcID:     subgraphMap[ETHAddressHex].AddressMap[src],
-				DesID:     subgraphMap[ETHAddressHex].AddressMap[des],
-				Transfers: nil,
-				Txs:       v,
-			})
-		}
-		for k, v := range tsMap {
-			token := k[:addrStrLength]
-			src := k[addrStrLength : addrStrLength*2]
-			des := k[addrStrLength*2:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     v[0].Token,
-				SrcID:     subgraphMap[token].AddressMap[src],
-				DesID:     subgraphMap[token].AddressMap[des],
-				Transfers: v,
-				Txs:       nil,
-			})
-		}
-
-		constructTime := time.Now()
-
-		if err := g.GWrite(ctx, greq); err != nil {
-			fmt.Println("SyncFromCache GWrite() failed", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache GWrite() failed", "err", err.Error())
-		}
-		gwriteTime := time.Now()
-
-		if err := g.SWrite(ctx, sreq); err != nil {
-			fmt.Println("SyncFromCache SWrite() failed", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache SWrite() failed", "err", err.Error())
-		}
-		swriteTime := time.Now()
-
-		//log.Info("SyncFromCache() 1 file done", "type", "normal", "path", filePath, "load", loadTime.Sub(startTime), "construct", constructTime.Sub(loadTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-		fmt.Println("[Debug] {SyncFromCache} SyncFromCache() 1 file done", "type", "normal", "path", filePath, "load", loadTime.Sub(startTime), "construct", constructTime.Sub(loadTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-
-		//m.Log()
-		//stats.Dump(qres)
-	}
-	fmt.Println("[Debug] {SyncFromCache} SyncFromCache all finished")
-}
-
-func SyncFromCacheSplit(dataDir string, sBlockID, eBlockID uint16, g *GraphDB, pdb *pricedb.PriceDB, pdbParallel int, compConfig *model.CompositeConfiguration, stats *opensearch.Statistics) {
-	m := WriteMetrics{}
-	entries, err := os.ReadDir(dataDir)
+	utils.Logger.Info("{SyncFromQresSimple} Construct S finished", "blockID", blockID, "txMap", len(txMap), "tsMap", len(tsMap))
+	oDegreeAll, oDegreeToken := getOutDegrees(txMap, tsMap)
+	utils.Logger.Info("{SyncFromQresSimple} Get Out Degrees finished\n")
+	tsMapByPos := classTsByTx(qres.Transfers)
+	utils.Logger.Info("{SyncFromQresSimple} Class Ts by Tx finished\n")
+	tsMap, qres.Transfers, err = semantic.AddWithinTx(txMap, tsMap, qres.Transfers, oDegreeAll, oDegreeToken, tsMapByPos, pdb, pdbParallel, ctx)
 	if err != nil {
-		log.Crit("read datadir failed", "datadir", dataDir, "err", err.Error())
+		utils.Logger.Error("AddWithinTx failed", "err", err.Error())
+		return err
 	}
-	ctx := context.WithValue(context.Background(), WriteMetricsKey, &m)
+	qres.Transfers, tsMap = filterTss(qres.Transfers, tsMap)
 
-	if compConfig == nil {
-		compConfig = model.EmptyCompositeConfiguration()
-	}
-
-	sort.SliceStable(entries, func(i, j int) bool {
-		fileStartI := getBlockID(entries[i].Name())
-		fileStartJ := getBlockID(entries[j].Name())
-		return fileStartI < fileStartJ
-	})
-
-	for i := 0; i < len(entries); i++ {
-		f := entries[i]
-		if f.IsDir() {
-			continue
-		}
-
-		startTime := time.Now()
-		fileName := f.Name()
-		filePath := path.Join(dataDir, fileName)
-		fileBID := getBlockID(fileName)
-		if fileBID < sBlockID || fileBID >= eBlockID {
-			//fmt.Println("[Debug] {SyncFromCache} skip file out of range", f.Name())
-			log.Info("SyncFromCache skip", "path", filePath)
-			continue
-		}
-		fmt.Println("[Debug] {SyncFromCache} iterate file", fileName)
-		qres, fileBID, err := loadQueryResult(fileName, dataDir)
-		if err != nil {
-			fmt.Println("SyncFromCache: loadQueryResult fail", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache: loadQueryResult fail", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} load finished, file: %s, tx: %d, ts: %d\n", fileName, len(qres.Txs), len(qres.Transfers))
-		for j := i + 1; j < len(entries); j++ {
-			sf := entries[j]
-			if sf.IsDir() {
-				i++
-				continue
-			}
-			sfileName := sf.Name()
-			sfileBID := getBlockID(sfileName)
-			if sfileBID != fileBID {
-				break
-			}
-			fmt.Println("[Debug] {SyncFromCache} iterate file", sfileName)
-			sqres, _, err := loadQueryResult(sfileName, dataDir)
-			if err != nil {
-				fmt.Println("SyncFromCache: loadQueryResult fail", "err", err.Error())
-				return
-				//log.Crit("SyncFromCache: loadQueryResult fail", "err", err.Error())
-			}
-			qres.Txs = append(qres.Txs, sqres.Txs...)
-			qres.Transfers = append(qres.Transfers, sqres.Transfers...)
-			i++
-			fmt.Printf("[Debug] {SyncFromCache} load finished, file: %s, tx: %d, ts: %d\n", sfileName, len(qres.Txs), len(qres.Transfers))
-		}
-
-		loadTime := time.Now()
-
-		txMap, tsMap, _, err := ConstructTxTss(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			fmt.Println("ConstructTxTss failed", "path", filePath, "err", err.Error())
-			return
-			//log.Crit("ConstructTxTss failed", "path", filePath, "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} Construct S finished, file: %s, txMap: %d, tsMap:%d\n", f.Name(), len(txMap), len(tsMap))
-
-		tsMap, qres.Transfers, err = semantic.AddTopswap(txMap, tsMap, qres.Transfers, pdb, pdbParallel, ctx)
-		if err != nil {
-			fmt.Println("AddTopswap failed", "err", err.Error())
-			return
-			//log.Crit("AddTopswap failed", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} AddTopswap finished, tsMap: %d, tss: %d\n", len(tsMap), len(qres.Transfers))
-		oDegreeAll, oDegreeToken := getOutDegrees(txMap, tsMap)
-		fmt.Printf("[Debug] {SyncFromCache} Get Out Degrees finished\n")
-		tsMapByPos := classTsByTx(qres.Transfers) // re-generate this every time after semantic.AddXxx(tsMapByPos) is called!
-		fmt.Printf("[Debug] {SyncFromCache} Class Ts by Tx finished\n")
-		tsMap, qres.Transfers, err = semantic.AddWithinTx(txMap, tsMap, qres.Transfers, oDegreeAll, oDegreeToken, tsMapByPos, pdb, pdbParallel, ctx)
-		if err != nil {
-			fmt.Println("AddWithinTx failed", "err", err.Error())
-			return
-			//log.Crit("AddWithinTx failed", "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} AddWithinTx finished, tsMap: %d, tss: %d\n", len(tsMap), len(qres.Transfers))
-		qres.Transfers, tsMap = filterTss(qres.Transfers, tsMap)
-
-		subgraphMap, err := ConstructSubgraphs(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			fmt.Println("ConstructSubgraphs failed", "path", filePath, "err", err.Error())
-			return
-			//log.Crit("ConstructSubgraphs failed", "path", filePath, "err", err.Error())
-		}
-		fmt.Printf("[Debug] {SyncFromCache} Construct G finished, file: %s, GMap: %d\n", f.Name(), len(subgraphMap))
-		greq := &GWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
-		}
-		for _, v := range subgraphMap {
-			greq.Contents = append(greq.Contents, v)
-		}
-		//subgraphsComposite, err := ConstructCompositeSubgraphs(greq.Contents, subgraphMap, compConfig)
-		compositeSubgraphsMap, err := ConstructCompositeSubgraphs(greq.Contents, subgraphMap, compConfig, fileBID)
-		if err != nil {
-			fmt.Println("ConstructCompositeSubgraphs failed", "err", err.Error())
-			return
-			//log.Crit("ConstructCompositeSubgraphs failed", "err", err.Error())
-		}
-		greq.CompositeContents = compositeSubgraphsMap
-		fmt.Printf("[Debug] {SyncFromCache} Construct CG finished, len(CGs): %d\n", len(compositeSubgraphsMap))
-		sreq := &SWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			BlockID:  fileBID,
-			Contents: make([]*SRecord, 0, len(txMap)+len(tsMap)),
-		}
-		//ETHAddressHex := model.EtherAddress.Hex()
-		ETHAddressHex := string(model.EtherAddress.Bytes())
-		addrStrLength := len(ETHAddressHex)
-		for k, v := range txMap {
-			src := k[:addrStrLength]
-			des := k[addrStrLength:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     model.EtherAddress,
-				SrcID:     subgraphMap[ETHAddressHex].AddressMap[src],
-				DesID:     subgraphMap[ETHAddressHex].AddressMap[des],
-				Transfers: nil,
-				Txs:       v,
-			})
-		}
-		for k, v := range tsMap {
-			token := k[:addrStrLength]
-			src := k[addrStrLength : addrStrLength*2]
-			des := k[addrStrLength*2:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     v[0].Token,
-				SrcID:     subgraphMap[token].AddressMap[src],
-				DesID:     subgraphMap[token].AddressMap[des],
-				Transfers: v,
-				Txs:       nil,
-			})
-		}
-
-		constructTime := time.Now()
-
-		if err := g.GWrite(ctx, greq); err != nil {
-			fmt.Println("SyncFromCache GWrite() failed", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache GWrite() failed", "err", err.Error())
-		}
-		gwriteTime := time.Now()
-
-		if err := g.SWrite(ctx, sreq); err != nil {
-			fmt.Println("SyncFromCache SWrite() failed", "err", err.Error())
-			return
-			//log.Crit("SyncFromCache SWrite() failed", "err", err.Error())
-		}
-		swriteTime := time.Now()
-
-		//log.Info("SyncFromCache() 1 file done", "type", "normal", "path", filePath, "load", loadTime.Sub(startTime), "construct", constructTime.Sub(loadTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-		fmt.Println("[Debug] {SyncFromCache} SyncFromCache() 1 file done", "type", "normal", "path", filePath, "load", loadTime.Sub(startTime), "construct", constructTime.Sub(loadTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-
-		//m.Log()
-		//stats.Dump(qres)
-	}
-	fmt.Println("[Debug] {SyncFromCache} SyncFromCache all finished")
-}
-
-func SyncFromCacheParallel(dataDir string, sBlockID, eBlockID uint16, g *GraphDB, parallel int) {
-	entries, err := os.ReadDir(dataDir)
+	subgraphMap, err := ConstructSubgraphs("", "", qres, blockID)
 	if err != nil {
-		log.Crit("read datadir failed", "datadir", dataDir, "err", err.Error())
+		utils.Logger.Error("ConstructSubgraphs failed", "blockID", blockID, "err", err.Error())
+		return err
+	}
+	utils.Logger.Info("{SyncFromQresSimple} Construct G finished", "blockID", blockID, "subgraphMap", len(subgraphMap))
+
+	greq := &GWriteRequest{
+		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
+		Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
+	}
+	for _, v := range subgraphMap {
+		greq.Contents = append(greq.Contents, v)
+	}
+	sreq := &SWriteRequest{
+		Desc:     fmt.Sprintf("bootstrap: %d", blockID),
+		BlockID:  blockID,
+		Contents: make([]*SRecord, 0),
+	}
+	NativeTokenAddressStr := string(model.NativeTokenAddress.Bytes())
+	addrStrLength := len(NativeTokenAddressStr)
+	for k, v := range txMap {
+		src := k[:addrStrLength]
+		des := k[addrStrLength:]
+		sreq.Contents = append(sreq.Contents, &SRecord{
+			Token:     model.NativeTokenAddress,
+			SrcID:     subgraphMap[NativeTokenAddressStr].AddressMap[src],
+			DesID:     subgraphMap[NativeTokenAddressStr].AddressMap[des],
+			Transfers: nil,
+			Txs:       v,
+		})
+	}
+	for k, v := range tsMap {
+		token := k[:addrStrLength]
+		src := k[addrStrLength : addrStrLength*2]
+		des := k[addrStrLength*2:]
+		sreq.Contents = append(sreq.Contents, &SRecord{
+			Token:     v[0].Token,
+			SrcID:     subgraphMap[token].AddressMap[src],
+			DesID:     subgraphMap[token].AddressMap[des],
+			Transfers: v,
+			Txs:       nil,
+		})
 	}
 
-	sort.SliceStable(entries, func(i, j int) bool {
-		fileStartI := getBlockID(entries[i].Name())
-		fileStartJ := getBlockID(entries[j].Name())
-		return fileStartI < fileStartJ
-	})
-
-	update := func(fileName, dataDir string) error {
-		startTime := time.Now()
-		filePath := path.Join(dataDir, fileName)
-		qres, fileBID, err := loadQueryResult(fileName, dataDir)
-		if err != nil {
-			return fmt.Errorf("SyncFromCacheParallel: loadQueryResult fail, file:%s, error:%s", fileName, err.Error())
-		}
-
-		loadTime := time.Now()
-		subgraphMap, err := ConstructSubgraphs(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			return fmt.Errorf("ConstructSubgraphs failed, path:%s, err: %s", filePath, err.Error())
-		}
-		txMap, tsMap, _, err := ConstructTxTss(fileName, dataDir, qres, fileBID)
-		if err != nil {
-			return fmt.Errorf("ConstructTxTss failed, path:%s, err: %s", filePath, err.Error())
-		}
-		greq := &GWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			Contents: make([]*model.Subgraph, 0, len(subgraphMap)),
-		}
-		for _, v := range subgraphMap {
-			greq.Contents = append(greq.Contents, v)
-		}
-		sreq := &SWriteRequest{
-			Desc:     fmt.Sprintf("bootstrap: %s", filePath),
-			BlockID:  fileBID,
-			Contents: make([]*SRecord, 0, len(txMap)+len(tsMap)),
-		}
-		//ETHAddressHex := model.EtherAddress.Hex()
-		ETHAddressHex := string(model.EtherAddress.Bytes())
-		addrStrLength := len(ETHAddressHex)
-		for k, v := range txMap {
-			src := k[:addrStrLength]
-			des := k[addrStrLength:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     model.EtherAddress,
-				SrcID:     subgraphMap[ETHAddressHex].AddressMap[src],
-				DesID:     subgraphMap[ETHAddressHex].AddressMap[des],
-				Transfers: nil,
-				Txs:       v,
-			})
-		}
-		for k, v := range tsMap {
-			token := k[:addrStrLength]
-			src := k[addrStrLength : addrStrLength*2]
-			des := k[addrStrLength*2:]
-			sreq.Contents = append(sreq.Contents, &SRecord{
-				Token:     v[0].Token,
-				SrcID:     subgraphMap[token].AddressMap[src],
-				DesID:     subgraphMap[token].AddressMap[des],
-				Transfers: v,
-				Txs:       nil,
-			})
-		}
-		constructTime := time.Now()
-
-		if err := g.GWrite(context.Background(), greq); err != nil {
-			return fmt.Errorf("SyncFromCache GWrite() failed, err: %s", err.Error())
-		}
-		gwriteTime := time.Now()
-
-		if err := g.SWrite(context.Background(), sreq); err != nil {
-			return fmt.Errorf("SyncFromCache SWrite() failed, err: %s", err.Error())
-		}
-		swriteTime := time.Now()
-
-		log.Info("SyncFromCache() done", "type", "normal", "path", filePath, "load", loadTime.Sub(startTime), "construct", constructTime.Sub(loadTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
-		return nil
+	constructTime := time.Now()
+	if err := g.GWrite(ctx, greq); err != nil {
+		utils.Logger.Error("SyncFromQresSimple GWrite() failed", "err", err.Error())
+		return err
 	}
+	gwriteTime := time.Now()
 
-	eg := errgroup.Group{}
-	eg.SetLimit(parallel)
-	for _, f := range entries {
-		if f.IsDir() {
-			continue
-		}
+	if err := g.SWrite(ctx, sreq); err != nil {
+		utils.Logger.Error("SyncFromQresSimple SWrite() failed", "err", err.Error())
+		return err
+	}
+	swriteTime := time.Now()
 
-		fileName := f.Name()
-		fileBID := getBlockID(fileName)
-		if fileBID < sBlockID || fileBID >= eBlockID {
-			log.Info("SyncFromCacheParallel skip", "file", fileName)
-			continue
-		}
-		eg.Go(func() error { return update(fileName, dataDir) })
-	}
-	if err := eg.Wait(); err != nil {
-		log.Crit("SyncFromCacheParallel bootstrap failed: %s", err.Error())
-	}
+	utils.Logger.Info("{SyncFromQresSimple} SyncFromQresSimple() done", "blockID", blockID, "construct", constructTime.Sub(startTime), "gwrite", gwriteTime.Sub(constructTime), "swrite", swriteTime.Sub(gwriteTime))
+	return nil
 }

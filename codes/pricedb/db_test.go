@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 	"testing"
-	"transfer-graph/pricedb"
+	"transfer-graph-evm/pricedb"
 
 	"github.com/ethereum/go-ethereum/common"
 )

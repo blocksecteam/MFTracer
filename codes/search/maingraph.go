@@ -2,13 +2,25 @@ package search
 
 import (
 	"fmt"
-	"transfer-graph/model"
-	"transfer-graph/utils"
-
-	"github.com/ethereum/go-ethereum/common"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/utils"
 )
 
 type MainGraph map[uint32]map[uint32]struct{}
+
+// Free releases all references held by the MainGraph.
+// Since map is a reference type, use a pointer receiver so we can nil it out.
+// After calling Free, the graph becomes nil and its memory is eligible for GC
+// (actual release depends on the GC cycle and runtime allocator behavior).
+func (mg *MainGraph) Free() {
+	if mg == nil || *mg == nil {
+		return
+	}
+	// Nilling the top-level map drops references to all inner maps.
+	// If you prefer to reuse the allocation instead, implement a Clear method
+	// that deletes keys in-place.
+	*mg = nil
+}
 
 func (hrb HopResultBack) ToMainGraph() MainGraph {
 	ret := make(MainGraph, len(hrb))
@@ -23,7 +35,7 @@ func (hrb HopResultBack) ToMainGraph() MainGraph {
 	return ret
 }
 
-func AddressSetToMainGraph(subgraph *model.Subgraph, AddressSet []common.Address) MainGraph {
+func AddressSetToMainGraph(subgraph *model.Subgraph, AddressSet []model.Address) MainGraph {
 	ret := make(MainGraph)
 	for i, src := range AddressSet {
 		srcID, ok := subgraph.AddressMap[utils.AddrToAddrString(src)]
@@ -41,7 +53,7 @@ func AddressSetToMainGraph(subgraph *model.Subgraph, AddressSet []common.Address
 	return ret
 }
 
-func GetMainGraph(subgraphs []*model.Subgraph, srcAddresses, desAddresses []common.Address, rMaps [][]string, allowed, forbidden []common.Address, parallel int) []MainGraph {
+func GetMainGraph(subgraphs []*model.Subgraph, srcAddresses, desAddresses []model.Address, rMaps [][]string, allowed, forbidden []model.Address, parallel int) []MainGraph {
 	if rMaps == nil {
 		rMaps = model.ReverseAddressMaps(nil, subgraphs)
 	}
@@ -77,7 +89,7 @@ func GetMainGraph(subgraphs []*model.Subgraph, srcAddresses, desAddresses []comm
 	return ret
 }
 
-func GetMainGraphPrune(subgraphs []*model.Subgraph, srcAddresses, desAddresses []common.Address, rMaps [][]string, allowed, forbidden []common.Address, pruneIter, parallel int) []MainGraph {
+func GetMainGraphPrune(subgraphs []*model.Subgraph, srcAddresses, desAddresses []model.Address, rMaps [][]string, allowed, forbidden []model.Address, pruneIter, parallel int) []MainGraph {
 	if rMaps == nil {
 		rMaps = model.ReverseAddressMaps(nil, subgraphs)
 	}
@@ -87,7 +99,6 @@ func GetMainGraphPrune(subgraphs []*model.Subgraph, srcAddresses, desAddresses [
 		subgraphsR[i] = subgraphs[len(subgraphs)-1-i]
 		rMapsR[i] = rMaps[len(rMaps)-1-i]
 	}
-	fmt.Println(forbidden[0].Hex())
 	closures := GetClosures(subgraphs, srcAddresses, allowed, forbidden, parallel)
 	clsgraphF := make([]HopResultBack, len(subgraphs))
 	clsgraphFR := make([]HopResultBack, len(subgraphs))
@@ -95,7 +106,9 @@ func GetMainGraphPrune(subgraphs []*model.Subgraph, srcAddresses, desAddresses [
 	var clsgraphBR []HopResultBack
 	for i := range closures {
 		clsgraphF[i] = closures[i].ToBack()
+		closures[i] = nil //[CRITICAL UPDATE] to help GC
 	}
+	closures = nil //[CRITICAL UPDATE] to help GC
 	for i := 0; i < pruneIter; i++ {
 		for j := range clsgraphF {
 			clsgraphFR[j] = clsgraphF[len(clsgraphF)-1-j]
@@ -109,11 +122,12 @@ func GetMainGraphPrune(subgraphs []*model.Subgraph, srcAddresses, desAddresses [
 	ret := make([]MainGraph, len(clsgraphF))
 	for i := range clsgraphF {
 		ret[i] = clsgraphF[i].ToMainGraph()
+		clsgraphF[i] = nil //[CRITICAL UPDATE] to help GC
 	}
 	return ret
 }
 
-func GetMainGraphReversePrune(subgraphs []*model.Subgraph, desAddresses, srcAddresses []common.Address, rMaps [][]string, pruneIter, parallel int) []MainGraph {
+func GetMainGraphReversePrune(subgraphs []*model.Subgraph, desAddresses, srcAddresses []model.Address, rMaps [][]string, pruneIter, parallel int) []MainGraph {
 	if rMaps == nil {
 		rMaps = model.ReverseAddressMaps(nil, subgraphs)
 	}

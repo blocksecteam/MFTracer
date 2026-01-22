@@ -3,8 +3,8 @@ package search
 import (
 	"fmt"
 	"sync"
-	"transfer-graph/model"
-	"transfer-graph/utils"
+	"transfer-graph-evm/model"
+	"transfer-graph-evm/utils"
 
 	"github.com/ethereum/go-ethereum/common"
 	"golang.org/x/sync/errgroup"
@@ -265,7 +265,7 @@ func traceBackSingle(stepResults [][]*SearchResult, subgraphs []*model.Subgraph,
 	return found, ret
 }
 
-func FindOnePath(subgraphs []*model.Subgraph, srcAddress, desAddress common.Address, parallel int) (bool, []*SubPath) {
+func FindOnePath(subgraphs []*model.Subgraph, srcAddress, desAddress model.Address, parallel int) (bool, []*SubPath) {
 	ret := make([]*SubPath, 0, 1)
 	found := false
 	stepResults := make([][]*SearchResult, 1)
@@ -323,8 +323,8 @@ func FindOnePath(subgraphs []*model.Subgraph, srcAddress, desAddress common.Addr
 	return found, ret
 }
 
-func GetClosures(subgraphs []*model.Subgraph, srcAddresses []common.Address, allowed, forbidden []common.Address, parallel int) []HopResult {
-	stepClosures := make([][]HopResult, 0, 1)
+func GetClosures(subgraphs []*model.Subgraph, srcAddresses []model.Address, allowed, forbidden []model.Address, parallel int) []HopResult {
+	//[CRITICAL LEGACY] stepClosures := make([][]HopResult, 0, 1)
 	conClosures := make([]HopResult, len(subgraphs))
 	src := make([]string, len(srcAddresses))
 	for i, srcAddress := range srcAddresses {
@@ -366,9 +366,10 @@ func GetClosures(subgraphs []*model.Subgraph, srcAddresses []common.Address, all
 			firstAddresses, _, firstHopLengths = NormalizeHopResultToAddresses(conClosures[i-1], subgraphs[i-1], rMaps[i-1])
 		}
 		stepClosureRPart := closureInSubgraphsParallel(subgraphs[i:], conClosures[i:], firstAddresses, firstHopLengths, aMap, fMap, parallel)
-		stepClosures = append(stepClosures, append(make([]HopResult, i), stepClosureRPart...))
+		//[CRITICAL LEGACY] stepClosures = append(stepClosures, append(make([]HopResult, i), stepClosureRPart...))
 		for j := i; j < len(subgraphs); j++ {
-			conClosures[j] = appendHopResult(conClosures[j], stepClosures[i][j])
+			//[CRITICAL LEGACY 0] conClosures[j] = appendHopResult(conClosures[j], stepClosures[i][j])
+			conClosures[j] = appendHopResult(conClosures[j], stepClosureRPart[j-i]) //[CRITICAL UPDATE 0]
 		}
 	}
 	return conClosures
@@ -416,7 +417,7 @@ func hopsInSubgraphsParallel(subgraphs []*model.Subgraph, visitedMaps []HopResul
 	return resultSync.hopsSlice, resultSync.closureSlice
 }
 
-func getCompleteSearchResult(subgraphs []*model.Subgraph, srcAddress common.Address, rMaps [][]string, allowed, forbidden []common.Address, parallel int) ([][][]HopResult, [][]HopResult, []HopResult) {
+func getCompleteSearchResult(subgraphs []*model.Subgraph, srcAddress model.Address, rMaps [][]string, allowed, forbidden []model.Address, parallel int) ([][][]HopResult, [][]HopResult, []HopResult) {
 	hops := make([][][]HopResult, 0, 1)
 	stepClosures := make([][]HopResult, 0, 1)
 	conClosures := make([]HopResult, len(subgraphs))

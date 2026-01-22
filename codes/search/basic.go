@@ -5,7 +5,7 @@ import (
 	"math"
 	"sync"
 	"time"
-	"transfer-graph/model"
+	"transfer-graph-evm/model"
 
 	"github.com/ethereum/go-ethereum/common"
 	"golang.org/x/sync/errgroup"
@@ -106,7 +106,7 @@ func getNextHop(thisHop HopResult, subgraph *model.Subgraph, preHops HopResult, 
 		if t, ok := alterVisitedMap[src]; ok && t.supMinTimestamp <= v.supMinTimestamp && t.hopLength <= v.hopLength {
 			continue
 		}
-		if v.hopLength >= model.MaxHopLimit {
+		if v.hopLength >= uint8(model.SearchDepth) {
 			continue
 		}
 
@@ -114,7 +114,7 @@ func getNextHop(thisHop HopResult, subgraph *model.Subgraph, preHops HopResult, 
 		rowE := subgraph.NodePtrs[src+1]
 		_, aok := allowedMap[src]
 		_, fok := forbiddenMap[src]
-		if !aok && rowE-rowS > model.SuperNodeOutDegreeLimitLevel5 || fok {
+		if !aok && rowE-rowS > uint32(model.SearchOutDegreeLimit) || fok {
 			continue
 		}
 		columns := subgraph.Columns[rowS:rowE]

@@ -1,0 +1,32 @@
+[database]
+path = "path/to/database"
+cache = "path/to/cache"
+price_db_path = "path/to/price_db"
+
+[search]
+out_degree_limit = 1000
+depth = 10
+
+[flow]
+activate_threshold = 100
+age_limit = 10
+label_limit = 3000
+
+[log]
+level = "info"
+
+[path]
+depth = 4
+max_path_global = 100
+max_path_perpair = 10
+min_value = 10000
+max_time = 60
+
+[aws]
+bucket = "blocksec-chaindata"
+prefix = "clickhouse/eth/transfer"
+fetch_concurrency = 16
+batch_size = 100000
+start_block_id = 226
+start_date = "20250531"
+min_transfer_value = 100000000
