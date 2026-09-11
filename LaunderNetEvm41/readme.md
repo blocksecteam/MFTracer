@@ -2,23 +2,39 @@
 This is a repository for publicly releasing the dataset LaunderNetEvm41 contributed by the paper *"Shedding Light on Shadows: Automatically Tracing Illicit Money Flows on EVM-Compatible Blockchains"* accepted to SIGMETRICS 2026.
 
 In total, LaunderNetEvm41 contains 1,939 accounts involved in money laundering activities and 6,701 detailed illicit fund flow records. collectively covering over US $125 million in stolen assets.
-The dataset is located in the root directory. The CSV file named `flow records.csv` contains all illicit fund flows included in the dataset. In addition, `source address.csv` and `terminal address.csv` list all source addresses $A_\mathrm{vic}$ and terminal addresses $V_\mathrm{terminal}$, respectively.
+The dataset is located in the root directory. The JSON file named `flow records.json` contains all illicit fund flows included in the dataset. In addition, `source address.csv` and `terminal address.csv` list all source addresses $A_\mathrm{vic}$ and terminal addresses $V_\mathrm{terminal}$, respectively.
 
-Each row in the CSV includes the following main fields:
+Each top-level object in `flow records.json` represents one directed address pair $(u,v)$, corresponding to an edge in the laundering-flow graph formalized in our paper. Multiple on-chain transfers between the same pair of addresses are grouped into the same object.
 
-- **TxHash**: the hash of the transaction that triggered the illicit fund transfer
-- **From**: the source address of the fund transfer
-- **From_label**: the label of the source address indicating its on-chain character (service/laundering layer/endpoints/...)
-- **To**: the destination address of the fund transfer
-- **To_label**: the label of the destination address
-- **Value_in_USD**: the transferred amount in U.S. dollars, rounded to two decimal places
-- **Timestamp**: the timestamp when the transfer occurred
+The pair-level fields are:
+
+* **`from`**: source address of the directed edge.
+* **`from_label`**: label of the source address, if available, indicating its on-chain role or entity.
+* **`to`**: destination address of the directed edge.
+* **`to_label`**: label of the destination address, if available.
+* **`transfer_count`**: number of underlying on-chain transfers associated with this address pair.
+* **`total_value_in_usd`**: aggregate USD value of all underlying on-chain transfers between the address pair.
+* **`illicit_usd_value`**: USD value attributed to illicit funds on this edge, corresponding to $\mathcal{M}_\mathrm{g}(u,v)$ in the paper.
+* **`transfers`**: list of the underlying on-chain transfers associated with this edge.
+
+Each entry in **`transfers`** contains:
+
+* **`timestamp`**: timestamp of the on-chain transfer.
+* **`block`**: block number containing the transfer.
+* **`tx_hash`**: transaction hash associated with the transfer. This can be used with public blockchain explorers to independently inspect the corresponding on-chain activity.
+* **`value_in_usd`**: full USD value of this individual on-chain transfer.
+* **`token_price`**: historical USD price per token used to value this transfer.
+* **`token_symbol`**: symbol of the transferred token.
+* **`token_quantity`**: quantity of the transferred token.
+
+Note that **`value_in_usd`** and **`total_value_in_usd`** describe the full value transferred on chain, whereas **`illicit_usd_value`** represents the portion attributed to illicit funds through our tracing and annotation process.
+
 
 The transaction hash can be used with public blockchain explorers to further examine the details of each illicit transaction.
 
 To facilitate clearer visualization (SVG files in the `visual/` folder of each directory) and easy navigation of laundering activities, we further categorize the laundering cases into five clusters. This categorization is based on factors such as the associated victims, the number of laundering addresses, the overarching criminal incidents, and the degree of downstream address overlap. Each cluster is stored in a separate directory within the repository.
 
-Within each directory, a CSV file named `flow records.csv` contains all illicit fund flow entries associated with the corresponding cluster. To support easier inspection and analysis, these flow records are pre-sorted by timestamp. The terminal addresses $V_\mathrm{terminal}$, indicating where the illicit money ultimately flows, are listed in the file named `terminal addresses.csv`. The source addresses $A_\mathrm{vic}$ are listed in the file `source addresses.csv`. *All the same as the csv files in the root directory.*
+Within each directory, a JSON file named `flow records.json` contains all illicit fund flow entries associated with the corresponding cluster. To support easier inspection and analysis, these flow records are pre-sorted by timestamp. The terminal addresses $V_\mathrm{terminal}$, indicating where the illicit money ultimately flows, are listed in the file named `terminal addresses.csv`. The source addresses $A_\mathrm{vic}$ are listed in the file `source addresses.csv`. *All the same as the files in the root directory.*
 
 ### How is the dataset created ? (Dataset Construction Methodology)
 

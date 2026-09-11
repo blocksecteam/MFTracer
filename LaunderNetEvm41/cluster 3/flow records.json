@@ -1,0 +1,2445 @@
+[
+  {
+    "from": "0x028ef978b0f361e74061ed76d8bea9ef8a071626",
+    "from_label": "LI.FI Exploiter 18",
+    "to": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "transfer_count": 1,
+    "total_value_in_usd": "881232.82",
+    "illicit_usd_value": "881232.82",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 13:55:59",
+        "block": 20434133,
+        "tx_hash": "0x21173d0522adcc1cc0e30909d8d415150993ea0a538192ffa6795d1c4e390d1d",
+        "value_in_usd": "881232.82",
+        "token_price": "3183.8",
+        "token_symbol": "ETH",
+        "token_quantity": "276.786486402587469697"
+      }
+    ]
+  },
+  {
+    "from": "0x02ea7f0ffb72afb904bbbf0d4ea2d633c1b99413",
+    "to": "0xa502024b5bf2e8eabae10d29555ac960bbddcc7d",
+    "transfer_count": 1,
+    "total_value_in_usd": "96108.48",
+    "illicit_usd_value": "93120.53",
+    "transfers": [
+      {
+        "timestamp": "2024-07-20 06:45:11",
+        "block": 20346037,
+        "tx_hash": "0xfb2d576e707cfda0d585f7d77160664e2e58f9ab297f4c0c6e22627c62b2abaa",
+        "value_in_usd": "96108.48",
+        "token_price": "3505.94",
+        "token_symbol": "ETH",
+        "token_quantity": "27.413040800808520146"
+      }
+    ]
+  },
+  {
+    "from": "0x02ea7f0ffb72afb904bbbf0d4ea2d633c1b99413",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "339815.00",
+    "illicit_usd_value": "339815.00",
+    "transfers": [
+      {
+        "timestamp": "2024-07-19 11:53:11",
+        "block": 20340403,
+        "tx_hash": "0x07dec7b53ed73e310757b9cc4d73abac6726f867a68a4910082b59ce224a5a6e",
+        "value_in_usd": "339815.00",
+        "token_price": "3398.15",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x0545843953e1abbccf4fb390daf1f70565f9e346",
+    "to": "0x1e55d39418e0481d69ed9e232d1854fb926052f1",
+    "transfer_count": 1,
+    "total_value_in_usd": "3564.24",
+    "illicit_usd_value": "3564.24",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:17:23",
+        "block": 20319614,
+        "tx_hash": "0x04b9f73b4c0b543dbd1b6130b4a6b64c0039399605b9963c571ec35711734f33",
+        "value_in_usd": "3564.24",
+        "token_price": "3400.31",
+        "token_symbol": "ETH",
+        "token_quantity": "1.048209606808623000"
+      }
+    ]
+  },
+  {
+    "from": "0x06cbba92eb9ab70ee0c5066a863549188d7c18d1",
+    "to": "0x016606acc6b0cfe537acc221e3bf1bb44b4049ee",
+    "to_label": "ChangeHero",
+    "transfer_count": 1,
+    "total_value_in_usd": "316.09",
+    "illicit_usd_value": "316.09",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 14:07:47",
+        "block": 20434192,
+        "tx_hash": "0xe871d797a5bf8d64d27559369400b82641b4083cea91338ac2f7488acfe06aba",
+        "value_in_usd": "316.09",
+        "token_price": "3171",
+        "token_symbol": "ETH",
+        "token_quantity": "0.099680335925305000"
+      }
+    ]
+  },
+  {
+    "from": "0x0cef92a97aee7e0c5681cc6b8b26bbbe7b72ac8b",
+    "to": "0x0ff28e389cfe34d15cb198364de6bd40bc1bc5c1",
+    "transfer_count": 1,
+    "total_value_in_usd": "866.65",
+    "illicit_usd_value": "767.53",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 10:07:35",
+        "block": 20533331,
+        "tx_hash": "0xd00bbbb2cf129879ba360c43b143b53e08f26bcf3497e4fc0c362c8e67849411",
+        "value_in_usd": "866.65",
+        "token_price": "2624.52",
+        "token_symbol": "ETH",
+        "token_quantity": "0.330214628934899304"
+      }
+    ]
+  },
+  {
+    "from": "0x0cef92a97aee7e0c5681cc6b8b26bbbe7b72ac8b",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "262.09",
+    "illicit_usd_value": "262.09",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 10:06:23",
+        "block": 20533325,
+        "tx_hash": "0xf251584465ed1e8da6bed015ac80e0090e2416a9b1226a8941e262993af048f8",
+        "value_in_usd": "262.09",
+        "token_price": "2620.88",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x0ed8050434faf5123bed95667de1ca5c0ef8fa77",
+    "to": "0x0545843953e1abbccf4fb390daf1f70565f9e346",
+    "transfer_count": 1,
+    "total_value_in_usd": "3570.75",
+    "illicit_usd_value": "3564.68",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:16:59",
+        "block": 20319612,
+        "tx_hash": "0x1e874a1e9d56a838357e6251e1360793b5d1ebb44a4474bc614e94916847f938",
+        "value_in_usd": "3570.75",
+        "token_price": "3405.3",
+        "token_symbol": "ETH",
+        "token_quantity": "1.048584993407301000"
+      }
+    ]
+  },
+  {
+    "from": "0x0ff28e389cfe34d15cb198364de6bd40bc1bc5c1",
+    "to": "0x485e50f514dc3cb7927c5143ddd16dffcfbc933e",
+    "transfer_count": 1,
+    "total_value_in_usd": "591.68",
+    "illicit_usd_value": "505.03",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 10:08:59",
+        "block": 20533337,
+        "tx_hash": "0x205b8d1dbb865d42947dc1c060c35e1c3c204059b0ef2494f81cd3b3a6e19dad",
+        "value_in_usd": "591.68",
+        "token_price": "2624.95",
+        "token_symbol": "ETH",
+        "token_quantity": "0.225406354221659596"
+      }
+    ]
+  },
+  {
+    "from": "0x0ff28e389cfe34d15cb198364de6bd40bc1bc5c1",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "262.50",
+    "illicit_usd_value": "262.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 10:08:23",
+        "block": 20533335,
+        "tx_hash": "0x38149e776c95b0826753f76e258a1a55ba8cc1d257b7e1ff83fe0593c138f99b",
+        "value_in_usd": "262.50",
+        "token_price": "2624.95",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x183bbd0586d35d2e89f41fe567158a9bb0b50ce3",
+    "to": "0xbc8a9849433ed3859d4ed46e901021af5dbfe217",
+    "transfer_count": 1,
+    "total_value_in_usd": "850.89",
+    "illicit_usd_value": "828.62",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 07:19:23",
+        "block": 20668511,
+        "tx_hash": "0x8f0f37d965bf748f8f0343307063ac720fb4ed9e15d908d40f96157ace2c4bf2",
+        "value_in_usd": "850.89",
+        "token_price": "2518.27",
+        "token_symbol": "ETH",
+        "token_quantity": "0.337887275437728756"
+      }
+    ]
+  },
+  {
+    "from": "0x183bbd0586d35d2e89f41fe567158a9bb0b50ce3",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2517.37",
+    "illicit_usd_value": "2517.37",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 07:07:35",
+        "block": 20668452,
+        "tx_hash": "0xb9ae4a25bcb72d1fb233865db6c0f75f10393d47668257769cbfbcfa3308a7d3",
+        "value_in_usd": "2517.37",
+        "token_price": "2517.37",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x1e55d39418e0481d69ed9e232d1854fb926052f1",
+    "to": "0xb3c09bd654e55e0153e0f137e72253b022889102",
+    "transfer_count": 1,
+    "total_value_in_usd": "3562.93",
+    "illicit_usd_value": "3562.93",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:17:59",
+        "block": 20319617,
+        "tx_hash": "0x0d2f8bb549c60f83ef39dd20aef02acd0022a59fa127453c801673b1ed8bf0d8",
+        "value_in_usd": "3562.93",
+        "token_price": "3400.31",
+        "token_symbol": "ETH",
+        "token_quantity": "1.047823899101007000"
+      }
+    ]
+  },
+  {
+    "from": "0x21f516b41170e09de0ed8a70609b07a56f173e47",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3530.09",
+    "illicit_usd_value": "1504.29",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:31:47",
+        "block": 20358210,
+        "tx_hash": "0xab38779c8411174403af8a8927b7bf683e816446afe59151a62a2400a8af007b",
+        "value_in_usd": "3530.09",
+        "token_price": "3530.09",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x270cd7a4c23f898936a19bd94f97d7cc2b639eeb",
+    "to": "0x500b5ae7b09f774ac7d238f4dd6cbd8591fb0d82",
+    "transfer_count": 1,
+    "total_value_in_usd": "472283.39",
+    "illicit_usd_value": "468254.42",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 23:38:35",
+        "block": 20336743,
+        "tx_hash": "0x34641692ae664a103800f6f7c457dbddb85051c5bed6f1723bbb16dce64c286b",
+        "value_in_usd": "472283.39",
+        "token_price": "3436.55",
+        "token_symbol": "ETH",
+        "token_quantity": "137.429510963438882150"
+      }
+    ]
+  },
+  {
+    "from": "0x27320b6c2bf5b4a447bb34de33dcd81927a40df4",
+    "to": "0xf84739541c281607f2cb9bbf92a36f311a317d5b",
+    "transfer_count": 1,
+    "total_value_in_usd": "476712.24",
+    "illicit_usd_value": "471697.65",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 07:26:11",
+        "block": 20331905,
+        "tx_hash": "0xe102f826a34fc5a339309b4c13b0de62e50f04344b261097deedbd9c04e67416",
+        "value_in_usd": "476712.24",
+        "token_price": "3443.4",
+        "token_symbol": "ETH",
+        "token_quantity": "138.442306033184879750"
+      }
+    ]
+  },
+  {
+    "from": "0x2dbd2b6257afabced7fe71f6993bcd7cc679e252",
+    "to": "0x0cef92a97aee7e0c5681cc6b8b26bbbe7b72ac8b",
+    "transfer_count": 1,
+    "total_value_in_usd": "255.45",
+    "illicit_usd_value": "248.15",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 09:42:59",
+        "block": 20533208,
+        "tx_hash": "0x8017a8e78fa9ae241ccc0bc9d5ed9cd71a959fd9041722d4674b92e75225f463",
+        "value_in_usd": "255.45",
+        "token_price": "2625.9",
+        "token_symbol": "ETH",
+        "token_quantity": "0.097282470264323684"
+      }
+    ]
+  },
+  {
+    "from": "0x2dbd2b6257afabced7fe71f6993bcd7cc679e252",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2626.50",
+    "illicit_usd_value": "2626.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 09:40:59",
+        "block": 20533198,
+        "tx_hash": "0x1a25bc91f1dd99cacc4f78279e721d9eddc3d83dc14fcccc910325ad9e5c0ece",
+        "value_in_usd": "2626.50",
+        "token_price": "2626.5",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x32b934d0ae307ec396149dfa69cfb125984ac9c5",
+    "to": "0x937b9433708bc91365583b0cae2ac2884dfb5483",
+    "transfer_count": 1,
+    "total_value_in_usd": "7963.28",
+    "illicit_usd_value": "5036.59",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:18:23",
+        "block": 20358143,
+        "tx_hash": "0x1ee6ff9a8f2d374c86553387c455331747c5f629c7ef92d8534d806198d36341",
+        "value_in_usd": "7963.28",
+        "token_price": "3532.37",
+        "token_symbol": "ETH",
+        "token_quantity": "2.254373670948046930"
+      }
+    ]
+  },
+  {
+    "from": "0x32b934d0ae307ec396149dfa69cfb125984ac9c5",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3533.30",
+    "illicit_usd_value": "3533.30",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:17:35",
+        "block": 20358139,
+        "tx_hash": "0x24cb7a744b09523c3d32971be993b66b1e25f7a6de181b6f718d73d715467417",
+        "value_in_usd": "3533.30",
+        "token_price": "3533.3",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x3c87fc08e3443023643d6195c631b175549e4ab0",
+    "to": "0xb02f545ca154899f5ffe6d10a752de3da86f987d",
+    "transfer_count": 1,
+    "total_value_in_usd": "3687.56",
+    "illicit_usd_value": "3514.98",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 10:52:47",
+        "block": 20526396,
+        "tx_hash": "0x5b1c844045da5b0613d4b67b36fea6dc6dff96ce88743841403f0378a9f8a21f",
+        "value_in_usd": "3687.56",
+        "token_price": "2752.82",
+        "token_symbol": "ETH",
+        "token_quantity": "1.339559054378762480"
+      }
+    ]
+  },
+  {
+    "from": "0x409a4c24eb5f360496ada674afb414010336b595",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "316.66",
+    "illicit_usd_value": "316.66",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 14:09:59",
+        "block": 20434203,
+        "tx_hash": "0x7e656b657609910ed45590cc855738839e44b7e0589e9e5568991d8b5ae2c498",
+        "value_in_usd": "316.66",
+        "token_price": "3174.86",
+        "token_symbol": "ETH",
+        "token_quantity": "0.099738654035701000"
+      }
+    ]
+  },
+  {
+    "from": "0x414cfba4b7d686ed889b9e7235e7ad234becc75d",
+    "from_label": "LI.FI Exploiter 19",
+    "to": "0xf4c107991caf8651088cc473199e3dfbc2f31437",
+    "transfer_count": 1,
+    "total_value_in_usd": "542389.57",
+    "illicit_usd_value": "542389.57",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 06:34:23",
+        "block": 20525107,
+        "tx_hash": "0x8b439c488bedb99d8e6d796818d3253464791d56b0bc7b64bfbe29ddb61469be",
+        "value_in_usd": "542389.57",
+        "token_price": "2735.3",
+        "token_symbol": "ETH",
+        "token_quantity": "198.292535215697407083"
+      }
+    ]
+  },
+  {
+    "from": "0x485e50f514dc3cb7927c5143ddd16dffcfbc933e",
+    "to": "0x574a7c4c5fcca055a44ca90d30c51543dcea2066",
+    "transfer_count": 1,
+    "total_value_in_usd": "306.20",
+    "illicit_usd_value": "239.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 13:13:47",
+        "block": 20534256,
+        "tx_hash": "0x2972bbea9b947bb774d2e4d5f7e852e29dd1d0ca6b5b2ca88f6ad39ac4c21256",
+        "value_in_usd": "306.20",
+        "token_price": "2655.32",
+        "token_symbol": "ETH",
+        "token_quantity": "0.115313875799829640"
+      }
+    ]
+  },
+  {
+    "from": "0x485e50f514dc3cb7927c5143ddd16dffcfbc933e",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "265.53",
+    "illicit_usd_value": "265.53",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 13:13:11",
+        "block": 20534253,
+        "tx_hash": "0xf0f3da6e72e46bdec05317f6eb65d0f6e6fc8088671c65dd79dd1eebc30e324a",
+        "value_in_usd": "265.53",
+        "token_price": "2655.32",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x500b5ae7b09f774ac7d238f4dd6cbd8591fb0d82",
+    "to": "0x02ea7f0ffb72afb904bbbf0d4ea2d633c1b99413",
+    "transfer_count": 1,
+    "total_value_in_usd": "432935.53",
+    "illicit_usd_value": "432935.53",
+    "transfers": [
+      {
+        "timestamp": "2024-07-19 11:51:11",
+        "block": 20340393,
+        "tx_hash": "0x583c18a2dab26edec5f0be728ffe88e09fd651c0a68970eb3dc1c4936d3a94c7",
+        "value_in_usd": "432935.53",
+        "token_price": "3397.69",
+        "token_symbol": "ETH",
+        "token_quantity": "127.420550680845689270"
+      }
+    ]
+  },
+  {
+    "from": "0x500b5ae7b09f774ac7d238f4dd6cbd8591fb0d82",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "34047.60",
+    "illicit_usd_value": "34047.60",
+    "transfers": [
+      {
+        "timestamp": "2024-07-19 00:53:47",
+        "block": 20337117,
+        "tx_hash": "0x035cf382981b50fb653d132873954961983bcee57563f36d3de733a5d32095bf",
+        "value_in_usd": "34047.60",
+        "token_price": "3404.76",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x574a7c4c5fcca055a44ca90d30c51543dcea2066",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "258.48",
+    "illicit_usd_value": "239.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-16 14:15:47",
+        "block": 20541727,
+        "tx_hash": "0x2a2ad56d7e41172f355e29592f00a359728bfe189bdfe265f9bd5a6abbf2ae2a",
+        "value_in_usd": "258.48",
+        "token_price": "2584.75",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x596fac5a5a6a953e7515012713bcebad45ccc6cb",
+    "to": "0x183bbd0586d35d2e89f41fe567158a9bb0b50ce3",
+    "transfer_count": 1,
+    "total_value_in_usd": "3376.92",
+    "illicit_usd_value": "3345.99",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 07:05:11",
+        "block": 20668440,
+        "tx_hash": "0x3aa343faa7e8553d24103f6f5621ec7bc60cb13e637739832093ab725deaedf2",
+        "value_in_usd": "3376.92",
+        "token_price": "2517.37",
+        "token_symbol": "ETH",
+        "token_quantity": "1.341446525045119716"
+      }
+    ]
+  },
+  {
+    "from": "0x596fac5a5a6a953e7515012713bcebad45ccc6cb",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2513.76",
+    "illicit_usd_value": "2513.76",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 07:00:47",
+        "block": 20668419,
+        "tx_hash": "0x09bdc13d16ea90ca7c232ac3e2d4259fa7daf9552a3d8c2dc9aff89905e1aae4",
+        "value_in_usd": "2513.76",
+        "token_price": "2513.76",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5a7ec7cc9be7a9f9966d37934a9488d9d7d4a072",
+    "to": "0xf5e10380213880111522dd0efd3dbb45b9f62bcc",
+    "to_label": "LI.FI Hack Terminus",
+    "transfer_count": 1,
+    "total_value_in_usd": "320.15",
+    "illicit_usd_value": "320.15",
+    "transfers": [
+      {
+        "timestamp": "2024-08-02 00:24:23",
+        "block": 20437258,
+        "tx_hash": "0xc344c4604e8def8250d9c8b71b6d844f03322ad6ea58a1e32683e7228782d8f7",
+        "value_in_usd": "320.15",
+        "token_price": "3201.52",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5bfaac0cc0cfe84afdd526e35d615399c8296709",
+    "to": "0x2dbd2b6257afabced7fe71f6993bcd7cc679e252",
+    "transfer_count": 1,
+    "total_value_in_usd": "2874.65",
+    "illicit_usd_value": "2874.65",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:25:11",
+        "block": 20532522,
+        "tx_hash": "0xf0f95a015e0fc678bff423c0f791ae415ef1af1c2b1cd6c9e1ad39b188377728",
+        "value_in_usd": "2874.65",
+        "token_price": "2609.78",
+        "token_symbol": "ETH",
+        "token_quantity": "1.101489725827641980"
+      }
+    ]
+  },
+  {
+    "from": "0x5bfaac0cc0cfe84afdd526e35d615399c8296709",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2612.29",
+    "illicit_usd_value": "2612.29",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:24:11",
+        "block": 20532517,
+        "tx_hash": "0x8dbce170da67fed78b3073140bf5873bd48a6c0dee6fbac966c0c3cf8a21aabd",
+        "value_in_usd": "2612.29",
+        "token_price": "2612.29",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5fd092ffa9edb2ae706894f89b4ccfe91942a169",
+    "to": "0xbc714df8f02f64bc567e005820d57230a2d88704",
+    "transfer_count": 1,
+    "total_value_in_usd": "11033.87",
+    "illicit_usd_value": "10858.13",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 15:43:11",
+        "block": 20527839,
+        "tx_hash": "0x086c35ecf4f086da4fbe9cc65fccca4cc97c7ff1551aa9441067d82dfd8b5e0a",
+        "value_in_usd": "11033.87",
+        "token_price": "2670.25",
+        "token_symbol": "ETH",
+        "token_quantity": "4.132148744678041880"
+      }
+    ]
+  },
+  {
+    "from": "0x5fd092ffa9edb2ae706894f89b4ccfe91942a169",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "265228.00",
+    "illicit_usd_value": "265228.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 15:23:47",
+        "block": 20527743,
+        "tx_hash": "0x089b1c78d235d527dcdd026c1b1b137cc3e01a57f2f0eb51eb7ecd99e532b8c8",
+        "value_in_usd": "265228.00",
+        "token_price": "2652.28",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x6a6df7cf485fdc6e6f7d4a8b818e1eacc31e664e",
+    "from_label": "LI.FI Exploiter 16",
+    "to": "0x27320b6c2bf5b4a447bb34de33dcd81927a40df4",
+    "transfer_count": 2,
+    "total_value_in_usd": "480123.28",
+    "illicit_usd_value": "471697.65",
+    "transfers": [
+      {
+        "timestamp": "2024-07-17 15:39:35",
+        "block": 20327197,
+        "tx_hash": "0xf2514b39ac127550e8b4972e7e53a0b4a81a922a963b2ff988f9077301d6e255",
+        "value_in_usd": "346.86",
+        "token_price": "3468.56",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      },
+      {
+        "timestamp": "2024-07-17 15:40:59",
+        "block": 20327204,
+        "tx_hash": "0x88424fed696e9ab22f9875db09d4b78e517c25f8cc808a3a4355d73832fb7c82",
+        "value_in_usd": "479776.42",
+        "token_price": "3468.03",
+        "token_symbol": "ETH",
+        "token_quantity": "138.342638196242602750"
+      }
+    ]
+  },
+  {
+    "from": "0x6a6df7cf485fdc6e6f7d4a8b818e1eacc31e664e",
+    "from_label": "LI.FI Exploiter 16",
+    "to": "0xd585fd360040662c43737d538be97e34e88dc416",
+    "to_label": "LI.FI Exploiter 15",
+    "transfer_count": 1,
+    "total_value_in_usd": "340.56",
+    "illicit_usd_value": "340.56",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:59:35",
+        "block": 20319227,
+        "tx_hash": "0xfafd401513f15e9b40677c0985f9e4b5c7082826281009a4de9b7abafa31a5a3",
+        "value_in_usd": "340.56",
+        "token_price": "3405.64",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x6a6df7cf485fdc6e6f7d4a8b818e1eacc31e664e",
+    "from_label": "LI.FI Exploiter 16",
+    "to": "0xe0183aa5b5b3ca0e53de9f04c92a1f2dad900e64",
+    "transfer_count": 1,
+    "total_value_in_usd": "3564.87",
+    "illicit_usd_value": "3564.87",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:13:35",
+        "block": 20319595,
+        "tx_hash": "0xaa67f4429a4f4eb95c26ad72b8fd8ebaacb4676828816aa282a4a935176d6d6a",
+        "value_in_usd": "3564.87",
+        "token_price": "3395.11",
+        "token_symbol": "ETH",
+        "token_quantity": "1.050000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x776da884f581d8ed0051d3888d2ef36e12cefabf",
+    "to": "0xf9b52261e4d02750c009aa9c06755fd9ebdccd4c",
+    "transfer_count": 1,
+    "total_value_in_usd": "25912.86",
+    "illicit_usd_value": "23047.03",
+    "transfers": [
+      {
+        "timestamp": "2024-07-20 07:29:47",
+        "block": 20346259,
+        "tx_hash": "0x9efe43b1ab0264bf7205fa40dde43a4b7245ffee10c5f75b3d689174f3579c0c",
+        "value_in_usd": "25912.86",
+        "token_price": "3500.41",
+        "token_symbol": "ETH",
+        "token_quantity": "7.402808185070249054"
+      }
+    ]
+  },
+  {
+    "from": "0x7e47a086c8714b09fa6a49653c67ce2d2f12c1ad",
+    "to": "0xad4a839c3de87e6de175bca5aaf170385ef2e4f9",
+    "transfer_count": 1,
+    "total_value_in_usd": "3568.70",
+    "illicit_usd_value": "3564.68",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:15:47",
+        "block": 20319606,
+        "tx_hash": "0xe86f74a4a0b07bf698e9eec9cbdad048e3604a0487c84eb5de672fac7cf8ec68",
+        "value_in_usd": "3568.70",
+        "token_price": "3400.99",
+        "token_symbol": "ETH",
+        "token_quantity": "1.049313227229834000"
+      }
+    ]
+  },
+  {
+    "from": "0x8004d66b5d55c5de273aa8b5778684c32ac5d213",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3529.36",
+    "illicit_usd_value": "3529.36",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:49:11",
+        "block": 20357997,
+        "tx_hash": "0xbe3bc4102a036838b3c93d1052ad8778786eb6dbfad8ea95bdde96f95a61b430",
+        "value_in_usd": "3529.36",
+        "token_price": "3529.36",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8004d66b5d55c5de273aa8b5778684c32ac5d213",
+    "to": "0xdc43e52d85a8dc1d3341b5f43ef3206ace24f979",
+    "transfer_count": 1,
+    "total_value_in_usd": "15059.95",
+    "illicit_usd_value": "12109.53",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:49:59",
+        "block": 20358001,
+        "tx_hash": "0xb3a7ee451afe7d7ed1fae4d0f4e4cc95252b3c5d74b575399448906e75105fce",
+        "value_in_usd": "15059.95",
+        "token_price": "3529.36",
+        "token_symbol": "ETH",
+        "token_quantity": "4.267048480275477858"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0x06cbba92eb9ab70ee0c5066a863549188d7c18d1",
+    "transfer_count": 1,
+    "total_value_in_usd": "318.03",
+    "illicit_usd_value": "318.03",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 14:05:11",
+        "block": 20434179,
+        "tx_hash": "0xd45f7423e56bc5df09133cb04a1cdfe31fa58ceb278eaba9082cd3e7c25caa70",
+        "value_in_usd": "318.03",
+        "token_price": "3180.33",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0x409a4c24eb5f360496ada674afb414010336b595",
+    "transfer_count": 1,
+    "total_value_in_usd": "318.60",
+    "illicit_usd_value": "318.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 13:56:35",
+        "block": 20434136,
+        "tx_hash": "0xe7d96bb8145a9d06764607785fc59143c32d813e845343971628ef0e322b4644",
+        "value_in_usd": "318.60",
+        "token_price": "3186.04",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0x5a7ec7cc9be7a9f9966d37934a9488d9d7d4a072",
+    "transfer_count": 1,
+    "total_value_in_usd": "320.15",
+    "illicit_usd_value": "320.15",
+    "transfers": [
+      {
+        "timestamp": "2024-08-02 00:24:23",
+        "block": 20437258,
+        "tx_hash": "0xc344c4604e8def8250d9c8b71b6d844f03322ad6ea58a1e32683e7228782d8f7",
+        "value_in_usd": "320.15",
+        "token_price": "3201.52",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0x5c8c7d7666e6e418d2f0b026a5a3e21e133a4278",
+    "transfer_count": 1,
+    "total_value_in_usd": "317.04",
+    "illicit_usd_value": "317.04",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 14:25:47",
+        "block": 20434281,
+        "tx_hash": "0x58edef058c604c8452a60c263c409fb0473901c601ab770c9dd7657de28cffb8",
+        "value_in_usd": "317.04",
+        "token_price": "3170.37",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0xa0c5830162926751b9eb8212d7ba3ce4dd89a677",
+    "transfer_count": 1,
+    "total_value_in_usd": "752685.41",
+    "illicit_usd_value": "752685.41",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 06:35:35",
+        "block": 20525113,
+        "tx_hash": "0x16520ef53e7341d3f6bcbd55c38aa9258865457f320b3c31147cae95e9add490",
+        "value_in_usd": "752685.41",
+        "token_price": "2733.23",
+        "token_symbol": "ETH",
+        "token_quantity": "275.383121461620670198"
+      }
+    ]
+  },
+  {
+    "from": "0x86015516b4e1be36ecb4e78f0159fa6301000d7c",
+    "to": "0xca0840578f57fe71599d29375e16783424023357",
+    "to_label": "Tornado.Cash: L1 Helper",
+    "transfer_count": 1,
+    "total_value_in_usd": "3153.48",
+    "illicit_usd_value": "3153.48",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 14:52:11",
+        "block": 20434413,
+        "tx_hash": "0xb3fcd711ab305842f0daadd8738b63e24cb20206b7734c808ed1349471748c67",
+        "value_in_usd": "3153.48",
+        "token_price": "3153.48",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x87694f29351ee4830bab5ee370c21dbbb971dd52",
+    "to": "0x8eb36fae2991b1180ec651994e8210f3c8c1a8b5",
+    "transfer_count": 1,
+    "total_value_in_usd": "11035.81",
+    "illicit_usd_value": "10927.91",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 00:32:23",
+        "block": 20666488,
+        "tx_hash": "0x9d6cc4f66728c716b13bd23970aba0d43e3ef0c6862e9beef5a6fc553e797f47",
+        "value_in_usd": "11035.81",
+        "token_price": "2535.72",
+        "token_symbol": "ETH",
+        "token_quantity": "4.352140701226179188"
+      }
+    ]
+  },
+  {
+    "from": "0x87694f29351ee4830bab5ee370c21dbbb971dd52",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "253501.00",
+    "illicit_usd_value": "253501.00",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 00:31:11",
+        "block": 20666482,
+        "tx_hash": "0x93d4e84f2bfed391aef11c03088b1bdefaaa90c81f0ab4c0613bee9f5a536626",
+        "value_in_usd": "253501.00",
+        "token_price": "2535.01",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8a4b788c7b9be02a8fd75373ab178f3808ac9537",
+    "to": "0x8004d66b5d55c5de273aa8b5778684c32ac5d213",
+    "transfer_count": 1,
+    "total_value_in_usd": "18600.86",
+    "illicit_usd_value": "15638.89",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:46:23",
+        "block": 20357983,
+        "tx_hash": "0xd3be2552a4cff20b3e07f9ada8d323fcd82fb155e490098a9b718e28183dac0a",
+        "value_in_usd": "18600.86",
+        "token_price": "3526.51",
+        "token_symbol": "ETH",
+        "token_quantity": "5.274578898218444102"
+      }
+    ]
+  },
+  {
+    "from": "0x8a4b788c7b9be02a8fd75373ab178f3808ac9537",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 2,
+    "total_value_in_usd": "3878.31",
+    "illicit_usd_value": "3878.31",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:34:11",
+        "block": 20357922,
+        "tx_hash": "0xf086ca5495c576e4f98fdd8d233eeb271bc26384586e116b0cb20e9306fe8a16",
+        "value_in_usd": "352.94",
+        "token_price": "3529.37",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      },
+      {
+        "timestamp": "2024-07-21 22:38:47",
+        "block": 20357945,
+        "tx_hash": "0xbf250b51c5e7a138fd5bc05b75cf6cfa4408902247fb988f0afa63ad8ada8f99",
+        "value_in_usd": "3525.37",
+        "token_price": "3525.37",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8a93360f6c9830210a4cf835fca943286221a349",
+    "from_label": "LI.FI Exploiter 13",
+    "to": "0x9cc9305cb588a001ced32bc6c9d752d3d8b279e6",
+    "to_label": "LI.FI Exploiter 14",
+    "transfer_count": 1,
+    "total_value_in_usd": "62661.36",
+    "illicit_usd_value": "62661.36",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:36:35",
+        "block": 20319112,
+        "tx_hash": "0x11a65500b7a018760c122fb466076129ee2b381cbb77b0decf3b567c14407ac8",
+        "value_in_usd": "62661.36",
+        "token_price": "3420.38",
+        "token_symbol": "ETH",
+        "token_quantity": "18.320000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8a93360f6c9830210a4cf835fca943286221a349",
+    "from_label": "LI.FI Exploiter 13",
+    "to": "0xb8901acb165ed027e32754e0ffe830802919727f",
+    "to_label": "Hop",
+    "transfer_count": 1,
+    "total_value_in_usd": "3420.38",
+    "illicit_usd_value": "3420.38",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:36:59",
+        "block": 20319114,
+        "tx_hash": "0x5bb14bbbfabc90530479710cf0aac66f5126af06f106e0ef9fce052e8793988e",
+        "value_in_usd": "3420.38",
+        "token_price": "3420.38",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8a93360f6c9830210a4cf835fca943286221a349",
+    "from_label": "LI.FI Exploiter 13",
+    "to": "0xca0840578f57fe71599d29375e16783424023357",
+    "to_label": "Tornado.Cash: L1 Helper",
+    "transfer_count": 1,
+    "total_value_in_usd": "2575.78",
+    "illicit_usd_value": "2575.78",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 14:48:11",
+        "block": 20577691,
+        "tx_hash": "0x20b6a568bff0cc9cecf03b082361f4dc5df6bb8c690f94f8bfe08215fdbcdb1c",
+        "value_in_usd": "2575.78",
+        "token_price": "2607.63",
+        "token_symbol": "ETH",
+        "token_quantity": "0.987786226249707364"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x0606a235a4e4f230d1e8968083d1b61b335ff878",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.74",
+    "illicit_usd_value": "341.74",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:04:47",
+        "block": 20318954,
+        "tx_hash": "0xc870a6237488b8335570170af36db965c883c786dbcbe82ec7b2faffdded8a51",
+        "value_in_usd": "341.74",
+        "token_price": "3417.36",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x14c1597cc833783ed8ac08ecc9b704b0a398201d",
+    "to_label": "LI.FI Exploiter 10",
+    "transfer_count": 1,
+    "total_value_in_usd": "769008.15",
+    "illicit_usd_value": "769008.15",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:12:23",
+        "block": 20319589,
+        "tx_hash": "0x27d20c3972ac7085a740e531c19812859c6958accc01112282a4db8ea9e312b8",
+        "value_in_usd": "769008.15",
+        "token_price": "3394.58",
+        "token_symbol": "ETH",
+        "token_quantity": "226.540000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x3a993fa6744c009b3b8d52e2edd854bd97e5b866",
+    "to_label": "LI.FI Exploiter 11",
+    "transfer_count": 1,
+    "total_value_in_usd": "824540.08",
+    "illicit_usd_value": "824540.08",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:15:23",
+        "block": 20319604,
+        "tx_hash": "0xc4e48be415b6d797655faddef06b048f6ff60c6473da2275c50dd76091f69957",
+        "value_in_usd": "824540.08",
+        "token_price": "3400.99",
+        "token_symbol": "ETH",
+        "token_quantity": "242.441195733907397811"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x3aa326d155eec2850982afa91d0f28c7c21f54ab",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.60",
+    "illicit_usd_value": "341.60",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:16:47",
+        "block": 20319014,
+        "tx_hash": "0x83f9786bca0c8c369dce5a66073b508e51a945026b2412a9a0533e5765d647e3",
+        "value_in_usd": "341.60",
+        "token_price": "3416.01",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x5367159bcbb2cda37526171a1d3439dea5dbf4e7",
+    "to_label": "LI.FI Exploiter 3",
+    "transfer_count": 1,
+    "total_value_in_usd": "714521.55",
+    "illicit_usd_value": "714521.55",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 13:37:59",
+        "block": 20319419,
+        "tx_hash": "0xb7120836b98c9e9d658d2088bc4e357f77aea6969c43609fbdf4e31447ba205c",
+        "value_in_usd": "714521.55",
+        "token_price": "3413.7",
+        "token_symbol": "ETH",
+        "token_quantity": "209.310000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x588e7e8e522ed4dd8dad263bd72208b099250114",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.13",
+    "illicit_usd_value": "341.13",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:09:11",
+        "block": 20318976,
+        "tx_hash": "0x2e6a5ec9e181da0cb3416a93f07b935993f7f4505d0b8908b76009e78d80e0de",
+        "value_in_usd": "341.13",
+        "token_price": "3411.33",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x5ff0f550368b1042d60d8ede624120211e828992",
+    "transfer_count": 1,
+    "total_value_in_usd": "340.97",
+    "illicit_usd_value": "340.97",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:12:47",
+        "block": 20318994,
+        "tx_hash": "0x4e7821183dbe10f5a8ffc8ba44b7e494650a67d60372befdbc40db0182253fd2",
+        "value_in_usd": "340.97",
+        "token_price": "3409.72",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x67807727f68ddbd0e59a89194f2d81f728551621",
+    "to_label": "LI.FI Exploiter 5",
+    "transfer_count": 1,
+    "total_value_in_usd": "695213.00",
+    "illicit_usd_value": "695213.00",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 13:59:23",
+        "block": 20319525,
+        "tx_hash": "0x829402086abd9007884ba75f59a652502e7afd8c9fb895fe873f526ae5b9a0ad",
+        "value_in_usd": "695213.00",
+        "token_price": "3402.07",
+        "token_symbol": "ETH",
+        "token_quantity": "204.350000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x6a6df7cf485fdc6e6f7d4a8b818e1eacc31e664e",
+    "to_label": "LI.FI Exploiter 16",
+    "transfer_count": 2,
+    "total_value_in_usd": "475603.08",
+    "illicit_usd_value": "475603.08",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:52:47",
+        "block": 20319193,
+        "tx_hash": "0x32dedf72d50d276f7ec46ba2e46611f5cd7eb6d9be4772a872a0116c13a00e5b",
+        "value_in_usd": "3414.38",
+        "token_price": "3414.38",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      },
+      {
+        "timestamp": "2024-07-16 13:16:35",
+        "block": 20319312,
+        "tx_hash": "0x815d3d690befff9178c5f66587c033c11d8ce6520ecdfdb2cb1bba91272428ed",
+        "value_in_usd": "472188.70",
+        "token_price": "0.9992544609198226",
+        "token_symbol": "USDC",
+        "token_quantity": "472541.000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x84cf0496b654b7922bb607264fd506cd2915105b",
+    "transfer_count": 1,
+    "total_value_in_usd": "342.35",
+    "illicit_usd_value": "342.35",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:39:59",
+        "block": 20319129,
+        "tx_hash": "0x38af5d230e94a739f396a540a385286c21eb3a14fa70ecbcbaeb32fdd02b5676",
+        "value_in_usd": "342.35",
+        "token_price": "3423.45",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x8a93360f6c9830210a4cf835fca943286221a349",
+    "to_label": "LI.FI Exploiter 13",
+    "transfer_count": 2,
+    "total_value_in_usd": "1166605.44",
+    "illicit_usd_value": "1166605.44",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:26:47",
+        "block": 20319063,
+        "tx_hash": "0x1f0c9ddd7a90a613c793072adfcedbe41f55eacd126dc16405148c9565d3e0ad",
+        "value_in_usd": "683723.72",
+        "token_price": "1.002",
+        "token_symbol": "USDT",
+        "token_quantity": "682359.000000"
+      },
+      {
+        "timestamp": "2024-07-16 13:17:47",
+        "block": 20319318,
+        "tx_hash": "0x0c8eb888af367d1e3f25ec58ab52f95915b7cbad92600e5b54d0490e8f293e25",
+        "value_in_usd": "482881.72",
+        "token_price": "0.9992544609198226",
+        "token_symbol": "USDC",
+        "token_quantity": "483242.000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x8e85eace2fa757c1d97c5ebfb8b0622e5f23c5a1",
+    "to_label": "LI.FI Exploiter 9",
+    "transfer_count": 1,
+    "total_value_in_usd": "697928.12",
+    "illicit_usd_value": "697928.12",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:09:47",
+        "block": 20319576,
+        "tx_hash": "0xe2379835bfd6985949e741562d23e1e3fae892546d7a7d68c3812e1319f26415",
+        "value_in_usd": "697928.12",
+        "token_price": "3380.01",
+        "token_symbol": "ETH",
+        "token_quantity": "206.487000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x9cc9305cb588a001ced32bc6c9d752d3d8b279e6",
+    "to_label": "LI.FI Exploiter 14",
+    "transfer_count": 1,
+    "total_value_in_usd": "624901.31",
+    "illicit_usd_value": "624901.31",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:27:59",
+        "block": 20319069,
+        "tx_hash": "0xeae6b6fc59c70a0d5df55d7d8e8dbfac5ddd908709578e491320ab02eeb65c85",
+        "value_in_usd": "624901.31",
+        "token_price": "1.002",
+        "token_symbol": "USDT",
+        "token_quantity": "623654.000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0x9f86c680f0b61ccc9648502ab846d1afe8188ae7",
+    "transfer_count": 1,
+    "total_value_in_usd": "342.45",
+    "illicit_usd_value": "342.45",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:32:11",
+        "block": 20319090,
+        "tx_hash": "0x624a00696f1e2ed9027df04e0d27a0781df4df7465b78af9085b5107736f7b49",
+        "value_in_usd": "342.45",
+        "token_price": "3424.49",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xa01e14c0ce80217a3c2e7b2bdc0e093ec51654dc",
+    "transfer_count": 1,
+    "total_value_in_usd": "342.06",
+    "illicit_usd_value": "342.06",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:23:47",
+        "block": 20319048,
+        "tx_hash": "0x2aa0b91af67ea332cd5bd744b6a8a6cd012d1acc7977e3cd6bf9682ab29c0308",
+        "value_in_usd": "342.06",
+        "token_price": "3420.64",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xa149b07d643bf7a004d1e9d9a3223738b7006bd8",
+    "transfer_count": 1,
+    "total_value_in_usd": "342.61",
+    "illicit_usd_value": "342.61",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:38:47",
+        "block": 20319123,
+        "tx_hash": "0x2dd2a5228e26ef2e52b13f0fa8c90f7d55d4b551b16977f976eb4acabc16912c",
+        "value_in_usd": "342.61",
+        "token_price": "3426.11",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xa2a6e22978a7b9d35c6f08c3fc4df5ac9bacb749",
+    "to_label": "LI.FI Exploiter 4",
+    "transfer_count": 1,
+    "total_value_in_usd": "724819.97",
+    "illicit_usd_value": "724819.97",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 13:35:59",
+        "block": 20319409,
+        "tx_hash": "0x44fa54c2ad4ea1a41e473bb87dc90908f37c351d0d901ddcf97d4e3a1158af4c",
+        "value_in_usd": "724819.97",
+        "token_price": "3413.97",
+        "token_symbol": "ETH",
+        "token_quantity": "212.310000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xb84ca7c825c1dde18a5bebbd5f6470ef2688eec8",
+    "to_label": "LI.FI Exploiter 6",
+    "transfer_count": 1,
+    "total_value_in_usd": "683698.47",
+    "illicit_usd_value": "683698.47",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:05:35",
+        "block": 20319556,
+        "tx_hash": "0xe31d5bc82526f06cdb97e5317a3c9d494e7f7880f97583e2cc29e374041a36b1",
+        "value_in_usd": "683698.47",
+        "token_price": "3386.49",
+        "token_symbol": "ETH",
+        "token_quantity": "201.890000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xb8901acb165ed027e32754e0ffe830802919727f",
+    "to_label": "Hop",
+    "transfer_count": 1,
+    "total_value_in_usd": "3423.61",
+    "illicit_usd_value": "3423.61",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:28:23",
+        "block": 20319071,
+        "tx_hash": "0x58899ff07cfa88f297b016c4936918db055de84867e47b1827d0c52788064438",
+        "value_in_usd": "3423.61",
+        "token_price": "3423.61",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xb9657eedd8bf2281004fde1baf4e8c938224e986",
+    "to_label": "LI.FI Exploiter 8",
+    "transfer_count": 1,
+    "total_value_in_usd": "692809.99",
+    "illicit_usd_value": "692809.99",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 13:55:59",
+        "block": 20319508,
+        "tx_hash": "0x5de44f25fe6c948604b6a259a1ba2e46f1604d1476efecea3f5e1fd89d039ed2",
+        "value_in_usd": "692809.99",
+        "token_price": "3410.27",
+        "token_symbol": "ETH",
+        "token_quantity": "203.154000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xbea46c21adf801f177ded28edb37147c8f73a98c",
+    "to_label": "LI.FI Exploiter 7",
+    "transfer_count": 1,
+    "total_value_in_usd": "691595.11",
+    "illicit_usd_value": "691595.11",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:07:35",
+        "block": 20319566,
+        "tx_hash": "0x72e7c8649944fcd7ea1c3cac0d64aaa9039a66de396ece8267c479c09ca59228",
+        "value_in_usd": "691595.11",
+        "token_price": "3384.2",
+        "token_symbol": "ETH",
+        "token_quantity": "204.360000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xbfed045dc1fadf33778f4f40c2d6bfd8d5d160b2",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.17",
+    "illicit_usd_value": "341.17",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:11:35",
+        "block": 20318988,
+        "tx_hash": "0xc313da95050698b0676ca95b386e56fc3d49947c4a76567074350fe2528d27c4",
+        "value_in_usd": "341.17",
+        "token_price": "3411.72",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xc05f413d129cb2d265e672580ec6db635045d8fd",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.94",
+    "illicit_usd_value": "341.94",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:34:47",
+        "block": 20319103,
+        "tx_hash": "0x96c214153fed9c159fdc593a204c497abe6d1bd0d984ea132326f5fe01683211",
+        "value_in_usd": "341.94",
+        "token_price": "3419.42",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xcaad962488b926a387b19ab3604d76aba3f48798",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.56",
+    "illicit_usd_value": "341.56",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:21:23",
+        "block": 20319036,
+        "tx_hash": "0x8bd771066ebd00a3309d471c00085ac6adf1862455747a31719774d265be3bc0",
+        "value_in_usd": "341.56",
+        "token_price": "3415.55",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xcb7c341dc6172b642dcf4a14015be70a27e5b31e",
+    "to_label": "LI.FI Exploiter 12",
+    "transfer_count": 2,
+    "total_value_in_usd": "1000093.25",
+    "illicit_usd_value": "1000093.25",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:23:47",
+        "block": 20319048,
+        "tx_hash": "0x52d1cfd0d45163f26d3577c4320750313bdd525e4fdb5a0b073087a4e2a9bed0",
+        "value_in_usd": "124778.11",
+        "token_price": "3420.64",
+        "token_symbol": "ETH",
+        "token_quantity": "36.478000000000000000"
+      },
+      {
+        "timestamp": "2024-07-16 12:25:23",
+        "block": 20319056,
+        "tx_hash": "0x050c935a0fb442aa5b4b669c7fa84bbf88bf3f6a43c50eb176d472cd4ac1d3d9",
+        "value_in_usd": "875315.14",
+        "token_price": "1.002",
+        "token_symbol": "USDT",
+        "token_quantity": "873568.000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xcd7757dff7594563d1e4c5b7e7a7044c4e382b30",
+    "transfer_count": 1,
+    "total_value_in_usd": "342.04",
+    "illicit_usd_value": "342.04",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:36:35",
+        "block": 20319112,
+        "tx_hash": "0x22b1bf5a5dd695b344e19b46c4932bd080673ebf75c2f165606bf84430635146",
+        "value_in_usd": "342.04",
+        "token_price": "3420.38",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xd8d34967f19160ce7031eb243bc4d0893e626190",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.86",
+    "illicit_usd_value": "341.86",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:22:35",
+        "block": 20319042,
+        "tx_hash": "0xe04b77a2f43b21c8757ef6ad2f2801d8838535b4a479239420ad27628966829b",
+        "value_in_usd": "341.86",
+        "token_price": "3418.59",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xea72074d441f0287fef0255002cce55dfa5d1685",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.49",
+    "illicit_usd_value": "341.49",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:10:35",
+        "block": 20318983,
+        "tx_hash": "0x78d876f4fc352d3fc1692bd076b6cfe686ebeb1eb854201d18987afeee011586",
+        "value_in_usd": "341.49",
+        "token_price": "3414.85",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b3cb6bf982798fba233bca56749e22eec42dcf3",
+    "from_label": "LI.FI Exploiter 2",
+    "to": "0xf929ba2aeec16cffcfc66858a9434e194baaf80d",
+    "transfer_count": 1,
+    "total_value_in_usd": "341.12",
+    "illicit_usd_value": "341.12",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:06:35",
+        "block": 20318963,
+        "tx_hash": "0x8b01d82ace64de260641d3353d66c087dcf4d286a045d857db2a767bcdce7adf",
+        "value_in_usd": "341.12",
+        "token_price": "3411.23",
+        "token_symbol": "ETH",
+        "token_quantity": "0.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8e85eace2fa757c1d97c5ebfb8b0622e5f23c5a1",
+    "from_label": "LI.FI Exploiter 9",
+    "to": "0xe9f7cd0c410257850324d86536bd165cf4306e80",
+    "transfer_count": 1,
+    "total_value_in_usd": "562321.36",
+    "illicit_usd_value": "562321.36",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 11:48:47",
+        "block": 20526673,
+        "tx_hash": "0x0d23ba0e8b53787893d7ba8bf0de75fafb2b81d13377ae19b22ff8ab812d0608",
+        "value_in_usd": "562321.36",
+        "token_price": "2754.52",
+        "token_symbol": "ETH",
+        "token_quantity": "204.144954833748098000"
+      }
+    ]
+  },
+  {
+    "from": "0x8e85eace2fa757c1d97c5ebfb8b0622e5f23c5a1",
+    "from_label": "LI.FI Exploiter 9",
+    "to": "0xfb6a65a1984c7191cf48a926cd123ab22c74c4ca",
+    "transfer_count": 1,
+    "total_value_in_usd": "6246.30",
+    "illicit_usd_value": "6246.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-13 14:14:35",
+        "block": 20520232,
+        "tx_hash": "0xb451142ce3fd00135a15e4f74ec6720967476cfce9e9ef6b74024c9d9f787190",
+        "value_in_usd": "6246.30",
+        "token_price": "2667.08",
+        "token_symbol": "ETH",
+        "token_quantity": "2.342000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8eb36fae2991b1180ec651994e8210f3c8c1a8b5",
+    "to": "0x91f62da9644f38cd1f8b2189334f966d50c0ae6e",
+    "transfer_count": 1,
+    "total_value_in_usd": "8524.69",
+    "illicit_usd_value": "8381.83",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 02:22:47",
+        "block": 20667038,
+        "tx_hash": "0x633f2f5482a8d9ef3660f16dd9d9e5f0130cd9b2b09e1c5c8b1b9bd28635726b",
+        "value_in_usd": "8524.69",
+        "token_price": "2546.08",
+        "token_symbol": "ETH",
+        "token_quantity": "3.348160827755598588"
+      }
+    ]
+  },
+  {
+    "from": "0x8eb36fae2991b1180ec651994e8210f3c8c1a8b5",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2546.08",
+    "illicit_usd_value": "2546.08",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 02:22:11",
+        "block": 20667035,
+        "tx_hash": "0x846f3a988cd98da7e7b318876226aac08ff0a64d393720a2cb6f1f3bc0bdb891",
+        "value_in_usd": "2546.08",
+        "token_price": "2546.08",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x91f62da9644f38cd1f8b2189334f966d50c0ae6e",
+    "to": "0x596fac5a5a6a953e7515012713bcebad45ccc6cb",
+    "transfer_count": 1,
+    "total_value_in_usd": "5908.70",
+    "illicit_usd_value": "5859.75",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 03:38:23",
+        "block": 20667415,
+        "tx_hash": "0xbcd30b06f74cd08d7c528f145f889eb9a4f8426d48f7327e5dc0ca65dd159d4b",
+        "value_in_usd": "5908.70",
+        "token_price": "2519.89",
+        "token_symbol": "ETH",
+        "token_quantity": "2.344824307407735036"
+      }
+    ]
+  },
+  {
+    "from": "0x91f62da9644f38cd1f8b2189334f966d50c0ae6e",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2522.08",
+    "illicit_usd_value": "2522.08",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 03:37:47",
+        "block": 20667412,
+        "tx_hash": "0x692ad77755578fbdf3c892bd3e01b170ab9941e940d6081419a07db10b851e3e",
+        "value_in_usd": "2522.08",
+        "token_price": "2522.08",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x937b9433708bc91365583b0cae2ac2884dfb5483",
+    "to": "0x21f516b41170e09de0ed8a70609b07a56f173e47",
+    "transfer_count": 1,
+    "total_value_in_usd": "4404.37",
+    "illicit_usd_value": "1504.29",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:29:11",
+        "block": 20358197,
+        "tx_hash": "0xb84cdda4262bde9142c2c83b1291c238100ce423d34a5dccc7b1748aff652f42",
+        "value_in_usd": "4404.37",
+        "token_price": "3528.93",
+        "token_symbol": "ETH",
+        "token_quantity": "1.248074419246275750"
+      }
+    ]
+  },
+  {
+    "from": "0x937b9433708bc91365583b0cae2ac2884dfb5483",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3532.30",
+    "illicit_usd_value": "3532.30",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:20:59",
+        "block": 20358156,
+        "tx_hash": "0xd0a2dea82f66c9da19085bb07a4dffc30e84c4c2f1a6d312db62d3fdc7d8874f",
+        "value_in_usd": "3532.30",
+        "token_price": "3532.3",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x96c3a05a9e1e720925324e727876983dccb494b2",
+    "to": "0x270cd7a4c23f898936a19bd94f97d7cc2b639eeb",
+    "transfer_count": 1,
+    "total_value_in_usd": "472230.40",
+    "illicit_usd_value": "468254.42",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 23:37:35",
+        "block": 20336738,
+        "tx_hash": "0x6eb4613e0eea5f5506423718b558680ecf1d381d67dd6182835bdccabca5247f",
+        "value_in_usd": "472230.40",
+        "token_price": "3436.16",
+        "token_symbol": "ETH",
+        "token_quantity": "137.429689091285387150"
+      }
+    ]
+  },
+  {
+    "from": "0x96c3a05a9e1e720925324e727876983dccb494b2",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3443.23",
+    "illicit_usd_value": "3443.23",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 07:37:23",
+        "block": 20331960,
+        "tx_hash": "0x567286991e171ece7ded4433d8079d7683d944c9dd8f2e0b627dfc9a48948978",
+        "value_in_usd": "3443.23",
+        "token_price": "3443.23",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x9cc9305cb588a001ced32bc6c9d752d3d8b279e6",
+    "from_label": "LI.FI Exploiter 14",
+    "to": "0x414cfba4b7d686ed889b9e7235e7ad234becc75d",
+    "to_label": "LI.FI Exploiter 19",
+    "transfer_count": 1,
+    "total_value_in_usd": "631845.71",
+    "illicit_usd_value": "631845.71",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 10:30:47",
+        "block": 20433113,
+        "tx_hash": "0x0e53f564ba20e6afa08a0fcd277a911f28365feebcbfe46f01bc45bf4cd87ded",
+        "value_in_usd": "631845.71",
+        "token_price": "3186.43",
+        "token_symbol": "ETH",
+        "token_quantity": "198.292668693953395083"
+      }
+    ]
+  },
+  {
+    "from": "0x9cc9305cb588a001ced32bc6c9d752d3d8b279e6",
+    "from_label": "LI.FI Exploiter 14",
+    "to": "0xca0840578f57fe71599d29375e16783424023357",
+    "to_label": "Tornado.Cash: L1 Helper",
+    "transfer_count": 1,
+    "total_value_in_usd": "2621.64",
+    "illicit_usd_value": "2621.64",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 00:16:35",
+        "block": 20580511,
+        "tx_hash": "0x1e3c116f78bbf403e99dcf45ffff22fc4cee4f3160e7965a3b1b722414af201b",
+        "value_in_usd": "2621.64",
+        "token_price": "2633.11",
+        "token_symbol": "ETH",
+        "token_quantity": "0.995644151906007959"
+      }
+    ]
+  },
+  {
+    "from": "0x9cc9305cb588a001ced32bc6c9d752d3d8b279e6",
+    "from_label": "LI.FI Exploiter 14",
+    "to": "0xf621fb08bbe51af70e7e0f4ea63496894166ff7f",
+    "transfer_count": 1,
+    "total_value_in_usd": "3414.82",
+    "illicit_usd_value": "3414.82",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:43:11",
+        "block": 20319145,
+        "tx_hash": "0xbcedc6f414a8f8dd5c63503f790f2ad7caae0144f4c79a88f53f237f587fedc1",
+        "value_in_usd": "3414.82",
+        "token_price": "3414.82",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xa502024b5bf2e8eabae10d29555ac960bbddcc7d",
+    "to": "0x776da884f581d8ed0051d3888d2ef36e12cefabf",
+    "transfer_count": 1,
+    "total_value_in_usd": "25941.55",
+    "illicit_usd_value": "23047.03",
+    "transfers": [
+      {
+        "timestamp": "2024-07-20 06:51:23",
+        "block": 20346068,
+        "tx_hash": "0xdf35a739140f1a15d1246b4a1f2beea6f1682e5e957766c5b7017631143febe6",
+        "value_in_usd": "25941.55",
+        "token_price": "3504.24",
+        "token_symbol": "ETH",
+        "token_quantity": "7.402902788038877054"
+      }
+    ]
+  },
+  {
+    "from": "0xa502024b5bf2e8eabae10d29555ac960bbddcc7d",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 2,
+    "total_value_in_usd": "70073.50",
+    "illicit_usd_value": "70073.50",
+    "transfers": [
+      {
+        "timestamp": "2024-07-20 06:49:35",
+        "block": 20346059,
+        "tx_hash": "0x4e20db97ee0c57b31419496495a29ce7188c65eae76bb4a8b3f87f8b7c0b722b",
+        "value_in_usd": "35039.20",
+        "token_price": "3503.92",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      },
+      {
+        "timestamp": "2024-07-20 06:50:35",
+        "block": 20346064,
+        "tx_hash": "0xbdff4d7b609741df85bbf076a241a37b99e29b5234c0fee41af30a63d9a96756",
+        "value_in_usd": "35034.30",
+        "token_price": "3503.43",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xad4a839c3de87e6de175bca5aaf170385ef2e4f9",
+    "to": "0x0ed8050434faf5123bed95667de1ca5c0ef8fa77",
+    "transfer_count": 1,
+    "total_value_in_usd": "3572.02",
+    "illicit_usd_value": "3564.68",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:16:11",
+        "block": 20319608,
+        "tx_hash": "0xdb24c7f01299d65a381be31897d3ea2526cfa7b78aea5df7a064ee8e9bd9de5a",
+        "value_in_usd": "3572.02",
+        "token_price": "3405.3",
+        "token_symbol": "ETH",
+        "token_quantity": "1.048959344937399000"
+      }
+    ]
+  },
+  {
+    "from": "0xb02f545ca154899f5ffe6d10a752de3da86f987d",
+    "to": "0x0cef92a97aee7e0c5681cc6b8b26bbbe7b72ac8b",
+    "transfer_count": 1,
+    "total_value_in_usd": "880.87",
+    "illicit_usd_value": "781.47",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 09:43:11",
+        "block": 20533209,
+        "tx_hash": "0x31bb34b16d2694bc9d241ab7e50f9af076bed24c88093f6832f8a3d822c56004",
+        "value_in_usd": "880.87",
+        "token_price": "2627.58",
+        "token_symbol": "ETH",
+        "token_quantity": "0.335238653734982320"
+      }
+    ]
+  },
+  {
+    "from": "0xb02f545ca154899f5ffe6d10a752de3da86f987d",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2733.51",
+    "illicit_usd_value": "2733.51",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 11:22:23",
+        "block": 20526543,
+        "tx_hash": "0x6c9c43fec0628a478fb3c288d0440c3f7fca9f4ab21eb553124370f434dfbef3",
+        "value_in_usd": "2733.51",
+        "token_price": "2733.51",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xb3c09bd654e55e0153e0f137e72253b022889102",
+    "to": "0xedfe0b781e4de48e8560a6c3c25029ac3cb84325",
+    "transfer_count": 1,
+    "total_value_in_usd": "3566.38",
+    "illicit_usd_value": "3562.93",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:19:11",
+        "block": 20319623,
+        "tx_hash": "0x51a219a70bf16e4d43594a12788218365a69124487e4cc5c220da10f68add8d9",
+        "value_in_usd": "3566.38",
+        "token_price": "3404.85",
+        "token_symbol": "ETH",
+        "token_quantity": "1.047440939596149000"
+      }
+    ]
+  },
+  {
+    "from": "0xbc714df8f02f64bc567e005820d57230a2d88704",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2623.94",
+    "illicit_usd_value": "2623.94",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:17:59",
+        "block": 20532486,
+        "tx_hash": "0x55966d941408a9d9f78b305698861a0a2cfc0caf5e6d78b8e38fe149f8676282",
+        "value_in_usd": "2623.94",
+        "token_price": "2623.94",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xbc714df8f02f64bc567e005820d57230a2d88704",
+    "to": "0xe6b240f49e0affca7aa3e6fd80a5af6d3f078264",
+    "transfer_count": 1,
+    "total_value_in_usd": "8191.92",
+    "illicit_usd_value": "8191.92",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:19:35",
+        "block": 20532494,
+        "tx_hash": "0x4158a05681233e9efd8b804898d8c022f6b663f8a265196585866c59107f492c",
+        "value_in_usd": "8191.92",
+        "token_price": "2618.86",
+        "token_symbol": "ETH",
+        "token_quantity": "3.128047644713281568"
+      }
+    ]
+  },
+  {
+    "from": "0xbc8a9849433ed3859d4ed46e901021af5dbfe217",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "850.47",
+    "illicit_usd_value": "828.62",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 07:28:47",
+        "block": 20668558,
+        "tx_hash": "0x8572fa167f89cdc65a8cbe5526b04024d372bd9b2ec7f9f161fbf08c71dd7f33",
+        "value_in_usd": "850.47",
+        "token_price": "2517.15",
+        "token_symbol": "ETH",
+        "token_quantity": "0.337870931790219756"
+      }
+    ]
+  },
+  {
+    "from": "0xbea46c21adf801f177ded28edb37147c8f73a98c",
+    "from_label": "LI.FI Exploiter 7",
+    "to": "0xcc5429b134b9071413c69c9fafa4e80295ef38a4",
+    "transfer_count": 1,
+    "total_value_in_usd": "518763.67",
+    "illicit_usd_value": "518763.67",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 23:59:59",
+        "block": 20666327,
+        "tx_hash": "0x2030b2b3ddc61ada3ae60590e5c85ac0fcbe42d8badb7eda677f9e602ec56cd5",
+        "value_in_usd": "518763.67",
+        "token_price": "2538.48",
+        "token_symbol": "ETH",
+        "token_quantity": "204.359958538563018000"
+      }
+    ]
+  },
+  {
+    "from": "0xc7dab65b691fb6544261d4e0364b683d4cfadc5a",
+    "to": "0xeb0fcea20a61026266dd190dd27743a37bdfe8ad",
+    "transfer_count": 1,
+    "total_value_in_usd": "475651.01",
+    "illicit_usd_value": "471697.65",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 07:29:11",
+        "block": 20331919,
+        "tx_hash": "0xe155ab8f720dc9a7b71a479f0fe821376da277de86173aefcf2314177271a2ca",
+        "value_in_usd": "475651.01",
+        "token_price": "3435.75",
+        "token_symbol": "ETH",
+        "token_quantity": "138.441682503281099750"
+      }
+    ]
+  },
+  {
+    "from": "0xcb7c341dc6172b642dcf4a14015be70a27e5b31e",
+    "from_label": "LI.FI Exploiter 12",
+    "to": "0x028ef978b0f361e74061ed76d8bea9ef8a071626",
+    "to_label": "LI.FI Exploiter 18",
+    "transfer_count": 1,
+    "total_value_in_usd": "881845.63",
+    "illicit_usd_value": "881845.63",
+    "transfers": [
+      {
+        "timestamp": "2024-08-01 10:29:11",
+        "block": 20433105,
+        "tx_hash": "0x37d411e434f6a5124a5e615f767dcbfc668d68355f8baac2ec5fd7ff4050ee94",
+        "value_in_usd": "881845.63",
+        "token_price": "3186.01",
+        "token_symbol": "ETH",
+        "token_quantity": "276.786835550362263697"
+      }
+    ]
+  },
+  {
+    "from": "0xcb7c341dc6172b642dcf4a14015be70a27e5b31e",
+    "from_label": "LI.FI Exploiter 12",
+    "to": "0x8a93360f6c9830210a4cf835fca943286221a349",
+    "to_label": "LI.FI Exploiter 13",
+    "transfer_count": 1,
+    "total_value_in_usd": "47212.73",
+    "illicit_usd_value": "47212.73",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:29:59",
+        "block": 20319079,
+        "tx_hash": "0xee24b5257b59e218dadc290adf5bdfa87f138dcac53a0ef24f5e8cf737d7d1c6",
+        "value_in_usd": "47212.73",
+        "token_price": "3430.41",
+        "token_symbol": "ETH",
+        "token_quantity": "13.763000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xcc5429b134b9071413c69c9fafa4e80295ef38a4",
+    "to": "0x87694f29351ee4830bab5ee370c21dbbb971dd52",
+    "transfer_count": 1,
+    "total_value_in_usd": "264428.91",
+    "illicit_usd_value": "264428.91",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 00:27:11",
+        "block": 20666462,
+        "tx_hash": "0x49e58987441965278d3d65c291ea416233e18c3d50e40130ceaabcdf2ca59db1",
+        "value_in_usd": "264428.91",
+        "token_price": "2533.91",
+        "token_symbol": "ETH",
+        "token_quantity": "104.356077727256726300"
+      }
+    ]
+  },
+  {
+    "from": "0xcc5429b134b9071413c69c9fafa4e80295ef38a4",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "253594.00",
+    "illicit_usd_value": "253594.00",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 00:07:23",
+        "block": 20666364,
+        "tx_hash": "0x5db439ea53be2d384f32678b082bfe8ef5355a1c745435e591adb273339f8fcd",
+        "value_in_usd": "253594.00",
+        "token_price": "2535.94",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xdc43e52d85a8dc1d3341b5f43ef3206ace24f979",
+    "to": "0x32b934d0ae307ec396149dfa69cfb125984ac9c5",
+    "transfer_count": 1,
+    "total_value_in_usd": "11542.79",
+    "illicit_usd_value": "8569.89",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:04:23",
+        "block": 20358073,
+        "tx_hash": "0x97eea59596eac8a6ba7f3b7919ace6f2bfc79d36419492c2047ac968ef2ddcf3",
+        "value_in_usd": "11542.79",
+        "token_price": "3540.03",
+        "token_symbol": "ETH",
+        "token_quantity": "3.260648194837212458"
+      }
+    ]
+  },
+  {
+    "from": "0xdc43e52d85a8dc1d3341b5f43ef3206ace24f979",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3539.64",
+    "illicit_usd_value": "3539.64",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 23:03:47",
+        "block": 20358070,
+        "tx_hash": "0xbc35673afdb3c2f8f6e525460a7d9b924faa9f2f60c45815a5e9d73af84b9094",
+        "value_in_usd": "3539.64",
+        "token_price": "3539.64",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xe0183aa5b5b3ca0e53de9f04c92a1f2dad900e64",
+    "to": "0x7e47a086c8714b09fa6a49653c67ce2d2f12c1ad",
+    "transfer_count": 1,
+    "total_value_in_usd": "3564.68",
+    "illicit_usd_value": "3564.68",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:14:59",
+        "block": 20319602,
+        "tx_hash": "0x3fa578c1b33012130af1d1e610f9fe983585e919e6939975caa8eea9eba585e4",
+        "value_in_usd": "3564.68",
+        "token_price": "3396.13",
+        "token_symbol": "ETH",
+        "token_quantity": "1.049628570795504000"
+      }
+    ]
+  },
+  {
+    "from": "0xe6b240f49e0affca7aa3e6fd80a5af6d3f078264",
+    "to": "0x5bfaac0cc0cfe84afdd526e35d615399c8296709",
+    "transfer_count": 1,
+    "total_value_in_usd": "5495.25",
+    "illicit_usd_value": "5495.25",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:22:35",
+        "block": 20532509,
+        "tx_hash": "0xf94a5818229a695e079ed4a336bd1a64056ea8b48b6bbc291a0df841cfcf18e3",
+        "value_in_usd": "5495.25",
+        "token_price": "2612.18",
+        "token_symbol": "ETH",
+        "token_quantity": "2.103704435462007568"
+      }
+    ]
+  },
+  {
+    "from": "0xe6b240f49e0affca7aa3e6fd80a5af6d3f078264",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2611.82",
+    "illicit_usd_value": "2611.82",
+    "transfers": [
+      {
+        "timestamp": "2024-08-15 07:21:23",
+        "block": 20532503,
+        "tx_hash": "0xe30e3ee75ee3e544689b00c01b75051611c30a51b7cce472bc0f55fd35f04d4a",
+        "value_in_usd": "2611.82",
+        "token_price": "2611.82",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xe9f7cd0c410257850324d86536bd165cf4306e80",
+    "to": "0x5fd092ffa9edb2ae706894f89b4ccfe91942a169",
+    "transfer_count": 1,
+    "total_value_in_usd": "276086.13",
+    "illicit_usd_value": "276086.13",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 15:21:11",
+        "block": 20527730,
+        "tx_hash": "0x99f9f147df7e3c73836b7fbd724c13ddee8aae14d16b2cccca76714fe2f3b7fd",
+        "value_in_usd": "276086.13",
+        "token_price": "2651.13",
+        "token_symbol": "ETH",
+        "token_quantity": "104.139039320469079140"
+      }
+    ]
+  },
+  {
+    "from": "0xe9f7cd0c410257850324d86536bd165cf4306e80",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "265408.00",
+    "illicit_usd_value": "265408.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 14:59:35",
+        "block": 20527622,
+        "tx_hash": "0xfe82ce08803579edd2ad69f7058cf52310b231890ec156ef5dcd046b5b296d03",
+        "value_in_usd": "265408.00",
+        "token_price": "2654.08",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xeb0fcea20a61026266dd190dd27743a37bdfe8ad",
+    "to": "0x96c3a05a9e1e720925324e727876983dccb494b2",
+    "transfer_count": 1,
+    "total_value_in_usd": "475649.98",
+    "illicit_usd_value": "471697.65",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 07:29:47",
+        "block": 20331922,
+        "tx_hash": "0x9ce338d938c21ab897cdb71562cc84f1aad7c2e228660e34f060ea0706a11311",
+        "value_in_usd": "475649.98",
+        "token_price": "3435.75",
+        "token_symbol": "ETH",
+        "token_quantity": "138.441381915294344750"
+      }
+    ]
+  },
+  {
+    "from": "0xedfe0b781e4de48e8560a6c3c25029ac3cb84325",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3404.43",
+    "illicit_usd_value": "3404.43",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 14:22:47",
+        "block": 20319640,
+        "tx_hash": "0x8108797b0ad52e1e205b7475baea67c877698829ee4744d04a0b372956497c9f",
+        "value_in_usd": "3404.43",
+        "token_price": "3404.43",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xf621fb08bbe51af70e7e0f4ea63496894166ff7f",
+    "to": "0xb8f275fbf7a959f4bce59999a2ef122a099e81a8",
+    "to_label": "Symbiosis Finance: Portal",
+    "transfer_count": 1,
+    "total_value_in_usd": "3420.34",
+    "illicit_usd_value": "3414.82",
+    "transfers": [
+      {
+        "timestamp": "2024-07-16 12:43:11",
+        "block": 20319145,
+        "tx_hash": "0xbcedc6f414a8f8dd5c63503f790f2ad7caae0144f4c79a88f53f237f587fedc1",
+        "value_in_usd": "3420.34",
+        "token_price": "3420.34",
+        "token_symbol": "WETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xf84739541c281607f2cb9bbf92a36f311a317d5b",
+    "to": "0xc7dab65b691fb6544261d4e0364b683d4cfadc5a",
+    "transfer_count": 1,
+    "total_value_in_usd": "476617.01",
+    "illicit_usd_value": "471697.65",
+    "transfers": [
+      {
+        "timestamp": "2024-07-18 07:27:23",
+        "block": 20331911,
+        "tx_hash": "0x7ce54315a74297d7be267dc9405fc38d7a9cd88617b3968164deb8cec8eec548",
+        "value_in_usd": "476617.01",
+        "token_price": "3442.72",
+        "token_symbol": "ETH",
+        "token_quantity": "138.441992064942809750"
+      }
+    ]
+  },
+  {
+    "from": "0xf9b52261e4d02750c009aa9c06755fd9ebdccd4c",
+    "to": "0x8a4b788c7b9be02a8fd75373ab178f3808ac9537",
+    "transfer_count": 1,
+    "total_value_in_usd": "22572.59",
+    "illicit_usd_value": "19517.20",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:31:35",
+        "block": 20357909,
+        "tx_hash": "0x1cde23a6dedeefa228f1e0946c5c7d565606f6e2b925485f110eb5ffef94c676",
+        "value_in_usd": "22572.59",
+        "token_price": "3531.77",
+        "token_symbol": "ETH",
+        "token_quantity": "6.391295565660580826"
+      }
+    ]
+  },
+  {
+    "from": "0xf9b52261e4d02750c009aa9c06755fd9ebdccd4c",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "3529.83",
+    "illicit_usd_value": "3529.83",
+    "transfers": [
+      {
+        "timestamp": "2024-07-21 22:12:35",
+        "block": 20357815,
+        "tx_hash": "0xcb86a871eb59bd2bc4d0a8ddaf6e85f9e8746496174e6c30f8d85926bba30d4f",
+        "value_in_usd": "3529.83",
+        "token_price": "3529.83",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfb6a65a1984c7191cf48a926cd123ab22c74c4ca",
+    "to": "0x3c87fc08e3443023643d6195c631b175549e4ab0",
+    "transfer_count": 1,
+    "total_value_in_usd": "3623.65",
+    "illicit_usd_value": "3514.98",
+    "transfers": [
+      {
+        "timestamp": "2024-08-14 01:12:59",
+        "block": 20523510,
+        "tx_hash": "0x5244e416b95431639e28ee12dcf9986ebdc02ef47a3c1b894394aac2ce012329",
+        "value_in_usd": "3623.65",
+        "token_price": "2704.8",
+        "token_symbol": "ETH",
+        "token_quantity": "1.339712116991612480"
+      }
+    ]
+  },
+  {
+    "from": "0xfb6a65a1984c7191cf48a926cd123ab22c74c4ca",
+    "to": "0xd90e2f925da726b50c4ed8d0fb90ad053324f31b",
+    "to_label": "Tornado.Cash: Router",
+    "transfer_count": 1,
+    "total_value_in_usd": "2731.32",
+    "illicit_usd_value": "2731.32",
+    "transfers": [
+      {
+        "timestamp": "2024-08-13 21:59:35",
+        "block": 20522545,
+        "tx_hash": "0xed79588a0f952efc2dc780fc9bd2383e97c0073be25b95f1cafc27112d9ef177",
+        "value_in_usd": "2731.32",
+        "token_price": "2731.32",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      }
+    ]
+  }
+]

@@ -1,0 +1,5046 @@
+[
+  {
+    "from": "0x01a53657eabe128ba07eff4401b6f06203ce9140",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "41581.52",
+    "illicit_usd_value": "41547.32",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 19:59:47",
+        "block": 20672301,
+        "tx_hash": "0x904f995f9837712b748e05d85b6be0678efbed5595c272d3bd9b15ea53b4c7be",
+        "value_in_usd": "41581.52",
+        "token_price": "2445.98",
+        "token_symbol": "ETH",
+        "token_quantity": "16.999943484911195000"
+      }
+    ]
+  },
+  {
+    "from": "0x028254d0c7cd27d4e17dedb880309f9bcb124c85",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "41793.78",
+    "illicit_usd_value": "41534.23",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 22:27:59",
+        "block": 20673040,
+        "tx_hash": "0xd12b87796e9a00e67555113e9bd8a1865d38ce7e41701040b2e4d4b339a289df",
+        "value_in_usd": "41793.78",
+        "token_price": "2458.46",
+        "token_symbol": "ETH",
+        "token_quantity": "16.999981853200343000"
+      }
+    ]
+  },
+  {
+    "from": "0x06bfc010e7d587bea8c87bd9ff05d0928c306b29",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49977.30",
+    "illicit_usd_value": "49977.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:49:23",
+        "block": 20605413,
+        "tx_hash": "0x1256c0e75f7225b3af0316e31587fdbc8b5cc2c4911a1a9cda0ae165c7a46a93",
+        "value_in_usd": "49977.30",
+        "token_price": "0.999546",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x08e870eab24c1c285c12b0a762da6c5226a37ff0",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "827.93",
+    "illicit_usd_value": "827.93",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:43:59",
+        "block": 20679685,
+        "tx_hash": "0x9d2521ba20dd483b28df4b608f1e4ad96c6f3e5df2f866be4b50c14f456837e2",
+        "value_in_usd": "827.93",
+        "token_price": "2453.65",
+        "token_symbol": "ETH",
+        "token_quantity": "0.337429752027153306"
+      }
+    ]
+  },
+  {
+    "from": "0x0b172c2479210d671a87fb2dc241cfdc0501345f",
+    "to": "0xefda87a2b7386d1789a2eb9215fb0aa96de92dd7",
+    "transfer_count": 1,
+    "total_value_in_usd": "100460.95",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:34:23",
+        "block": 20583875,
+        "tx_hash": "0x0bbe063ec7d7f3220f05543098c272d03a2e32f28413a2cbe553e91438fb1fca",
+        "value_in_usd": "100460.95",
+        "token_price": "2638.7",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072138025021333000"
+      }
+    ]
+  },
+  {
+    "from": "0x0ddddf32f44b3c103983849112aed39423bf3eba",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49977.30",
+    "illicit_usd_value": "49977.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:49:23",
+        "block": 20605413,
+        "tx_hash": "0x9fec3b77349693a7aad805e3e8e868f174e2d2ae45f52e02c14cb07982727687",
+        "value_in_usd": "49977.30",
+        "token_price": "0.999546",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x10095ae6509bfc7414307332a622d7355fc10c8a",
+    "to": "0xb6bc1455e7aa65959ec009bfe0732c690a1ca9cd",
+    "transfer_count": 1,
+    "total_value_in_usd": "100385.52",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:16:59",
+        "block": 20583789,
+        "tx_hash": "0xccbf8990d63b628dc5db6c3c0d26a63413b232a0964232cd784aa804c252c9ba",
+        "value_in_usd": "100385.52",
+        "token_price": "2636.72",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072118899844656000"
+      }
+    ]
+  },
+  {
+    "from": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "from_label": "LI.FI: LiFi Diamond",
+    "to": "0x4dbd4fc535ac27206064b68ffcf827b0a60bab3f",
+    "to_label": "Arbitrum: Delayed Inbox",
+    "transfer_count": 1,
+    "total_value_in_usd": "26244.29",
+    "illicit_usd_value": "26244.29",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:48:11",
+        "block": 20584244,
+        "tx_hash": "0xbb2c3efdffe6ef6de4fc439a1a8260ccd5e25d6ea357b5f6006c4527b0c346e7",
+        "value_in_usd": "26244.29",
+        "token_price": "2624.43",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999994517385006260"
+      }
+    ]
+  },
+  {
+    "from": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "from_label": "LI.FI: LiFi Diamond",
+    "to": "0x5c7bcd6e7de5423a257d81b442095a1a6ced35c5",
+    "to_label": "Across Protocol: Ethereum Spoke Pool V2",
+    "transfer_count": 4,
+    "total_value_in_usd": "618290.56",
+    "illicit_usd_value": "618290.56",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 08:26:23",
+        "block": 20582941,
+        "tx_hash": "0xfd9f05f2eb3673eebfd4c2b3af50fa8503a3486a5c7f00e92bf5213d774f6b9c",
+        "value_in_usd": "395545.50",
+        "token_price": "2636.97",
+        "token_symbol": "ETH",
+        "token_quantity": "150.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 13:16:35",
+        "block": 20584386,
+        "tx_hash": "0xf2981baa18811e8b1178774af88e22d86efb06171a7f99da870520bbef272784",
+        "value_in_usd": "26211.46",
+        "token_price": "2621.15",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999984757491692833"
+      },
+      {
+        "timestamp": "2024-08-22 13:33:11",
+        "block": 20584468,
+        "tx_hash": "0xbaa7a09358572870ab2d60983c3a3cef37d0ae4d29c7b7ad67c41d084e5eac61",
+        "value_in_usd": "78897.26",
+        "token_price": "2629.91",
+        "token_symbol": "ETH",
+        "token_quantity": "29.999984752611115346"
+      },
+      {
+        "timestamp": "2024-08-22 13:57:35",
+        "block": 20584590,
+        "tx_hash": "0xc892294e7c82615c02f87b842fa33d8362eb3f8177718a31c15596bba1fcbb6d",
+        "value_in_usd": "117636.34",
+        "token_price": "2624.4",
+        "token_symbol": "ETH",
+        "token_quantity": "44.824088386343095950"
+      }
+    ]
+  },
+  {
+    "from": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "from_label": "LI.FI: LiFi Diamond",
+    "to": "0xb8901acb165ed027e32754e0ffe830802919727f",
+    "to_label": "Hop Protocol: Ethereum Bridge",
+    "transfer_count": 2,
+    "total_value_in_usd": "284897.10",
+    "illicit_usd_value": "284897.10",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:25:11",
+        "block": 20576384,
+        "tx_hash": "0xcb1a95d694a4df6e764ad7a349b4255674a007d9b3262ce1bec436d2189a6e27",
+        "value_in_usd": "258506.96",
+        "token_price": "2585.07",
+        "token_symbol": "ETH",
+        "token_quantity": "99.999984505132674801"
+      },
+      {
+        "timestamp": "2024-08-21 21:26:23",
+        "block": 20579667,
+        "tx_hash": "0x76f3df33b837609a6bc03d6fc80e45743f8da918ef511762fb82cc1d4b701e0d",
+        "value_in_usd": "26390.14",
+        "token_price": "2639.02",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999977172424288541"
+      }
+    ]
+  },
+  {
+    "from": "0x127600e25539b5b31731f597f064945fa11c2c79",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "8912.24",
+    "illicit_usd_value": "8912.24",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 02:25:47",
+        "block": 20681390,
+        "tx_hash": "0x425419dd94ff9a8d5c5aec84538b4caf88a34eaa513684b90ee186baa12cf6c2",
+        "value_in_usd": "8912.24",
+        "token_price": "2451.13",
+        "token_symbol": "ETH",
+        "token_quantity": "3.635970899830152039"
+      }
+    ]
+  },
+  {
+    "from": "0x14d513eab477bf1d15ef1593d10c3eff7b57facf",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "311.59",
+    "illicit_usd_value": "311.59",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:09:47",
+        "block": 20680412,
+        "tx_hash": "0x28eb7eeee2c530209208aacddde11f4d40f5139887c6fd0a49c60792cbca0e8d",
+        "value_in_usd": "311.59",
+        "token_price": "2462.31",
+        "token_symbol": "ETH",
+        "token_quantity": "0.126544842179188699"
+      }
+    ]
+  },
+  {
+    "from": "0x18a82424b54846e86db91d72f0055ff3b656e75a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58343.62",
+    "illicit_usd_value": "58244.76",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:39:23",
+        "block": 20597917,
+        "tx_hash": "0xa818c16dd6d74a07fede022fda80a7c1bc90d27bec03f086bb7e931fdc895ce1",
+        "value_in_usd": "58343.62",
+        "token_price": "2778.27",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999981598828099000"
+      }
+    ]
+  },
+  {
+    "from": "0x1a9edb477f744cbe1f0d183e9772b357face5370",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:59:35",
+        "block": 20604865,
+        "tx_hash": "0x6a633ccfa60ed00bddbdc6e1c1e5344d355698a19cd0c39c6ca2910feda736e8",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x1beb8e6ce9cc10849d5fce506bebea625dcf23a2",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "772.21",
+    "illicit_usd_value": "772.21",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:21:47",
+        "block": 20679873,
+        "tx_hash": "0x3423e9d11b1678d3a62f192fef5f527bf77b277b94ae5a9507472821b623611d",
+        "value_in_usd": "772.21",
+        "token_price": "2452.75",
+        "token_symbol": "ETH",
+        "token_quantity": "0.314835156510603271"
+      }
+    ]
+  },
+  {
+    "from": "0x1e7e20f6d23c3c337146e6a7c781cd3bbbce780b",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "39669.11",
+    "illicit_usd_value": "39481.61",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:44:35",
+        "block": 20679987,
+        "tx_hash": "0x5900a512ede9f3c9ba7b853f6c4d277e46da1375139249f989e237a299fd62a0",
+        "value_in_usd": "39669.11",
+        "token_price": "2456.38",
+        "token_symbol": "ETH",
+        "token_quantity": "16.149417099789292272"
+      }
+    ]
+  },
+  {
+    "from": "0x2117f4c770e633c53cc6f35fe9cbab5d6ae7b881",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:25:35",
+        "block": 20605592,
+        "tx_hash": "0xaabef605fda7f7722c5a4c337920474a1fa85c56824f07f87a60a163c317bf14",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x227da5e4b5588c86667a6c7cd95288be85742db3",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "129246.10",
+    "illicit_usd_value": "128798.33",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 20:01:23",
+        "block": 20593554,
+        "tx_hash": "0xdb2d544bac7f211af2743b66ffd621630aeec843a3666e97d1a36a7d01e7d5e5",
+        "value_in_usd": "129246.10",
+        "token_price": "2749.92",
+        "token_symbol": "ETH",
+        "token_quantity": "46.999947922215500000"
+      }
+    ]
+  },
+  {
+    "from": "0x23aaf393ae14aa9d7605f9c512720dceba4fb179",
+    "from_label": "KuCoin_Deposit_0x23aa",
+    "to": "0x45300136662dd4e58fc0df61e6290dffd992b785",
+    "to_label": "KuCoin 17",
+    "transfer_count": 2,
+    "total_value_in_usd": "65432.06",
+    "illicit_usd_value": "65432.06",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 13:08:35",
+        "block": 20584346,
+        "tx_hash": "0x05cc3d7fdf04f00d2bff52953e7ba0e5c46042792d2087e6f8a1a60aa879e17e",
+        "value_in_usd": "39316.29",
+        "token_price": "2621.09",
+        "token_symbol": "ETH",
+        "token_quantity": "14.999975259938598000"
+      },
+      {
+        "timestamp": "2024-08-22 14:05:59",
+        "block": 20584631,
+        "tx_hash": "0x9da15599fdc03724f8110feef80a1b51dd4f62288073a45073e75ad44c91cde2",
+        "value_in_usd": "26115.77",
+        "token_price": "2611.59",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999951326551624000"
+      }
+    ]
+  },
+  {
+    "from": "0x24b805f0c24760d55b27aeaac88edab531eff31e",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49973.90",
+    "illicit_usd_value": "49973.90",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:11:23",
+        "block": 20605523,
+        "tx_hash": "0xaaaa1494db40c9ed1155a4747165d7bf9f7bd5bd4daa0ca10943a9db7cc71f07",
+        "value_in_usd": "49973.90",
+        "token_price": "0.999478",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x24eb9f6aad51a42ade78dd0fe48f1f1a356d6d26",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "2216.02",
+    "illicit_usd_value": "2216.02",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:39:59",
+        "block": 20683247,
+        "tx_hash": "0xb9e3652938466565354eb320c436046f74ddc3c4782de300a62dc153dfed2d14",
+        "value_in_usd": "2216.02",
+        "token_price": "2399.6",
+        "token_symbol": "ETH",
+        "token_quantity": "0.923495158345906991"
+      }
+    ]
+  },
+  {
+    "from": "0x2b77b7584a9f79d22cd5b8a6196f263006aa33ac",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1144.12",
+    "illicit_usd_value": "1144.12",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 09:24:11",
+        "block": 20683467,
+        "tx_hash": "0x3d9a331545d9ea03ade9b7afe73d0ce9d669d77647c15d160c114de246f735f1",
+        "value_in_usd": "1144.12",
+        "token_price": "2395.84",
+        "token_symbol": "ETH",
+        "token_quantity": "0.477544105279998480"
+      }
+    ]
+  },
+  {
+    "from": "0x2c8a7826672e3ae9e2d3a7f1ecce18e5c5539a7a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 15:27:35",
+        "block": 20606496,
+        "tx_hash": "0xdba903f07b63af19a66f9648263ea784718dc8743cd8a11dba744e062ee55f9c",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x33d091bdb4490e12a14130c3b9394f6d058eb9d1",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "98780.34",
+    "illicit_usd_value": "98569.60",
+    "transfers": [
+      {
+        "timestamp": "2024-09-01 15:44:59",
+        "block": 20656699,
+        "tx_hash": "0x2d19ab4d89a7bea3e3160b9af97ef27284e2e2bd422df3145e35daef9f30d352",
+        "value_in_usd": "98780.34",
+        "token_price": "2469.51",
+        "token_symbol": "ETH",
+        "token_quantity": "39.999976763588515000"
+      }
+    ]
+  },
+  {
+    "from": "0x36561ea2e8ce32723d261a6710e34cded7a2615b",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "260.00",
+    "illicit_usd_value": "260.00",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 10:07:47",
+        "block": 20683684,
+        "tx_hash": "0x5073cd9bb399f17bd0d64a55ad7724b720fa13e14c1f0e27724e924e5c0d122e",
+        "value_in_usd": "260.00",
+        "token_price": "2394.72",
+        "token_symbol": "ETH",
+        "token_quantity": "0.108570311343918573"
+      }
+    ]
+  },
+  {
+    "from": "0x36b202b1c6a68cbe9b48683c6a917c537087a26a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58167.43",
+    "illicit_usd_value": "58167.43",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:23:23",
+        "block": 20597540,
+        "tx_hash": "0xcf531e358a8f0048839647a0ef8531abf8388fccf6b19873e53ef217defcc283",
+        "value_in_usd": "58167.43",
+        "token_price": "2769.88",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999983354511490000"
+      }
+    ]
+  },
+  {
+    "from": "0x3721df75f9c16be9ef80edae1151404c3b631696",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "915.58",
+    "illicit_usd_value": "909.56",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:54:23",
+        "block": 20683023,
+        "tx_hash": "0x6e81920f736f8f2384c700a81602012cc53c5f1494a2d40d5846d841ad2076fd",
+        "value_in_usd": "915.58",
+        "token_price": "2412.8",
+        "token_symbol": "ETH",
+        "token_quantity": "0.379468845205044124"
+      }
+    ]
+  },
+  {
+    "from": "0x37253802817df85a46f9158d7b41509b0fe7389a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "5624.57",
+    "illicit_usd_value": "5608.67",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:15:59",
+        "block": 20679545,
+        "tx_hash": "0xd32e980ab2244ddc9eea032cc27830102db179a80b40658dc1bb392a9bcc2f8e",
+        "value_in_usd": "5624.57",
+        "token_price": "2451.88",
+        "token_symbol": "ETH",
+        "token_quantity": "2.293984345638716422"
+      }
+    ]
+  },
+  {
+    "from": "0x3b731a80f6d40706c829889235f6aeb567c43703",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50.00",
+    "illicit_usd_value": "49.99",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:23:23",
+        "block": 20605283,
+        "tx_hash": "0xe7da3ef866968cd632c17456e4f8d7a0b0752cf71428f4c124781fa32dfbd23a",
+        "value_in_usd": "50.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x3cef57ddfd73e270d382dac18990b4d9c7863078",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49988.45",
+    "illicit_usd_value": "49988.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:25:23",
+        "block": 20604697,
+        "tx_hash": "0xa98216405a9e42511523aa89047ea917f0098fc15c3d1162d0d4994ff02795a1",
+        "value_in_usd": "49988.45",
+        "token_price": "0.999769",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x3e01968fbf9f934cdfe81a4f6855850c151a759c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49973.90",
+    "illicit_usd_value": "49973.90",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:11:23",
+        "block": 20605523,
+        "tx_hash": "0x601e8d9b26755532d7ddbdc22c0b1279af5ce82345ee0c291bf6219b6d24ffad",
+        "value_in_usd": "49973.90",
+        "token_price": "0.999478",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x410189e01724c0ec9d0b60e17386f43a620762d4",
+    "to": "0x8021140cde8767414fe1b12bfbe6de0475f0604c",
+    "transfer_count": 1,
+    "total_value_in_usd": "100393.46",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:16:59",
+        "block": 20584088,
+        "tx_hash": "0x237deafbb3c546b0206f1008dccb637a38fdc845db02f3ea1dd254fe7bf0fa71",
+        "value_in_usd": "100393.46",
+        "token_price": "2636.9",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072533253171402000"
+      }
+    ]
+  },
+  {
+    "from": "0x41939b104e69d086271bffd6ebb74a252e9732a6",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "25218.67",
+    "illicit_usd_value": "25148.60",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 18:35:11",
+        "block": 20664708,
+        "tx_hash": "0xeb96bc86778cedc93da8acbbfe8a87c116d0af492b6f2c06e87a19cc477d237c",
+        "value_in_usd": "25218.67",
+        "token_price": "2521.91",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999829578666820000"
+      }
+    ]
+  },
+  {
+    "from": "0x45732e71751e55000e3691cec5e0470154476b1d",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49979.77",
+    "illicit_usd_value": "49229.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-31 19:22:35",
+        "block": 20650613,
+        "tx_hash": "0x97a75da515c4bc52f7911cab435e55367b56bfff6e41795b901948b95ab0cab6",
+        "value_in_usd": "49979.77",
+        "token_price": "2499.4",
+        "token_symbol": "ETH",
+        "token_quantity": "19.996706706912976130"
+      }
+    ]
+  },
+  {
+    "from": "0x468d626b64e01498a77c62eed2a04b13aeabbe97",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "24994.94",
+    "illicit_usd_value": "24936.46",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:39:47",
+        "block": 20679664,
+        "tx_hash": "0xdd7fc46e8f31249c618d88dcf9d3a12cefe61a33eb88bc2d30fc09f6c8099674",
+        "value_in_usd": "24994.94",
+        "token_price": "2453.5",
+        "token_symbol": "ETH",
+        "token_quantity": "10.187461943853432532"
+      }
+    ]
+  },
+  {
+    "from": "0x472eb0b32b403d0744c492545d43a0330b5037ca",
+    "to": "0x7abb6a5b71d860c0ba0dac83e0a5485fbb8e3713",
+    "transfer_count": 1,
+    "total_value_in_usd": "2871.30",
+    "illicit_usd_value": "2871.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 16:52:11",
+        "block": 20585458,
+        "tx_hash": "0x47c066c58d25197fb6bd6e8399f051b1a5019c9d580f8813b4cd248bf6e0f0e9",
+        "value_in_usd": "2871.30",
+        "token_price": "2610.27",
+        "token_symbol": "ETH",
+        "token_quantity": "1.100000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x472eb0b32b403d0744c492545d43a0330b5037ca",
+    "to": "0x9f5ebf1bf779461f904f7288b7498145b0209ac5",
+    "transfer_count": 1,
+    "total_value_in_usd": "120.65",
+    "illicit_usd_value": "120.65",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 22:20:35",
+        "block": 20587095,
+        "tx_hash": "0x365860bc2954f5b5d0860f5a18e1eeee71c363eeca094bfa59c485c7255b0ee5",
+        "value_in_usd": "120.65",
+        "token_price": "2622.83",
+        "token_symbol": "ETH",
+        "token_quantity": "0.046000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x4adc40335b676ff8ad08ca4d6c3fddd840496c53",
+    "from_label": "eXch_Deposit_0x4adc",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58343.62",
+    "illicit_usd_value": "58234.68",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:39:23",
+        "block": 20597917,
+        "tx_hash": "0x70747df39b814102c2acd286b7dbd98f371c67110ef53ede04e3829589dd333d",
+        "value_in_usd": "58343.62",
+        "token_price": "2778.27",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999981598828099000"
+      }
+    ]
+  },
+  {
+    "from": "0x4b3952acb05f348dfcce65609b57a4f67695e214",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 10:56:35",
+        "block": 20605149,
+        "tx_hash": "0x67010119a317ef0624804ce83bc98c3a022c25029402879f6a50f1ef689f787e",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x4dbd4fc535ac27206064b68ffcf827b0a60bab3f",
+    "from_label": "Arbitrum: Delayed Inbox",
+    "to": "0x8315177ab297ba92a06054ce80a67ed4dbd7ed3a",
+    "to_label": "Arbitrum: Bridge",
+    "transfer_count": 1,
+    "total_value_in_usd": "26244.29",
+    "illicit_usd_value": "26244.29",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:48:11",
+        "block": 20584244,
+        "tx_hash": "0xbb2c3efdffe6ef6de4fc439a1a8260ccd5e25d6ea357b5f6006c4527b0c346e7",
+        "value_in_usd": "26244.29",
+        "token_price": "2624.43",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999994517385006260"
+      }
+    ]
+  },
+  {
+    "from": "0x4ee036077e55632a2a030425cd59fc0f75840b35",
+    "to": "0x58d43ecfd767deec65c574daddc00a3e2f876ae6",
+    "transfer_count": 1,
+    "total_value_in_usd": "2225.00",
+    "illicit_usd_value": "2225.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 01:06:11",
+        "block": 20602217,
+        "tx_hash": "0x75324794fcc29d5eadce98a029871dbfed078aa6c3fb510846fc45396fead30d",
+        "value_in_usd": "2225.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "2225.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x4ef72a9c7c552c614108f7e09aa2415fa176cdb7",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "483.86",
+    "illicit_usd_value": "482.37",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:44:35",
+        "block": 20679987,
+        "tx_hash": "0xf33f380173e85b421b1bbdd5d5c3a0cebac0ebdaf52a3599b44d37ef5ea2c6a1",
+        "value_in_usd": "483.86",
+        "token_price": "2456.38",
+        "token_symbol": "ETH",
+        "token_quantity": "0.196980066866348295"
+      }
+    ]
+  },
+  {
+    "from": "0x52dfa61a658b64a6c4f4062b3dd5ef5059c4b6da",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49959.49",
+    "illicit_usd_value": "49732.20",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:13:23",
+        "block": 20597490,
+        "tx_hash": "0xd8d3679bed4c671af08e66520d35e5aacdc4eb7f932eed94cc465b7b20df6e6b",
+        "value_in_usd": "49959.49",
+        "token_price": "2775.53",
+        "token_symbol": "ETH",
+        "token_quantity": "17.999981315598075000"
+      }
+    ]
+  },
+  {
+    "from": "0x58d43ecfd767deec65c574daddc00a3e2f876ae6",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "2224.14",
+    "illicit_usd_value": "2224.14",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 01:19:59",
+        "block": 20602286,
+        "tx_hash": "0xe6bdbd0c817a8c0cae8826acd2bd8ea515e4544d9a77d0418bb92f89e3071dc1",
+        "value_in_usd": "2224.14",
+        "token_price": "0.999612",
+        "token_symbol": "DAI",
+        "token_quantity": "2225.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x59ad58d44674cf0508b300f248e3f3ec21c62451",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "471.83",
+    "illicit_usd_value": "471.83",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 03:19:47",
+        "block": 20681656,
+        "tx_hash": "0xbd0514c74b6fe6c1bf72290fd61254e1f1e1fd5e1b128c3e24061b435d930c37",
+        "value_in_usd": "471.83",
+        "token_price": "2419.08",
+        "token_symbol": "ETH",
+        "token_quantity": "0.195046981238737771"
+      }
+    ]
+  },
+  {
+    "from": "0x5a8ada30fe354ff9a8f964ced408ad7a28b50e90",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "3112.56",
+    "illicit_usd_value": "3106.33",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:48:23",
+        "block": 20680306,
+        "tx_hash": "0x03029fe9e7b6ed6d6e1a31a6935b946517613392d77278348226d75483ea9d56",
+        "value_in_usd": "3112.56",
+        "token_price": "2461.4",
+        "token_symbol": "ETH",
+        "token_quantity": "1.264547293289559860"
+      }
+    ]
+  },
+  {
+    "from": "0x5b809162249aec4e90bdbc058f63d76a116f1b17",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "7739.55",
+    "illicit_usd_value": "7730.02",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 01:45:59",
+        "block": 20681191,
+        "tx_hash": "0x3a3c819c0fa18e30df824a36931e4ab62ead35a565657ae880b70dabff14cb5b",
+        "value_in_usd": "7739.55",
+        "token_price": "2463.23",
+        "token_symbol": "ETH",
+        "token_quantity": "3.142031657343018186"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0x82c32f58ef59c84e74d0550f051cc86c6c5142f5",
+    "to_label": "transit_82c3",
+    "transfer_count": 1,
+    "total_value_in_usd": "1099836.94",
+    "illicit_usd_value": "1099836.94",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:18:23",
+        "block": 20573363,
+        "tx_hash": "0x732294688aeee634302666992f7d101bad26671cf013f49edf34e90c7dbbe0d1",
+        "value_in_usd": "1099836.94",
+        "token_price": "0.9998517640802643",
+        "token_symbol": "DAI",
+        "token_quantity": "1100000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "to_label": "transit_860c",
+    "transfer_count": 1,
+    "total_value_in_usd": "1650623.48",
+    "illicit_usd_value": "1650623.48",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:19:23",
+        "block": 20573367,
+        "tx_hash": "0xa11ebe4db723c16b275efd2cbb2d07f53c3d1931f3220d0cb8835ef869aa9ee0",
+        "value_in_usd": "1650623.48",
+        "token_price": "1.0003778694217969",
+        "token_symbol": "DAI",
+        "token_quantity": "1650000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 2,
+    "total_value_in_usd": "10995766.44",
+    "illicit_usd_value": "10995766.44",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:10:59",
+        "block": 20573326,
+        "tx_hash": "0x5d0813cf16dfedcd9b1acfc0c7e4faad2607b47e293ec8c65725fcead2f5213f",
+        "value_in_usd": "9996096.04",
+        "token_price": "2576.52",
+        "token_symbol": "ETH",
+        "token_quantity": "3879.688898937200589030"
+      },
+      {
+        "timestamp": "2024-08-21 00:39:47",
+        "block": 20573469,
+        "tx_hash": "0x7e101dc35d6acf5068551bef00b08ff666773af3b14b46a85e4d41602718d05b",
+        "value_in_usd": "999670.40",
+        "token_price": "0.9996704039883223",
+        "token_symbol": "DAI",
+        "token_quantity": "1000000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0xc2cc41c4f0f9aa38cb1fa71c39da2121adfa5909",
+    "transfer_count": 1,
+    "total_value_in_usd": "2197676.80",
+    "illicit_usd_value": "2197676.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:15:59",
+        "block": 20573351,
+        "tx_hash": "0x69271cadac0567ea431ffe13e95ff043ccc61e013fa89dd822fabc1f7b652976",
+        "value_in_usd": "2197676.80",
+        "token_price": "0.998944",
+        "token_symbol": "DAI",
+        "token_quantity": "2200000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0xdd6397104d57533e507bd571ac88c4b24852bce9",
+    "transfer_count": 2,
+    "total_value_in_usd": "36762252.74",
+    "illicit_usd_value": "36762252.74",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:42:23",
+        "block": 20573482,
+        "tx_hash": "0x7af275b3242b57a50a2ece06b9114ab4497e08b927cce50c51417c7f702e9abb",
+        "value_in_usd": "36761737.52",
+        "token_price": "0.9996704039883223",
+        "token_symbol": "DAI",
+        "token_quantity": "36773858.041800000000000000"
+      },
+      {
+        "timestamp": "2024-08-21 00:42:59",
+        "block": 20573485,
+        "tx_hash": "0xf16911496a0f7a6a001b2bf544a07859079b7d22a80925df7846c63a741c23b4",
+        "value_in_usd": "515.22",
+        "token_price": "2579.82",
+        "token_symbol": "ETH",
+        "token_quantity": "0.199711580000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x5d4b2a02c59197eb2cae95a6df9fe27af60459d4",
+    "to": "0xfb65a68d4583b6d3a61ccd90655c0b7b4677e9a6",
+    "to_label": "transit_fb65",
+    "transfer_count": 1,
+    "total_value_in_usd": "2749592.35",
+    "illicit_usd_value": "2749592.35",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 00:17:11",
+        "block": 20573357,
+        "tx_hash": "0x8340a1ea11fe9627df59b259d7c813b446145790526ad7fae1ed0b5f6fe53e59",
+        "value_in_usd": "2749592.35",
+        "token_price": "0.9998517640802643",
+        "token_symbol": "DAI",
+        "token_quantity": "2750000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x6567a846d38a3190526104b738c08b8e520448a1",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "99954.60",
+    "illicit_usd_value": "99954.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:51:23",
+        "block": 20605423,
+        "tx_hash": "0x843c32b75a36e66745df02f27389a993d106adf339bf4b2007742eb2ced1536f",
+        "value_in_usd": "99954.60",
+        "token_price": "0.999546",
+        "token_symbol": "DAI",
+        "token_quantity": "100000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x65edf7d29e5612ef0eac1fa89c5f0de2f44e57bf",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:06:47",
+        "block": 20605200,
+        "tx_hash": "0xbf97d302bad30f8f3257a21f28e888f632a6e1e851f5c80dd50b676de23b8122",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x676f3812ce33595c58d244b44ef7cf09ca87921e",
+    "to": "0xbb5b78343e1cd11396db855473bc31f874a92d8c",
+    "transfer_count": 1,
+    "total_value_in_usd": "100646.89",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:55:11",
+        "block": 20583979,
+        "tx_hash": "0x4d85caca843c5e2af23f06d055665c519aa5df9a6a2b7b3808932863afcfef47",
+        "value_in_usd": "100646.89",
+        "token_price": "2643.56",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072480141459443000"
+      }
+    ]
+  },
+  {
+    "from": "0x685662c13378b2464c4fd1dda8d26d86178c4e23",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "30262.49",
+    "illicit_usd_value": "30187.44",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 18:35:11",
+        "block": 20664708,
+        "tx_hash": "0x0abee86fc035c368a53e42e99f377ae21518e6a65a9fa9e04a0c2488a6999f60",
+        "value_in_usd": "30262.49",
+        "token_price": "2521.91",
+        "token_symbol": "ETH",
+        "token_quantity": "11.999829578666820000"
+      }
+    ]
+  },
+  {
+    "from": "0x68814d016bd34a49ebc5d5d4d1f565cde75d4e92",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "41632.90",
+    "illicit_usd_value": "41424.75",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:13:23",
+        "block": 20597490,
+        "tx_hash": "0x3db1dfe57629790613a4943bbc3c1ed8df53b57284a8fccac9d753b25624d3c2",
+        "value_in_usd": "41632.90",
+        "token_price": "2775.53",
+        "token_symbol": "ETH",
+        "token_quantity": "14.999981315598075000"
+      }
+    ]
+  },
+  {
+    "from": "0x6ba9fdaaf704488ba37d3f5451125c774b7c8ee8",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:23:23",
+        "block": 20605283,
+        "tx_hash": "0xb588064606d0c6b31db5a7ee48cdb60231ea7dd0fae7a5c269b6dbf61829fc6a",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x6d07e33fc5dd2ed1dcff885449f5824c22bd402f",
+    "to": "0x45732e71751e55000e3691cec5e0470154476b1d",
+    "transfer_count": 1,
+    "total_value_in_usd": "50029.79",
+    "illicit_usd_value": "49229.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-31 18:48:35",
+        "block": 20650444,
+        "tx_hash": "0x229f9938893234763dcd235527487a9eb2d60a6de36147db6a8c46feb7454011",
+        "value_in_usd": "50029.79",
+        "token_price": "2501.9",
+        "token_symbol": "ETH",
+        "token_quantity": "19.996719916581280130"
+      }
+    ]
+  },
+  {
+    "from": "0x6d07e33fc5dd2ed1dcff885449f5824c22bd402f",
+    "to": "0xf621fb08bbe51af70e7e0f4ea63496894166ff7f",
+    "transfer_count": 3,
+    "total_value_in_usd": "49172.60",
+    "illicit_usd_value": "49172.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-30 17:31:11",
+        "block": 20642900,
+        "tx_hash": "0x42a1757e23034967cde1394c29bff15360dc5afed6428437635ba1de17d553f0",
+        "value_in_usd": "12298.45",
+        "token_price": "2459.69",
+        "token_symbol": "ETH",
+        "token_quantity": "5.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-30 17:33:35",
+        "block": 20642912,
+        "tx_hash": "0x20ee23f6c20a16e66df27176bfa7df67c042c415b88e497e4fe91fd22ecdd7d8",
+        "value_in_usd": "24592.00",
+        "token_price": "2459.2",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-30 17:34:47",
+        "block": 20642918,
+        "tx_hash": "0xf94ea7d69453a746f66b15a0733ba619d7df5473b3eda09e7e6f982b39a32568",
+        "value_in_usd": "12282.15",
+        "token_price": "2456.43",
+        "token_symbol": "ETH",
+        "token_quantity": "5.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x732faf291aed306e3be782ed92a33de3dc670f28",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "4224.69",
+    "illicit_usd_value": "4224.69",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 09:15:59",
+        "block": 20683426,
+        "tx_hash": "0x95837da2ec4f8069b4cbc02f432f4b85d014b10ba8ccb9601c1b210863f594e2",
+        "value_in_usd": "4224.69",
+        "token_price": "2402.65",
+        "token_symbol": "ETH",
+        "token_quantity": "1.758345109877034792"
+      }
+    ]
+  },
+  {
+    "from": "0x7549fa0736610baaf8ff81beb0f0a6cf37d5b7fc",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "7585.28",
+    "illicit_usd_value": "7585.28",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:02:23",
+        "block": 20682765,
+        "tx_hash": "0x22f6525e228d30fb291526bbb6e653d03ac4042d5f140773181954d6d0395205",
+        "value_in_usd": "7585.28",
+        "token_price": "2399.22",
+        "token_symbol": "ETH",
+        "token_quantity": "3.161562710286937421"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x10095ae6509bfc7414307332a622d7355fc10c8a",
+    "transfer_count": 1,
+    "total_value_in_usd": "99971.45",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 10:10:35",
+        "block": 20583461,
+        "tx_hash": "0x46151b83e353b843e2db4d26f510c31dfd684ddaf515b33f02a57168aa6d5c43",
+        "value_in_usd": "99971.45",
+        "token_price": "2625.84",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072177000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "to_label": "LI.FI: LiFi Diamond",
+    "transfer_count": 2,
+    "total_value_in_usd": "654052.50",
+    "illicit_usd_value": "654052.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:25:11",
+        "block": 20576384,
+        "tx_hash": "0xcb1a95d694a4df6e764ad7a349b4255674a007d9b3262ce1bec436d2189a6e27",
+        "value_in_usd": "258507.00",
+        "token_price": "2585.07",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 08:26:23",
+        "block": 20582941,
+        "tx_hash": "0xfd9f05f2eb3673eebfd4c2b3af50fa8503a3486a5c7f00e92bf5213d774f6b9c",
+        "value_in_usd": "395545.50",
+        "token_price": "2636.97",
+        "token_symbol": "ETH",
+        "token_quantity": "150.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x18a82424b54846e86db91d72f0055ff3b656e75a",
+    "transfer_count": 1,
+    "total_value_in_usd": "58244.76",
+    "illicit_usd_value": "58244.76",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:01:59",
+        "block": 20597732,
+        "tx_hash": "0x09ce621673b300597e05ceacd85178331c07fb1426bc5b02b3dadbdf4f31c6ca",
+        "value_in_usd": "58244.76",
+        "token_price": "2773.56",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x227da5e4b5588c86667a6c7cd95288be85742db3",
+    "transfer_count": 1,
+    "total_value_in_usd": "128798.33",
+    "illicit_usd_value": "128798.33",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 19:36:23",
+        "block": 20593429,
+        "tx_hash": "0x814f702829eaa9ddc9c1208d07c65d42ce0df653185a2ce82825eee0f0ce74f6",
+        "value_in_usd": "128798.33",
+        "token_price": "2740.39",
+        "token_symbol": "ETH",
+        "token_quantity": "47.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x36b202b1c6a68cbe9b48683c6a917c537087a26a",
+    "transfer_count": 1,
+    "total_value_in_usd": "58303.35",
+    "illicit_usd_value": "58303.35",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 08:52:23",
+        "block": 20597386,
+        "tx_hash": "0x32fe8e1e5e332edbf9350f84d3cd84f1fb30eecf8eebbd4e2b25a2de8d63b563",
+        "value_in_usd": "58303.35",
+        "token_price": "2776.35",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x40a50cf069e992aa4536211b23f286ef88752187",
+    "to_label": "CoW Protocol: Eth Flow",
+    "transfer_count": 1,
+    "total_value_in_usd": "3263304.00",
+    "illicit_usd_value": "3000587.20",
+    "transfers": [
+      {
+        "timestamp": "2024-08-26 15:09:23",
+        "block": 20613566,
+        "tx_hash": "0xb030543d6f5e4ee0937cc68df902228186fcd679491d34c73ffede7d475afef5",
+        "value_in_usd": "3263304.00",
+        "token_price": "2719.42",
+        "token_symbol": "ETH",
+        "token_quantity": "1200.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x4adc40335b676ff8ad08ca4d6c3fddd840496c53",
+    "to_label": "eXch_Deposit_0x4adc",
+    "transfer_count": 1,
+    "total_value_in_usd": "58234.68",
+    "illicit_usd_value": "58234.68",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:04:23",
+        "block": 20597744,
+        "tx_hash": "0xe82b03c409da88e4f15c3fe3f52ba8f974ed8ef12da85f9c5a2dc35484022471",
+        "value_in_usd": "58234.68",
+        "token_price": "2773.08",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x52dfa61a658b64a6c4f4062b3dd5ef5059c4b6da",
+    "transfer_count": 1,
+    "total_value_in_usd": "49732.20",
+    "illicit_usd_value": "49732.20",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 08:38:59",
+        "block": 20597319,
+        "tx_hash": "0x66c963698f6ec088f830b3181160043ac44154f66bcd52895127003846f7dc5f",
+        "value_in_usd": "49732.20",
+        "token_price": "2762.9",
+        "token_symbol": "ETH",
+        "token_quantity": "18.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x68814d016bd34a49ebc5d5d4d1f565cde75d4e92",
+    "transfer_count": 1,
+    "total_value_in_usd": "41424.75",
+    "illicit_usd_value": "41424.75",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 08:37:35",
+        "block": 20597312,
+        "tx_hash": "0xd11036c4824901074c86079b2e5e05f7cbe46313f4ce18cad4980e511060485a",
+        "value_in_usd": "41424.75",
+        "token_price": "2761.65",
+        "token_symbol": "ETH",
+        "token_quantity": "15.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x87b2d2226fd74d1a9d505e112d5dbecf4e6ea19d",
+    "transfer_count": 1,
+    "total_value_in_usd": "58270.38",
+    "illicit_usd_value": "58270.38",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:24:23",
+        "block": 20597843,
+        "tx_hash": "0xb7f43608ae29a1d98819ae3b9e4fb87781996f7eb21b962ed40e1d0e7318241e",
+        "value_in_usd": "58270.38",
+        "token_price": "2774.78",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x91fec7d9ef52b6f1e0edca4a3e342149db70d135",
+    "transfer_count": 1,
+    "total_value_in_usd": "787095.00",
+    "illicit_usd_value": "787095.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 10:03:47",
+        "block": 20583427,
+        "tx_hash": "0xc6c5647d65d1c0bd4f943adc7c3bfbb7c472bbd7e9abe525e7c9ac4e99931f4d",
+        "value_in_usd": "787095.00",
+        "token_price": "2623.65",
+        "token_symbol": "ETH",
+        "token_quantity": "300.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0x9b06713aeabaf6cbc7db93a5f1d7966cd6fd7e03",
+    "transfer_count": 1,
+    "total_value_in_usd": "58191.00",
+    "illicit_usd_value": "58191.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:40:23",
+        "block": 20597624,
+        "tx_hash": "0x6db8438e9e2ac3425575b9c99cdaade2bea46b6604fdf3cce2fba8e7aa75dff5",
+        "value_in_usd": "58191.00",
+        "token_price": "2771",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xb26c68370db0dfee465d9e1bcaad95bbbae2a5ed",
+    "transfer_count": 1,
+    "total_value_in_usd": "58264.50",
+    "illicit_usd_value": "58264.50",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:05:59",
+        "block": 20597453,
+        "tx_hash": "0xddde4fd2856f515ac267c83ac9385721da9c193cfc7755c10b0ba0b485beb658",
+        "value_in_usd": "58264.50",
+        "token_price": "2774.5",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xbfbe186e8892012e992b8eb046ffc6096fd500f3",
+    "transfer_count": 1,
+    "total_value_in_usd": "58214.52",
+    "illicit_usd_value": "58214.52",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:10:47",
+        "block": 20597477,
+        "tx_hash": "0x5a6e32983f55fe0e25f6305a5d93ee67925154c09f1ff08d158987bdc111599b",
+        "value_in_usd": "58214.52",
+        "token_price": "2772.12",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xbfe1c7db8894bafa0459991bf6e77615db94f287",
+    "transfer_count": 1,
+    "total_value_in_usd": "58354.80",
+    "illicit_usd_value": "58354.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:03:11",
+        "block": 20597439,
+        "tx_hash": "0xa0ec3ed25343821d3ca12738783f7578382667618bf8094069425bfc717988f5",
+        "value_in_usd": "58354.80",
+        "token_price": "2778.8",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xcbcbb92c96dc0600fb0decb8e18cbbef3cb99f93",
+    "transfer_count": 1,
+    "total_value_in_usd": "52531.01",
+    "illicit_usd_value": "52531.01",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 08:48:59",
+        "block": 20597369,
+        "tx_hash": "0x1d3b8b740439f8f70806337e81b9bc2182209aaf85fc7e14df65338fba0502a5",
+        "value_in_usd": "52531.01",
+        "token_price": "2764.79",
+        "token_symbol": "ETH",
+        "token_quantity": "19.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xdbd4b7f150fa1758f014bb2f95c155d96e07aa5f",
+    "transfer_count": 1,
+    "total_value_in_usd": "58236.99",
+    "illicit_usd_value": "58236.99",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:14:35",
+        "block": 20597496,
+        "tx_hash": "0x9c90882effe0334aaf9fe8675644d5b381b2abf609f3615c89c470daf4a7f4c3",
+        "value_in_usd": "58236.99",
+        "token_price": "2773.19",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xdc456baa3ab206a5f93401a86dddbd29eac883c3",
+    "transfer_count": 1,
+    "total_value_in_usd": "166367.13",
+    "illicit_usd_value": "166367.13",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 18:23:59",
+        "block": 20593069,
+        "tx_hash": "0x6ecdf320efe72b483a06c1cfc95233dd53346f27893bb2068e9e75fffb3c3c76",
+        "value_in_usd": "166367.13",
+        "token_price": "2727.33",
+        "token_symbol": "ETH",
+        "token_quantity": "61.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "from_label": "transit_77b9",
+    "to": "0xe7f4b7b741e549cd99d7f1f5abde239c2dbce45f",
+    "transfer_count": 1,
+    "total_value_in_usd": "58196.46",
+    "illicit_usd_value": "58196.46",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 08:56:47",
+        "block": 20597408,
+        "tx_hash": "0x5f94d03f66cd094d188a30a88b3e72b60c9f35735eb15f61cd8cebf88de8bcd2",
+        "value_in_usd": "58196.46",
+        "token_price": "2771.26",
+        "token_symbol": "ETH",
+        "token_quantity": "21.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x7a384d2da0ee93d16bb50cedad4a319b86898a3a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "357.20",
+    "illicit_usd_value": "357.20",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:59:35",
+        "block": 20680660,
+        "tx_hash": "0x375912b1f0997be2b6c367237b202dc117722aa52bc60f2a492bbae9872efafd",
+        "value_in_usd": "357.20",
+        "token_price": "2450",
+        "token_symbol": "ETH",
+        "token_quantity": "0.145795814730211095"
+      }
+    ]
+  },
+  {
+    "from": "0x7abb6a5b71d860c0ba0dac83e0a5485fbb8e3713",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "2870.59",
+    "illicit_usd_value": "2870.59",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 17:41:23",
+        "block": 20585701,
+        "tx_hash": "0x0ae862e7d0fd30b650b42909e88e105b821810bbb735ac563579b8572c3c2d41",
+        "value_in_usd": "2870.59",
+        "token_price": "2609.69",
+        "token_symbol": "ETH",
+        "token_quantity": "1.099975423722785000"
+      }
+    ]
+  },
+  {
+    "from": "0x8021140cde8767414fe1b12bfbe6de0475f0604c",
+    "to": "0x23aaf393ae14aa9d7605f9c512720dceba4fb179",
+    "to_label": "KuCoin_Deposit_0x23aa",
+    "transfer_count": 2,
+    "total_value_in_usd": "65640.90",
+    "illicit_usd_value": "65640.90",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 13:03:23",
+        "block": 20584320,
+        "tx_hash": "0x9bb42cd9a30bca188a102f037695705ce586c608d3119e9ad074eb2f3df9bd3f",
+        "value_in_usd": "39400.50",
+        "token_price": "2626.7",
+        "token_symbol": "ETH",
+        "token_quantity": "15.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 13:23:23",
+        "block": 20584420,
+        "tx_hash": "0xf674f77d5215235cd5295b75afd66b6d352c327de335cad29dd7b31b47fdde50",
+        "value_in_usd": "26240.40",
+        "token_price": "2624.04",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8021140cde8767414fe1b12bfbe6de0475f0604c",
+    "to": "0xf2ba59c0d4fefe1a69fb03f504b7b243db9d6bf5",
+    "transfer_count": 2,
+    "total_value_in_usd": "34223.10",
+    "illicit_usd_value": "34223.10",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:25:23",
+        "block": 20584130,
+        "tx_hash": "0x7afd9c8c0a53b333067036014c818bcd5207b149d537f66c5081a14ec2f11b6d",
+        "value_in_usd": "2637.95",
+        "token_price": "2637.95",
+        "token_symbol": "ETH",
+        "token_quantity": "1.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 13:48:11",
+        "block": 20584543,
+        "tx_hash": "0x57618ce0a8509067c4c0be65180f70bc379faec3573e1a6fbcbf64cd7329f373",
+        "value_in_usd": "31585.15",
+        "token_price": "2616.27",
+        "token_symbol": "ETH",
+        "token_quantity": "12.072589623657332000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "to_label": "LI.FI: LiFi Diamond",
+    "transfer_count": 1,
+    "total_value_in_usd": "26390.20",
+    "illicit_usd_value": "26390.20",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 21:26:23",
+        "block": 20579667,
+        "tx_hash": "0x76f3df33b837609a6bc03d6fc80e45743f8da918ef511762fb82cc1d4b701e0d",
+        "value_in_usd": "26390.20",
+        "token_price": "2639.02",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x33d091bdb4490e12a14130c3b9394f6d058eb9d1",
+    "transfer_count": 1,
+    "total_value_in_usd": "98569.60",
+    "illicit_usd_value": "98569.60",
+    "transfers": [
+      {
+        "timestamp": "2024-09-01 15:11:11",
+        "block": 20656530,
+        "tx_hash": "0x17cc52072d368e90dde18ae954c87cbffdd665e9c84b257ca8b3432b2449449a",
+        "value_in_usd": "98569.60",
+        "token_price": "2464.24",
+        "token_symbol": "ETH",
+        "token_quantity": "40.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x40a50cf069e992aa4536211b23f286ef88752187",
+    "to_label": "CoW Protocol: Eth Flow",
+    "transfer_count": 1,
+    "total_value_in_usd": "24635.27",
+    "illicit_usd_value": "24635.27",
+    "transfers": [
+      {
+        "timestamp": "2024-09-07 04:01:35",
+        "block": 20696197,
+        "tx_hash": "0xa3f21504619b36449187963569f8011af8e7ce02157cef46092b750c389dca96",
+        "value_in_usd": "24635.27",
+        "token_price": "2239.57",
+        "token_symbol": "ETH",
+        "token_quantity": "11.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x41939b104e69d086271bffd6ebb74a252e9732a6",
+    "transfer_count": 1,
+    "total_value_in_usd": "25148.60",
+    "illicit_usd_value": "25148.60",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 17:18:23",
+        "block": 20664326,
+        "tx_hash": "0x911f63e3c70e5a4d9dfc28fc7fed6ea30e939f466b50084130a10b93c08fd6c5",
+        "value_in_usd": "25148.60",
+        "token_price": "2514.86",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x51b1f2e1e7729f9bea18220c8e522d7ff34f3290",
+    "transfer_count": 1,
+    "total_value_in_usd": "51935.19",
+    "illicit_usd_value": "51935.19",
+    "transfers": [
+      {
+        "timestamp": "2024-09-07 03:51:59",
+        "block": 20696149,
+        "tx_hash": "0x9be4261936f6f802022e67de26e0f0d6e8aab1ee6d8873f0a7fab71576e8d281",
+        "value_in_usd": "51935.19",
+        "token_price": "2238.79",
+        "token_symbol": "ETH",
+        "token_quantity": "23.197884106756400000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x685662c13378b2464c4fd1dda8d26d86178c4e23",
+    "transfer_count": 1,
+    "total_value_in_usd": "30187.44",
+    "illicit_usd_value": "30187.44",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 17:22:11",
+        "block": 20664344,
+        "tx_hash": "0xc30d4ff7a322f5eaf98cd716b7fa963904c591ecd52a80c41cf5c5803ee5ff36",
+        "value_in_usd": "30187.44",
+        "token_price": "2515.62",
+        "token_symbol": "ETH",
+        "token_quantity": "12.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x6d07e33fc5dd2ed1dcff885449f5824c22bd402f",
+    "transfer_count": 1,
+    "total_value_in_usd": "98401.60",
+    "illicit_usd_value": "98401.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-30 17:29:35",
+        "block": 20642892,
+        "tx_hash": "0x9dd60d20f2027b94fa78f89e14d79b1c4924ece2c0c6d92d095e034adf1fae09",
+        "value_in_usd": "98401.60",
+        "token_price": "2460.04",
+        "token_symbol": "ETH",
+        "token_quantity": "40.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+    "to_label": "MakerDAO: sDAI Token",
+    "transfer_count": 3,
+    "total_value_in_usd": "4152145.07",
+    "illicit_usd_value": "4152145.07",
+    "transfers": [
+      {
+        "timestamp": "2024-08-27 18:19:23",
+        "block": 20621668,
+        "tx_hash": "0x23d0bebb014a703d08250bc04e7d842f861a7bf0e38fa1b0c87a39807e34745b",
+        "value_in_usd": "3003000.00",
+        "token_price": "1.001",
+        "token_symbol": "DAI",
+        "token_quantity": "3000000.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-27 18:28:23",
+        "block": 20621713,
+        "tx_hash": "0x2a479b4a6e8072aa1d3722de45c194e53eb0b170b1ad729745b558d53435f529",
+        "value_in_usd": "1124484.98",
+        "token_price": "0.998295",
+        "token_symbol": "DAI",
+        "token_quantity": "1126405.496444658400696735"
+      },
+      {
+        "timestamp": "2024-09-07 04:11:11",
+        "block": 20696245,
+        "tx_hash": "0x06924fd34d75d0eb96fce521aa1bf65e993cb71151376325c2f06a31ed420583",
+        "value_in_usd": "24660.09",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "24660.094503670157242905"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x890191f1e008800dd8042173add37e1960b20c7a",
+    "transfer_count": 1,
+    "total_value_in_usd": "50951.60",
+    "illicit_usd_value": "50951.60",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 22:05:23",
+        "block": 20665756,
+        "tx_hash": "0x67dad964b281b0be67c8b2a0a501ca75658cdc1b79ee6f149b86d092c74a05a7",
+        "value_in_usd": "50951.60",
+        "token_price": "2547.58",
+        "token_symbol": "ETH",
+        "token_quantity": "20.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0x8b97d659506c989de0c3686e1c8a5a855d34d44c",
+    "transfer_count": 1,
+    "total_value_in_usd": "123475.50",
+    "illicit_usd_value": "123475.50",
+    "transfers": [
+      {
+        "timestamp": "2024-09-01 15:44:23",
+        "block": 20656696,
+        "tx_hash": "0x16b4753399d2b9570d2d28fe8c8bca22186015f419f0451a37c4ae7a43c0bab4",
+        "value_in_usd": "123475.50",
+        "token_price": "2469.51",
+        "token_symbol": "ETH",
+        "token_quantity": "50.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0xd927a68f47cea9e739f5c1227b18707953ab8b54",
+    "transfer_count": 1,
+    "total_value_in_usd": "37745.25",
+    "illicit_usd_value": "37745.25",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 17:25:35",
+        "block": 20664361,
+        "tx_hash": "0x37c08545572d4a0540a4f1515c26f0c24384190210ef4557de843bc896009459",
+        "value_in_usd": "37745.25",
+        "token_price": "2516.35",
+        "token_symbol": "ETH",
+        "token_quantity": "15.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0xe7a2c603965e57f2b7876b0c84e0d7a9447030a2",
+    "transfer_count": 1,
+    "total_value_in_usd": "17759.42",
+    "illicit_usd_value": "17759.42",
+    "transfers": [
+      {
+        "timestamp": "2024-08-30 18:40:47",
+        "block": 20643248,
+        "tx_hash": "0x92f2a1b7ed553e6e59db0a10f27e68729c689b2fb1bac171a8ca3aa3b5c6292a",
+        "value_in_usd": "17759.42",
+        "token_price": "2537.06",
+        "token_symbol": "ETH",
+        "token_quantity": "7.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0xe7ef36a59043f4538331c22f4e27e75525d55842",
+    "transfer_count": 1,
+    "total_value_in_usd": "25048.00",
+    "illicit_usd_value": "25048.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-31 17:31:35",
+        "block": 20650060,
+        "tx_hash": "0x71710e71de8fbcf710abf8fdded09a557c296ebe151fa68be47c4f2cd3cee23f",
+        "value_in_usd": "25048.00",
+        "token_price": "2504.8",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0xf1f516c17665187d59b47ba85b40d61707f15918",
+    "transfer_count": 1,
+    "total_value_in_usd": "250068.27",
+    "illicit_usd_value": "250068.27",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:30:47",
+        "block": 20584157,
+        "tx_hash": "0xed7409cabd00da8054129cce7616b524628959b76506b0a98fb4d674fbba4104",
+        "value_in_usd": "250068.27",
+        "token_price": "2637.09",
+        "token_symbol": "ETH",
+        "token_quantity": "94.827357000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "from_label": "transit_8250",
+    "to": "0xf621fb08bbe51af70e7e0f4ea63496894166ff7f",
+    "transfer_count": 3,
+    "total_value_in_usd": "61100.80",
+    "illicit_usd_value": "61100.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-28 01:56:11",
+        "block": 20623945,
+        "tx_hash": "0x15d187a346d79165f0aaff25be7d26c985fdfb22776887847cdf308103c966f3",
+        "value_in_usd": "12203.20",
+        "token_price": "2440.64",
+        "token_symbol": "ETH",
+        "token_quantity": "5.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-28 01:57:47",
+        "block": 20623953,
+        "tx_hash": "0xc0ea086647de2db021cdfca02c6489cceda05c04acb3ad6a2eb7d253256b3d86",
+        "value_in_usd": "24444.20",
+        "token_price": "2444.42",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-28 01:59:23",
+        "block": 20623961,
+        "tx_hash": "0x436050ee1e65af07e38dff3d50eb2bba2edd72baa14fc2682eac552840eb68f9",
+        "value_in_usd": "24453.40",
+        "token_price": "2445.34",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x82c32f58ef59c84e74d0550f051cc86c6c5142f5",
+    "from_label": "transit_82c3",
+    "to": "0x01a53657eabe128ba07eff4401b6f06203ce9140",
+    "transfer_count": 1,
+    "total_value_in_usd": "41547.32",
+    "illicit_usd_value": "41547.32",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 16:25:59",
+        "block": 20671233,
+        "tx_hash": "0x85ed01121dc32fc701db842733a52e42d14a05b15f5ff6aa2687ed661359a8f1",
+        "value_in_usd": "41547.32",
+        "token_price": "2443.96",
+        "token_symbol": "ETH",
+        "token_quantity": "17.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x82c32f58ef59c84e74d0550f051cc86c6c5142f5",
+    "from_label": "transit_82c3",
+    "to": "0x028254d0c7cd27d4e17dedb880309f9bcb124c85",
+    "transfer_count": 1,
+    "total_value_in_usd": "41534.23",
+    "illicit_usd_value": "41534.23",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 16:26:23",
+        "block": 20671235,
+        "tx_hash": "0x85193bd1f8f1ca611e61880cf49dedd2a1dab634944a7cddf9a1a674fc15e28b",
+        "value_in_usd": "41534.23",
+        "token_price": "2443.19",
+        "token_symbol": "ETH",
+        "token_quantity": "17.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x82c32f58ef59c84e74d0550f051cc86c6c5142f5",
+    "from_label": "transit_82c3",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 1,
+    "total_value_in_usd": "149867.41",
+    "illicit_usd_value": "149867.41",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:16:47",
+        "block": 20576342,
+        "tx_hash": "0x6ddbcbcaf758b4cd7f91ad0fffe9ccca76d6ca2a5ee5cc59e8051ba0b7a627df",
+        "value_in_usd": "149867.41",
+        "token_price": "0.9991160643303824",
+        "token_symbol": "DAI",
+        "token_quantity": "150000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x82c32f58ef59c84e74d0550f051cc86c6c5142f5",
+    "from_label": "transit_82c3",
+    "to": "0xf0f686e8b5077bf0e3e2c3430a490b48bfa3661d",
+    "transfer_count": 1,
+    "total_value_in_usd": "39091.04",
+    "illicit_usd_value": "39091.04",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 16:26:35",
+        "block": 20671236,
+        "tx_hash": "0x43a189353d3db58d796fffb7714fc6d5be9bcb2e5aceaf440becae68bad697b4",
+        "value_in_usd": "39091.04",
+        "token_price": "2443.19",
+        "token_symbol": "ETH",
+        "token_quantity": "16.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x83f20f44975d03b1b09e64809b757c47f942beea",
+    "from_label": "MakerDAO: sDAI Token",
+    "to": "0x0000000000000000000000000000000000000000",
+    "to_label": "Null Address",
+    "transfer_count": 3,
+    "total_value_in_usd": "4152145.07",
+    "illicit_usd_value": "4152145.07",
+    "transfers": [
+      {
+        "timestamp": "2024-08-27 18:19:23",
+        "block": 20621668,
+        "tx_hash": "0x23d0bebb014a703d08250bc04e7d842f861a7bf0e38fa1b0c87a39807e34745b",
+        "value_in_usd": "3003000.00",
+        "token_price": "1.001",
+        "token_symbol": "DAI",
+        "token_quantity": "3000000.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-27 18:28:23",
+        "block": 20621713,
+        "tx_hash": "0x2a479b4a6e8072aa1d3722de45c194e53eb0b170b1ad729745b558d53435f529",
+        "value_in_usd": "1124484.98",
+        "token_price": "0.998295",
+        "token_symbol": "DAI",
+        "token_quantity": "1126405.496444658400696735"
+      },
+      {
+        "timestamp": "2024-09-07 04:11:11",
+        "block": 20696245,
+        "tx_hash": "0x06924fd34d75d0eb96fce521aa1bf65e993cb71151376325c2f06a31ed420583",
+        "value_in_usd": "24660.09",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "24660.094503670157242905"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x06bfc010e7d587bea8c87bd9ff05d0928c306b29",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:08:11",
+        "block": 20604611,
+        "tx_hash": "0x957c9899c2cd113805a960026ca6120af1d5686e11e9b89508620a47c90cb894",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x0ddddf32f44b3c103983849112aed39423bf3eba",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:07:59",
+        "block": 20604610,
+        "tx_hash": "0x8ffafffe8c65311e700b7049a66aaa99bc949824764d5672c9f78e095de88478",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x1a9edb477f744cbe1f0d183e9772b357face5370",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:04:47",
+        "block": 20604594,
+        "tx_hash": "0xe0ef660503f4b67dbdb4dad45fe30e1c578120cff5699f0741baeee9160b7bca",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x2117f4c770e633c53cc6f35fe9cbab5d6ae7b881",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:11:47",
+        "block": 20604629,
+        "tx_hash": "0x83fa46e5fb3ab4304f41fab6c737678c23ef1a39f11e791414ddfdb487599472",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x24b805f0c24760d55b27aeaac88edab531eff31e",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:08:59",
+        "block": 20604615,
+        "tx_hash": "0x00c07caa09df2d371f603d0e01a38eca06b935a33534070f2d7e8331ca98c658",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x2c8a7826672e3ae9e2d3a7f1ecce18e5c5539a7a",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:42:59",
+        "block": 20605679,
+        "tx_hash": "0x63f5ecf67cd26debe5e9771ce470f944bbef64a23cf32e97bb2511a99279c15b",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x3b731a80f6d40706c829889235f6aeb567c43703",
+    "transfer_count": 1,
+    "total_value_in_usd": "49.99",
+    "illicit_usd_value": "49.99",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:06:23",
+        "block": 20604602,
+        "tx_hash": "0xdaffa3632354ab70f9e3ee1bf4db230af555b4a3870cef74a24c21313cd697f3",
+        "value_in_usd": "49.99",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x3cef57ddfd73e270d382dac18990b4d9c7863078",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:02:59",
+        "block": 20604585,
+        "tx_hash": "0xcdbb9269520ed91db6aecfe3ec2ef073afcdafceb7e09098792f2a84124b9b2e",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x3e01968fbf9f934cdfe81a4f6855850c151a759c",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:11:23",
+        "block": 20604627,
+        "tx_hash": "0xe657d8ea964bf8fa2c00392e6dc2d793fd990a7214cfba3b38f19a7e86c8832f",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x4b3952acb05f348dfcce65609b57a4f67695e214",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:05:35",
+        "block": 20604598,
+        "tx_hash": "0x2db20c9e1c5972a5ad17be0130d75c0993ad1853980c12dd74919efd2e15b387",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x6567a846d38a3190526104b738c08b8e520448a1",
+    "transfer_count": 2,
+    "total_value_in_usd": "99979.60",
+    "illicit_usd_value": "99979.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:08:35",
+        "block": 20604613,
+        "tx_hash": "0x8979a2237820c39d6d6896fe1f521427324ae7555927dfb9a1bb37e3cba64b71",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-25 09:08:47",
+        "block": 20604614,
+        "tx_hash": "0x5200a0d8c485420ca4c98320d58ff541aa6c0497203c52caa7c7ab07e3052c0d",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x65edf7d29e5612ef0eac1fa89c5f0de2f44e57bf",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:06:11",
+        "block": 20604601,
+        "tx_hash": "0x5565e6b538730d4b64107fe20474962e1f12d2070ac7c8bb6b575bb9a2129757",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x6ba9fdaaf704488ba37d3f5451125c774b7c8ee8",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:05:47",
+        "block": 20604599,
+        "tx_hash": "0x0c1891d4133242345b8a4a72f9687dc90e2478f7076d2e2e63b7088ae6b95251",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x8a9e2b32af22ce56b3eb6f75b1a44e3658edfab4",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:05:35",
+        "block": 20604598,
+        "tx_hash": "0xc47b09c58a264c8793b1c2ad572b461613312a87c8b30e2f78285ece10a9cee9",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 1,
+    "total_value_in_usd": "299956.16",
+    "illicit_usd_value": "299956.16",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 01:17:23",
+        "block": 20573657,
+        "tx_hash": "0x9ef1b32d09461d83882c6acf4d8b710af00287ff4d079cafa913a62aac55982c",
+        "value_in_usd": "299956.16",
+        "token_price": "0.9998538511372415",
+        "token_symbol": "DAI",
+        "token_quantity": "300000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xb46fb08e3729fe144672b200af6ec07afa4cc45f",
+    "to_label": "eXch_Deposit_0xb46f",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:05:11",
+        "block": 20604596,
+        "tx_hash": "0x021309b708ab5ce8c2417e977269a03f003f366215dce861b784891c7757492b",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xb847787f18208c7c9aadcd50966eb9a1539e5814",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:04:23",
+        "block": 20604592,
+        "tx_hash": "0xa2b5ef4727d01d985bd1fabf10415e407b481d508ebd4bfb263cdad8100b5188",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xb8c46532b93417e612a9745067400167cdbd307d",
+    "transfer_count": 1,
+    "total_value_in_usd": "45000.00",
+    "illicit_usd_value": "45000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:43:35",
+        "block": 20605682,
+        "tx_hash": "0x4f8940b4da6a2d0a19d94d68bbf3418c8c3034c4b6fd5393efe698bde261cc46",
+        "value_in_usd": "45000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "45000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xbaebf0400f438ad771401a4daa79f47a4ff96a4c",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:03:23",
+        "block": 20604587,
+        "tx_hash": "0x248cba4817c938a5e35a6a9b08ce93e2c804079f0065e3b812252624c02884c5",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xbdce311ce503b69e6a4c40a2bcd806173429d403",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:11:59",
+        "block": 20604630,
+        "tx_hash": "0xfaaf41ea3321c49958b0abbabfa8523706f5046177000ce4bb1aa4c03ad97d93",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xc01bf2530adf8f053a74e83201e37818dd9f9597",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:42:47",
+        "block": 20605678,
+        "tx_hash": "0xa1287c7ddf4027721e44ab55a7ded640909c5c1de6139fdc31aefe51011635a9",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xd06f45294fc36bfa922dc42f4bff7af45b9032ba",
+    "transfer_count": 1,
+    "total_value_in_usd": "49989.80",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:12:23",
+        "block": 20604632,
+        "tx_hash": "0xe0f35f32e7cb1138e5262daac98aa191b75e0ae4dd304386195ddd4d996298ce",
+        "value_in_usd": "49989.80",
+        "token_price": "0.999796",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xd78ca96cb8516d01270017337bf1b5f8f9d4e4fa",
+    "transfer_count": 1,
+    "total_value_in_usd": "49991.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 09:07:59",
+        "block": 20604610,
+        "tx_hash": "0xe2f2aee12d33da0ba1c546c1d4fc77d543a0026a014667b83a872abf24620b04",
+        "value_in_usd": "49991.30",
+        "token_price": "0.999826",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x860cf33bdc076f42edbc66c6fec30aa9ee99f073",
+    "from_label": "transit_860c",
+    "to": "0xe7d9ea25df87067051c039c97ab4bafe6b3050ab",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:43:11",
+        "block": 20605680,
+        "tx_hash": "0xfab07a5a0da52caaf058229de27f96f38ebd4fb4c218430d28c802ccdc06ceda",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x87b2d2226fd74d1a9d505e112d5dbecf4e6ea19d",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58286.29",
+    "illicit_usd_value": "58270.38",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:47:35",
+        "block": 20597958,
+        "tx_hash": "0x57420ba59d0a628879af8e6e25679056aa16b91d4b07eaa48b2906639b70b005",
+        "value_in_usd": "58286.29",
+        "token_price": "2775.54",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999982658857006000"
+      }
+    ]
+  },
+  {
+    "from": "0x890191f1e008800dd8042173add37e1960b20c7a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50891.30",
+    "illicit_usd_value": "50891.30",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 22:30:47",
+        "block": 20665883,
+        "tx_hash": "0xb1678826af97e198e8c1c9c4da825d2e6f46ab1f08692de6b72db1f4c47f0335",
+        "value_in_usd": "50891.30",
+        "token_price": "2544.57",
+        "token_symbol": "ETH",
+        "token_quantity": "19.999961287568417000"
+      }
+    ]
+  },
+  {
+    "from": "0x899e762cb6b135a70270c41f2f8c646350a9d28c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1708.59",
+    "illicit_usd_value": "1708.59",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:38:23",
+        "block": 20683239,
+        "tx_hash": "0xcd3701622a5b67d8ca4acc1edc65597ef76108ef246721a6b0c4c0ce2c83bb64",
+        "value_in_usd": "1708.59",
+        "token_price": "2402.34",
+        "token_symbol": "ETH",
+        "token_quantity": "0.711218653554615746"
+      }
+    ]
+  },
+  {
+    "from": "0x8a9e2b32af22ce56b3eb6f75b1a44e3658edfab4",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:29:11",
+        "block": 20605312,
+        "tx_hash": "0xb2c62e3fd79a70874f4db20d895e430bf2b525475e2ae1079c890c816c3670d3",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8b97d659506c989de0c3686e1c8a5a855d34d44c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "124219.44",
+    "illicit_usd_value": "123475.50",
+    "transfers": [
+      {
+        "timestamp": "2024-09-01 16:08:35",
+        "block": 20656817,
+        "tx_hash": "0x2a4481249e661dac6d477317d6cb73379659cb4e8aa3ffde9c60983e24d3dc5a",
+        "value_in_usd": "124219.44",
+        "token_price": "2484.39",
+        "token_symbol": "ETH",
+        "token_quantity": "49.999976708965037000"
+      }
+    ]
+  },
+  {
+    "from": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "from_label": "transit_8cc5",
+    "to": "0x77b9f7e33e42b1f64b915bb27e9a9bca199da83e",
+    "to_label": "transit_77b9",
+    "transfer_count": 1,
+    "total_value_in_usd": "5595608.31",
+    "illicit_usd_value": "5563071.01",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:15:23",
+        "block": 20576335,
+        "tx_hash": "0xf97a281f71a89503f031ffab006456dbd880932bfa8e20ba39784e1f98ffa17a",
+        "value_in_usd": "5595608.31",
+        "token_price": "2585.2",
+        "token_symbol": "ETH",
+        "token_quantity": "2164.477917223937192290"
+      }
+    ]
+  },
+  {
+    "from": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "from_label": "transit_8cc5",
+    "to": "0xba258b2b0afdbff8a6b4171f2da3ef1ae8071843",
+    "transfer_count": 1,
+    "total_value_in_usd": "5593025.38",
+    "illicit_usd_value": "5593025.38",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:13:59",
+        "block": 20576328,
+        "tx_hash": "0x4a9a5072d3108e70874605a40a58027185a13e3ed783a116bc75cc98e30bf1b7",
+        "value_in_usd": "5593025.38",
+        "token_price": "2584.04",
+        "token_symbol": "ETH",
+        "token_quantity": "2164.450000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "from_label": "transit_8cc5",
+    "to": "0xbeda662dc22c972498a18cbddfb22b8ff9fde97c",
+    "to_label": "transit_beda",
+    "transfer_count": 2,
+    "total_value_in_usd": "999788.26",
+    "illicit_usd_value": "999788.26",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 10:04:35",
+        "block": 20576281,
+        "tx_hash": "0x38e68435635e5ccade9e12f0ff591bb6cb735f06fdcda5fe0c28ac1c9e188b00",
+        "value_in_usd": "50023.65",
+        "token_price": "2580.23",
+        "token_symbol": "ETH",
+        "token_quantity": "19.387284000000000000"
+      },
+      {
+        "timestamp": "2024-08-21 10:08:35",
+        "block": 20576301,
+        "tx_hash": "0xfbc4d0703b4b067ade17a9bac6bc575bdbf02414729d64babb1e665e823fc86f",
+        "value_in_usd": "949764.61",
+        "token_price": "2582.28",
+        "token_symbol": "ETH",
+        "token_quantity": "367.800784000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+    "from_label": "CoW Protocol: GPv2Settlement",
+    "to": "0xca6061c6e5a7c3657297f9cc45ce110dc4d14470",
+    "to_label": "transit_ca60",
+    "transfer_count": 2,
+    "total_value_in_usd": "1972351.69",
+    "illicit_usd_value": "1972351.69",
+    "transfers": [
+      {
+        "timestamp": "2024-09-06 16:46:59",
+        "block": 20692837,
+        "tx_hash": "0x5ee84c595a008bb452330b717a3c6986a4e6dd2e917493bf59b35437babff602",
+        "value_in_usd": "9992.82",
+        "token_price": "2259.8",
+        "token_symbol": "ETH",
+        "token_quantity": "4.421994676436294408"
+      },
+      {
+        "timestamp": "2024-09-06 16:49:23",
+        "block": 20692849,
+        "tx_hash": "0xee0d2daaf6d79721f34ff3b2e8bdeb1fa61e10ef9a15570fa0cfa6f65fc85252",
+        "value_in_usd": "1962358.87",
+        "token_price": "2253.75",
+        "token_symbol": "ETH",
+        "token_quantity": "870.708317165896835223"
+      }
+    ]
+  },
+  {
+    "from": "0x909c8bfc0786358fe3cc671d2921ef4ab3091d99",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "8.93",
+    "illicit_usd_value": "8.93",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:17:47",
+        "block": 20679254,
+        "tx_hash": "0xfb7e696c6a6a3b0468b70e1f70f69d9ce1f8048e15b69807d1068300a6756fc1",
+        "value_in_usd": "8.93",
+        "token_price": "2445.63",
+        "token_symbol": "ETH",
+        "token_quantity": "0.003653219042170260"
+      }
+    ]
+  },
+  {
+    "from": "0x91fec7d9ef52b6f1e0edca4a3e342149db70d135",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "791261.93",
+    "illicit_usd_value": "787095.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 10:46:23",
+        "block": 20583637,
+        "tx_hash": "0x2e42521b5142068b650c93d9ac798cad0fffff5ae35662f77190a4c42807fa9b",
+        "value_in_usd": "791261.93",
+        "token_price": "2637.54",
+        "token_symbol": "ETH",
+        "token_quantity": "299.999973815421363000"
+      }
+    ]
+  },
+  {
+    "from": "0x96380cc4cfbdab88f8e262b983f8d19a1fd75b64",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "228.67",
+    "illicit_usd_value": "228.67",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:59:59",
+        "block": 20680662,
+        "tx_hash": "0x72b5c1e32353de64054de5056f2433c2584050c294b5e3ba8d094e976b5bf715",
+        "value_in_usd": "228.67",
+        "token_price": "2450",
+        "token_symbol": "ETH",
+        "token_quantity": "0.093333233272313057"
+      }
+    ]
+  },
+  {
+    "from": "0x992c5b4fb2f95406b21b71159413b632c8f9df69",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "39129.21",
+    "illicit_usd_value": "39129.21",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 10:43:35",
+        "block": 20683862,
+        "tx_hash": "0x47f5758687631c4ade23c0474fd988d8e6324a3bbb9c2f3cd679cb5ad8088c9b",
+        "value_in_usd": "39129.21",
+        "token_price": "2393.98",
+        "token_symbol": "ETH",
+        "token_quantity": "16.344836794717399400"
+      }
+    ]
+  },
+  {
+    "from": "0x9b06713aeabaf6cbc7db93a5f1d7966cd6fd7e03",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58240.28",
+    "illicit_usd_value": "58191.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 10:09:35",
+        "block": 20597770,
+        "tx_hash": "0xa09274678a1a25cc9c326a0f87595c4aa22dd225b403c1964d87f7b10421fb6b",
+        "value_in_usd": "58240.28",
+        "token_price": "2773.35",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999976149000520000"
+      }
+    ]
+  },
+  {
+    "from": "0x9b8381ba2a477871f0e60582f4d7900c102b6151",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "7292.09",
+    "illicit_usd_value": "7281.79",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 05:44:59",
+        "block": 20682378,
+        "tx_hash": "0x6ea494ca6c8932fb5a6dd0bebdc217c2b1026ba2e8140892db7b952edb89865d",
+        "value_in_usd": "7292.09",
+        "token_price": "2412.62",
+        "token_symbol": "ETH",
+        "token_quantity": "3.022477529020712200"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x08e870eab24c1c285c12b0a762da6c5226a37ff0",
+    "transfer_count": 1,
+    "total_value_in_usd": "828.84",
+    "illicit_usd_value": "828.84",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:06:11",
+        "block": 20679496,
+        "tx_hash": "0xf7713bb95f6b4ad46cf77a51adfbe86837e7811b4d561988a2eac1a9a6727c3d",
+        "value_in_usd": "828.84",
+        "token_price": "2454.39",
+        "token_symbol": "ETH",
+        "token_quantity": "0.337695737779500306"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x127600e25539b5b31731f597f064945fa11c2c79",
+    "transfer_count": 1,
+    "total_value_in_usd": "8920.07",
+    "illicit_usd_value": "8920.07",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 01:23:23",
+        "block": 20681078,
+        "tx_hash": "0x49883b6b2f17f058aba791086554322df3e26f6217efbfa1c8eb96ee685b482e",
+        "value_in_usd": "8920.07",
+        "token_price": "2452.98",
+        "token_symbol": "ETH",
+        "token_quantity": "3.636422997557184039"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x14d513eab477bf1d15ef1593d10c3eff7b57facf",
+    "transfer_count": 1,
+    "total_value_in_usd": "311.73",
+    "illicit_usd_value": "311.73",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:36:11",
+        "block": 20680245,
+        "tx_hash": "0x10b80a5254a3142b8528687d2ab7f231e8e5c4b381cae52493e7bad482c8df2e",
+        "value_in_usd": "311.73",
+        "token_price": "2462.37",
+        "token_symbol": "ETH",
+        "token_quantity": "0.126598913997100699"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x1beb8e6ce9cc10849d5fce506bebea625dcf23a2",
+    "transfer_count": 1,
+    "total_value_in_usd": "773.07",
+    "illicit_usd_value": "773.07",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:04:11",
+        "block": 20679785,
+        "tx_hash": "0x0f3a951ceb09b86117d7dcd73eab824e108366be667e6eca67e93a331fb1f3c2",
+        "value_in_usd": "773.07",
+        "token_price": "2454.3",
+        "token_symbol": "ETH",
+        "token_quantity": "0.314987602864761271"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x1e7e20f6d23c3c337146e6a7c781cd3bbbce780b",
+    "transfer_count": 1,
+    "total_value_in_usd": "39481.61",
+    "illicit_usd_value": "39481.61",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 18:54:35",
+        "block": 20679140,
+        "tx_hash": "0xcdf6f4040ca16c7bdd184d135446705586d79208de80a1de0e9939feb02ac308",
+        "value_in_usd": "39481.61",
+        "token_price": "2444.76",
+        "token_symbol": "ETH",
+        "token_quantity": "16.149482094974113272"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x24eb9f6aad51a42ade78dd0fe48f1f1a356d6d26",
+    "transfer_count": 1,
+    "total_value_in_usd": "2230.46",
+    "illicit_usd_value": "2230.46",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:06:23",
+        "block": 20683082,
+        "tx_hash": "0xa78eebf39fcbf8dc6219e385006574168210d58ef50d791f538be325752ed070",
+        "value_in_usd": "2230.46",
+        "token_price": "2415.1",
+        "token_symbol": "ETH",
+        "token_quantity": "0.923546064177253991"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x2b77b7584a9f79d22cd5b8a6196f263006aa33ac",
+    "transfer_count": 1,
+    "total_value_in_usd": "1147.35",
+    "illicit_usd_value": "1147.35",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:38:11",
+        "block": 20683238,
+        "tx_hash": "0xaf1532a4b1ed5a5ef09fa3c9bba96c91f8e52742fdb511db4b06008fd52acb37",
+        "value_in_usd": "1147.35",
+        "token_price": "2402.34",
+        "token_symbol": "ETH",
+        "token_quantity": "0.477595112547498480"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x36561ea2e8ce32723d261a6710e34cded7a2615b",
+    "transfer_count": 1,
+    "total_value_in_usd": "261.03",
+    "illicit_usd_value": "261.03",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 09:04:47",
+        "block": 20683371,
+        "tx_hash": "0xba6596ceeca183dfab756c3bfef1b22fcbd5ba8f1cc4106b7933c20bad095827",
+        "value_in_usd": "261.03",
+        "token_price": "2403.11",
+        "token_symbol": "ETH",
+        "token_quantity": "0.108619684368045573"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x3721df75f9c16be9ef80edae1151404c3b631696",
+    "transfer_count": 1,
+    "total_value_in_usd": "909.56",
+    "illicit_usd_value": "909.56",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 06:44:35",
+        "block": 20682676,
+        "tx_hash": "0x413a677fadc39928966f257518fc13d15ded1cd45fbfa2496c64c0b7b00eb5be",
+        "value_in_usd": "909.56",
+        "token_price": "2396.71",
+        "token_symbol": "ETH",
+        "token_quantity": "0.379504186428087124"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x37253802817df85a46f9158d7b41509b0fe7389a",
+    "transfer_count": 1,
+    "total_value_in_usd": "5608.67",
+    "illicit_usd_value": "5608.67",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:12:11",
+        "block": 20679226,
+        "tx_hash": "0x721227b962f90ed825f7df688cd6ee9ab6a47c8f36d6245e1afd781adb15093b",
+        "value_in_usd": "5608.67",
+        "token_price": "2444.66",
+        "token_symbol": "ETH",
+        "token_quantity": "2.294254216484387422"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x468d626b64e01498a77c62eed2a04b13aeabbe97",
+    "transfer_count": 1,
+    "total_value_in_usd": "24936.46",
+    "illicit_usd_value": "24936.46",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:38:47",
+        "block": 20679359,
+        "tx_hash": "0xb9b1ed495a447962067230c790415bd5e09689b984902d5169d32856a9ee28d8",
+        "value_in_usd": "24936.46",
+        "token_price": "2447.67",
+        "token_symbol": "ETH",
+        "token_quantity": "10.187836181582451532"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x4ef72a9c7c552c614108f7e09aa2415fa176cdb7",
+    "transfer_count": 1,
+    "total_value_in_usd": "482.37",
+    "illicit_usd_value": "482.37",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 18:57:47",
+        "block": 20679156,
+        "tx_hash": "0xf0946f18987b4a8cc4fbf32066fdf95a05468d95b7685c64f91a89f3803a3d21",
+        "value_in_usd": "482.37",
+        "token_price": "2448",
+        "token_symbol": "ETH",
+        "token_quantity": "0.197045062051169295"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x59ad58d44674cf0508b300f248e3f3ec21c62451",
+    "transfer_count": 1,
+    "total_value_in_usd": "478.26",
+    "illicit_usd_value": "478.26",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 02:35:11",
+        "block": 20681437,
+        "tx_hash": "0x15b34b9ea6fdab424824c70faa66b9df86b7a6933e549db7131fb1760c44670c",
+        "value_in_usd": "478.26",
+        "token_price": "2449.63",
+        "token_symbol": "ETH",
+        "token_quantity": "0.195237939960985771"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x5a8ada30fe354ff9a8f964ced408ad7a28b50e90",
+    "transfer_count": 1,
+    "total_value_in_usd": "3106.33",
+    "illicit_usd_value": "3106.33",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:44:47",
+        "block": 20679988,
+        "tx_hash": "0x2148c9365f9cda660dac3f645866a9ce1a4a005a9aeb2d8915470b7aaac75523",
+        "value_in_usd": "3106.33",
+        "token_price": "2456.38",
+        "token_symbol": "ETH",
+        "token_quantity": "1.264598106747303860"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x5b809162249aec4e90bdbc058f63d76a116f1b17",
+    "transfer_count": 1,
+    "total_value_in_usd": "7730.02",
+    "illicit_usd_value": "7730.02",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 00:30:47",
+        "block": 20680816,
+        "tx_hash": "0xb787c962d3d7b00cf432d0c45ece94cf38ec0c08c4a6d33011ccdd6d6a165c32",
+        "value_in_usd": "7730.02",
+        "token_price": "2459.95",
+        "token_symbol": "ETH",
+        "token_quantity": "3.142347786791877186"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x732faf291aed306e3be782ed92a33de3dc670f28",
+    "transfer_count": 1,
+    "total_value_in_usd": "4240.44",
+    "illicit_usd_value": "4240.44",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:16:47",
+        "block": 20683133,
+        "tx_hash": "0xe48721bc335b38a070632dca37153cebbaefad4c9c8f7281f6139301d4ecf978",
+        "value_in_usd": "4240.44",
+        "token_price": "2411.54",
+        "token_symbol": "ETH",
+        "token_quantity": "1.758393428053836792"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x7549fa0736610baaf8ff81beb0f0a6cf37d5b7fc",
+    "transfer_count": 1,
+    "total_value_in_usd": "7625.61",
+    "illicit_usd_value": "7625.61",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 05:42:47",
+        "block": 20682367,
+        "tx_hash": "0x9b740bef2578398ea7bdfb70a9a52f69bd587bc0493df5a72ea265db2fcf95ca",
+        "value_in_usd": "7625.61",
+        "token_price": "2411.95",
+        "token_symbol": "ETH",
+        "token_quantity": "3.161595251014009421"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x7a384d2da0ee93d16bb50cedad4a319b86898a3a",
+    "transfer_count": 1,
+    "total_value_in_usd": "359.19",
+    "illicit_usd_value": "359.19",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:05:11",
+        "block": 20680389,
+        "tx_hash": "0xa3847c4f94bd9c2ce013a19f2ae29159b6e30b7854b176d2804bc45cb0e680f9",
+        "value_in_usd": "359.19",
+        "token_price": "2462.75",
+        "token_symbol": "ETH",
+        "token_quantity": "0.145848523851088095"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x899e762cb6b135a70270c41f2f8c646350a9d28c",
+    "transfer_count": 1,
+    "total_value_in_usd": "1715.51",
+    "illicit_usd_value": "1715.51",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:40:23",
+        "block": 20682953,
+        "tx_hash": "0xe475d3d8282057ef4c39a426eb21bd8669aa02d4a1f182bfda2f5629f8fed1c5",
+        "value_in_usd": "1715.51",
+        "token_price": "2411.89",
+        "token_symbol": "ETH",
+        "token_quantity": "0.711271693130967746"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x909c8bfc0786358fe3cc671d2921ef4ab3091d99",
+    "transfer_count": 1,
+    "total_value_in_usd": "9.15",
+    "illicit_usd_value": "9.15",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 18:52:11",
+        "block": 20679128,
+        "tx_hash": "0xed43993a01a86b6a98055238a3236abe9fee390b9890ccfafdf6331d7c68034d",
+        "value_in_usd": "9.15",
+        "token_price": "2444.84",
+        "token_symbol": "ETH",
+        "token_quantity": "0.003744243809206260"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x96380cc4cfbdab88f8e262b983f8d19a1fd75b64",
+    "transfer_count": 1,
+    "total_value_in_usd": "230.07",
+    "illicit_usd_value": "230.07",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:22:23",
+        "block": 20680475,
+        "tx_hash": "0x242070a8fd7cd84d1a4fd5876402d2a19b9f82a57befdeb28fce1bf9ba889934",
+        "value_in_usd": "230.07",
+        "token_price": "2463.7",
+        "token_symbol": "ETH",
+        "token_quantity": "0.093385727012108057"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x992c5b4fb2f95406b21b71159413b632c8f9df69",
+    "transfer_count": 1,
+    "total_value_in_usd": "39219.88",
+    "illicit_usd_value": "39219.88",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 09:21:35",
+        "block": 20683454,
+        "tx_hash": "0xbe115f3711a0d36aa1c8f9feb465bfec4874ac0a36da02975bbe5b82b1e73f60",
+        "value_in_usd": "39219.88",
+        "token_price": "2399.52",
+        "token_symbol": "ETH",
+        "token_quantity": "16.344884838789391400"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0x9b8381ba2a477871f0e60582f4d7900c102b6151",
+    "transfer_count": 1,
+    "total_value_in_usd": "7281.79",
+    "illicit_usd_value": "7281.79",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 04:38:59",
+        "block": 20682051,
+        "tx_hash": "0x35af6102c0b6fb69900124316310a1aaf7d06f08dd67819ad67cece9bfc7b7aa",
+        "value_in_usd": "7281.79",
+        "token_price": "2409.19",
+        "token_symbol": "ETH",
+        "token_quantity": "3.022505844437408200"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xa0225ebefcd427cac8f1ab298f833fbe88ee2bfa",
+    "transfer_count": 1,
+    "total_value_in_usd": "4656.73",
+    "illicit_usd_value": "4656.73",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 01:40:35",
+        "block": 20681164,
+        "tx_hash": "0xd14661cb68e87d6351003bab46b21ca9fdd23f9fc60925ee03e0ed9d6492679a",
+        "value_in_usd": "4656.73",
+        "token_price": "2465.43",
+        "token_symbol": "ETH",
+        "token_quantity": "1.888811223420150040"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xa17627fbb5a4f7340263c651200a7c40350e5f3c",
+    "transfer_count": 1,
+    "total_value_in_usd": "9344.75",
+    "illicit_usd_value": "9344.75",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 21:54:35",
+        "block": 20680037,
+        "tx_hash": "0x2ecd19daa7f6ba2221c0e5674dbea122894270c1c9ddebbe2832d81729de9df4",
+        "value_in_usd": "9344.75",
+        "token_price": "2463.34",
+        "token_symbol": "ETH",
+        "token_quantity": "3.793526882220594611"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xa8851bb83789c787c66d29fc9f11ac2d15a8c5aa",
+    "transfer_count": 1,
+    "total_value_in_usd": "745.68",
+    "illicit_usd_value": "745.68",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 01:06:47",
+        "block": 20680995,
+        "tx_hash": "0x53e27df80480d4c8ff3fe6d4c995ed5e3d973b234a0adba4ea2cdbed25ca978c",
+        "value_in_usd": "745.68",
+        "token_price": "2457.34",
+        "token_symbol": "ETH",
+        "token_quantity": "0.303448482398435636"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xa8fe3060d7a3cf8e5bc86cabefd804cfcae52505",
+    "transfer_count": 1,
+    "total_value_in_usd": "15542.92",
+    "illicit_usd_value": "15542.92",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 04:20:35",
+        "block": 20681960,
+        "tx_hash": "0x59d11d6aaf78e8166e0c620c0c259bbcfb9f50d717f7fbbfef87601cf2b482f0",
+        "value_in_usd": "15542.92",
+        "token_price": "2412.88",
+        "token_symbol": "ETH",
+        "token_quantity": "6.441644491958666689"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xaa69bf086899add817985d991a601ccb72f3e4ae",
+    "transfer_count": 1,
+    "total_value_in_usd": "924.80",
+    "illicit_usd_value": "924.80",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:24:35",
+        "block": 20679288,
+        "tx_hash": "0x3e393d079cc6bccda42ae1aa6158c69add4fd0def00641a8a9fb184149be6711",
+        "value_in_usd": "924.80",
+        "token_price": "2447.44",
+        "token_symbol": "ETH",
+        "token_quantity": "0.377863474303898874"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xad01d3be225915fe1514a889c793e81dd9e2e3c2",
+    "transfer_count": 1,
+    "total_value_in_usd": "998.18",
+    "illicit_usd_value": "998.18",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:10:59",
+        "block": 20680119,
+        "tx_hash": "0x75369f6f3285b20232eb28838d1b1fc0d256a1e895e5fd95a408ba1c308f4c87",
+        "value_in_usd": "998.18",
+        "token_price": "2463.46",
+        "token_symbol": "ETH",
+        "token_quantity": "0.405195256426527672"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xaf4f0b22fadd7a48979d1fa149e5aa1295679ac8",
+    "transfer_count": 1,
+    "total_value_in_usd": "1998.81",
+    "illicit_usd_value": "1998.81",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 06:08:23",
+        "block": 20682495,
+        "tx_hash": "0x1d341eec2273becf7ff787426f93fb09eed792ea6bbc134a805277dac6148f45",
+        "value_in_usd": "1998.81",
+        "token_price": "2408.95",
+        "token_symbol": "ETH",
+        "token_quantity": "0.829743941563058622"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xb68f917a93087b06d793b7956117501cabc8a22a",
+    "transfer_count": 1,
+    "total_value_in_usd": "2784.74",
+    "illicit_usd_value": "2784.74",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:51:11",
+        "block": 20683007,
+        "tx_hash": "0x117dafc006d2131cbe02bb1d54033a70ba1f0d92bed6e524dff5cccd78bad6f6",
+        "value_in_usd": "2784.74",
+        "token_price": "2413.17",
+        "token_symbol": "ETH",
+        "token_quantity": "1.153974673260486129"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xbc43e47b08dab70d7f44c343a3558ed9a947538c",
+    "transfer_count": 1,
+    "total_value_in_usd": "888.46",
+    "illicit_usd_value": "888.46",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 00:53:11",
+        "block": 20680927,
+        "tx_hash": "0x5170fb52eb3e0923d80d32e2da860d5339cd3bc5f3ef6915ec6bec8425d61b5b",
+        "value_in_usd": "888.46",
+        "token_price": "2458.81",
+        "token_symbol": "ETH",
+        "token_quantity": "0.361335623199989444"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xbd9971ce31d606e3d5683167c1a4f84da5fe6ad8",
+    "transfer_count": 1,
+    "total_value_in_usd": "7296.19",
+    "illicit_usd_value": "7296.19",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 18:36:47",
+        "block": 20679051,
+        "tx_hash": "0xf1043012c6c4e0d133aba298d82ae07b806d8e30e175127fb82c65aaa13e870e",
+        "value_in_usd": "7296.19",
+        "token_price": "2448.95",
+        "token_symbol": "ETH",
+        "token_quantity": "2.979311781967430298"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xc305ec74795008491b6570b73c782df87d49fbbf",
+    "transfer_count": 1,
+    "total_value_in_usd": "1575.53",
+    "illicit_usd_value": "1575.53",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 03:46:47",
+        "block": 20681791,
+        "tx_hash": "0x19f6c9479cbabeb103a32a50fa3219265285a3fc2e6f34a6bad51235f37a4042",
+        "value_in_usd": "1575.53",
+        "token_price": "2415.74",
+        "token_symbol": "ETH",
+        "token_quantity": "0.652193977329049986"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xe111c635ea97cc0e5400a95de0b154027db7b8a0",
+    "transfer_count": 1,
+    "total_value_in_usd": "623.97",
+    "illicit_usd_value": "623.97",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 00:06:23",
+        "block": 20680694,
+        "tx_hash": "0x45e1a9a1bb892fa02d25d8d448e2ecbf96c26a4f6fdbc8146860c78e77edfed5",
+        "value_in_usd": "623.97",
+        "token_price": "2448.25",
+        "token_symbol": "ETH",
+        "token_quantity": "0.254862514884719188"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xebafb860fc5a561689899c29ca0700fb3c20aecf",
+    "transfer_count": 1,
+    "total_value_in_usd": "1137.26",
+    "illicit_usd_value": "1137.26",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 04:56:35",
+        "block": 20682138,
+        "tx_hash": "0xb04a432daa6423f80450d01429f974b1265cedbca3b69955581fa58c4415435e",
+        "value_in_usd": "1137.26",
+        "token_price": "2417.44",
+        "token_symbol": "ETH",
+        "token_quantity": "0.470440956226661219"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xed99272aa2ec35638ce3a5c6c1d66763f067e843",
+    "transfer_count": 1,
+    "total_value_in_usd": "1933.28",
+    "illicit_usd_value": "1933.28",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 23:42:47",
+        "block": 20680577,
+        "tx_hash": "0x76417562b27633dc7fd15f0300dbbf374aa201878e5d7ad2d25ff6d984301b94",
+        "value_in_usd": "1933.28",
+        "token_price": "2451",
+        "token_symbol": "ETH",
+        "token_quantity": "0.788771895854581613"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xeed4deaa004b0753d9264ed8dce75720659c946d",
+    "transfer_count": 1,
+    "total_value_in_usd": "26993.84",
+    "illicit_usd_value": "26993.84",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:46:23",
+        "block": 20680296,
+        "tx_hash": "0x31b2707a286dd23f2947cfae4d52779986199552b11809d75fa6c74fb50d004b",
+        "value_in_usd": "26993.84",
+        "token_price": "2460.38",
+        "token_symbol": "ETH",
+        "token_quantity": "10.971412795966848758"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xf458e9a945eba473fde1769992486c87d978587f",
+    "transfer_count": 1,
+    "total_value_in_usd": "390.61",
+    "illicit_usd_value": "390.61",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 09:35:11",
+        "block": 20683521,
+        "tx_hash": "0x7529243b9093964228b3d7a45d90cce58a02b634be871d350f07c15e0d3bad14",
+        "value_in_usd": "390.61",
+        "token_price": "2391.94",
+        "token_symbol": "ETH",
+        "token_quantity": "0.163302679409539464"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xf56889c29704e8477d95f9aed27c685c1163c9cd",
+    "transfer_count": 1,
+    "total_value_in_usd": "3388.74",
+    "illicit_usd_value": "3388.74",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:54:59",
+        "block": 20679440,
+        "tx_hash": "0x5e2dca349dd6ce8f03fe803017ec40aeab3c205291cf1bad02dc53572ee991e7",
+        "value_in_usd": "3388.74",
+        "token_price": "2445.95",
+        "token_symbol": "ETH",
+        "token_quantity": "1.385448652545865515"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xf9a8b3145cef617973f12848d6bec23dae902523",
+    "transfer_count": 1,
+    "total_value_in_usd": "1254.85",
+    "illicit_usd_value": "1254.85",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:01:11",
+        "block": 20682759,
+        "tx_hash": "0x4884d3936608bad1a8cd2a5c5275ec3fe5bac5767edc78c4ddab6201ab4e29ee",
+        "value_in_usd": "1254.85",
+        "token_price": "2397.16",
+        "token_symbol": "ETH",
+        "token_quantity": "0.523474569524932879"
+      }
+    ]
+  },
+  {
+    "from": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "from_label": "transit_9c7a",
+    "to": "0xfed0ffb23cb2cd7c5cec47c09308a7d5b1681dfd",
+    "transfer_count": 1,
+    "total_value_in_usd": "3078.53",
+    "illicit_usd_value": "3078.53",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:26:59",
+        "block": 20682886,
+        "tx_hash": "0x845969320e39a6638c744920fe097776202fd25da4dd8c5ff932125a92ac53fa",
+        "value_in_usd": "3078.53",
+        "token_price": "2413.58",
+        "token_symbol": "ETH",
+        "token_quantity": "1.275502864457028683"
+      }
+    ]
+  },
+  {
+    "from": "0x9f5ebf1bf779461f904f7288b7498145b0209ac5",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "120.60",
+    "illicit_usd_value": "120.60",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 22:41:35",
+        "block": 20587199,
+        "tx_hash": "0x1966bb6176f85e564fc52fad5194d8f1b4c7daa57114cfb5436815ffcb557b63",
+        "value_in_usd": "120.60",
+        "token_price": "2622.78",
+        "token_symbol": "ETH",
+        "token_quantity": "0.045981182082532000"
+      }
+    ]
+  },
+  {
+    "from": "0xa0225ebefcd427cac8f1ab298f833fbe88ee2bfa",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "4537.82",
+    "illicit_usd_value": "4537.82",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 05:09:59",
+        "block": 20682205,
+        "tx_hash": "0x97f22aca94b96489dfc0de99985dfdea5a2f6df29780445012a54e386a24c871",
+        "value_in_usd": "4537.82",
+        "token_price": "2402.52",
+        "token_symbol": "ETH",
+        "token_quantity": "1.888776561523566040"
+      }
+    ]
+  },
+  {
+    "from": "0xa17627fbb5a4f7340263c651200a7c40350e5f3c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "9347.04",
+    "illicit_usd_value": "9344.75",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:55:59",
+        "block": 20680344,
+        "tx_hash": "0x4525e80a8bafd04bc2018a210bb2a138eeeaf45f76319ce643c69208e98ac9ea",
+        "value_in_usd": "9347.04",
+        "token_price": "2463.98",
+        "token_symbol": "ETH",
+        "token_quantity": "3.793473980420244611"
+      }
+    ]
+  },
+  {
+    "from": "0xa8851bb83789c787c66d29fc9f11ac2d15a8c5aa",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "742.41",
+    "illicit_usd_value": "742.41",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 02:08:11",
+        "block": 20681302,
+        "tx_hash": "0x798703120594b9ac94b9acd3437cc76cf955eabbca5b8ac187f8d68516cccd1b",
+        "value_in_usd": "742.41",
+        "token_price": "2450.27",
+        "token_symbol": "ETH",
+        "token_quantity": "0.302992905368177636"
+      }
+    ]
+  },
+  {
+    "from": "0xa8fe3060d7a3cf8e5bc86cabefd804cfcae52505",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "15542.52",
+    "illicit_usd_value": "15542.52",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 05:34:11",
+        "block": 20682324,
+        "tx_hash": "0x290e0eb4cb059c50af40790c678df350b021e313201e241453bb6d889e1c01b4",
+        "value_in_usd": "15542.52",
+        "token_price": "2412.83",
+        "token_symbol": "ETH",
+        "token_quantity": "6.441613257062834689"
+      }
+    ]
+  },
+  {
+    "from": "0xaa69bf086899add817985d991a601ccb72f3e4ae",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "927.78",
+    "illicit_usd_value": "924.80",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:59:47",
+        "block": 20679763,
+        "tx_hash": "0x5925e971b6ed3e3aca6ad9ffe929c7f1832a2955d2cc009df55bce20bfbcd27c",
+        "value_in_usd": "927.78",
+        "token_price": "2456.26",
+        "token_symbol": "ETH",
+        "token_quantity": "0.377721357448472874"
+      }
+    ]
+  },
+  {
+    "from": "0xaa862f977d6916a1e89e856fc11fd99a2f2fabf8",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 1,
+    "total_value_in_usd": "335706.75",
+    "illicit_usd_value": "335604.10",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 01:58:11",
+        "block": 20573861,
+        "tx_hash": "0xf46920f9fb543c071f401c90337bfa5d27a51f4ae62e0235cd07832ad2ac087c",
+        "value_in_usd": "335706.75",
+        "token_price": "2582.36",
+        "token_symbol": "ETH",
+        "token_quantity": "129.999979000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xad01d3be225915fe1514a889c793e81dd9e2e3c2",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "997.32",
+    "illicit_usd_value": "997.32",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 22:47:59",
+        "block": 20680304,
+        "tx_hash": "0xf137dfca2157b0f96e71dcea0f16a0f6b1c8128f4ea0707617d45e3f3dfcbdc4",
+        "value_in_usd": "997.32",
+        "token_price": "2461.66",
+        "token_symbol": "ETH",
+        "token_quantity": "0.405142751796489672"
+      }
+    ]
+  },
+  {
+    "from": "0xaf4f0b22fadd7a48979d1fa149e5aa1295679ac8",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "2002.10",
+    "illicit_usd_value": "1998.81",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 07:53:47",
+        "block": 20683020,
+        "tx_hash": "0x64ad9304ced2bb6b48d35c7491c1d787093d0fa6c2d417454064e2192a36ffef",
+        "value_in_usd": "2002.10",
+        "token_price": "2413.01",
+        "token_symbol": "ETH",
+        "token_quantity": "0.829708600340015622"
+      }
+    ]
+  },
+  {
+    "from": "0xb072d9baa8f916df2cf7c146c2a4eb16ad3418bd",
+    "to": "0x676f3812ce33595c58d244b44ef7cf09ca87921e",
+    "transfer_count": 1,
+    "total_value_in_usd": "100541.83",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:47:47",
+        "block": 20583942,
+        "tx_hash": "0xeec9620fa23499e5e178567fc5898e8b8e0d6e1a3a10e037c4f9bc3885351dbf",
+        "value_in_usd": "100541.83",
+        "token_price": "2640.8",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072490594358228000"
+      }
+    ]
+  },
+  {
+    "from": "0xb26c68370db0dfee465d9e1bcaad95bbbae2a5ed",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58224.55",
+    "illicit_usd_value": "58224.55",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:33:23",
+        "block": 20597590,
+        "tx_hash": "0xd0c9a4621c9838c88a7bcf236bd50175e1d7f320c1a94dc1c91251952aaf43d1",
+        "value_in_usd": "58224.55",
+        "token_price": "2772.6",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999982630475548000"
+      }
+    ]
+  },
+  {
+    "from": "0xb46fb08e3729fe144672b200af6ec07afa4cc45f",
+    "from_label": "eXch_Deposit_0xb46f",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 14:36:11",
+        "block": 20606240,
+        "tx_hash": "0x546bd4390259db9bba105bd076816bcfb41b45d3fbe701fca9e05b42fa889d5d",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xb68f917a93087b06d793b7956117501cabc8a22a",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "2771.10",
+    "illicit_usd_value": "2771.10",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:53:59",
+        "block": 20683317,
+        "tx_hash": "0xf70b2040f5fa30cbef6960262111f6ef337f53fb471e4aea35535270ed7740f9",
+        "value_in_usd": "2771.10",
+        "token_price": "2401.46",
+        "token_symbol": "ETH",
+        "token_quantity": "1.153923608260479129"
+      }
+    ]
+  },
+  {
+    "from": "0xb6bc1455e7aa65959ec009bfe0732c690a1ca9cd",
+    "to": "0x0b172c2479210d671a87fb2dc241cfdc0501345f",
+    "transfer_count": 1,
+    "total_value_in_usd": "100490.85",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:31:35",
+        "block": 20583861,
+        "tx_hash": "0xf6393b781f80fb4e06be16fee20df4b050e7ccfc70e4e82f77426089c2ace10f",
+        "value_in_usd": "100490.85",
+        "token_price": "2639.49",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072070547785488000"
+      }
+    ]
+  },
+  {
+    "from": "0xb847787f18208c7c9aadcd50966eb9a1539e5814",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49992.30",
+    "illicit_usd_value": "49991.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 10:45:23",
+        "block": 20605093,
+        "tx_hash": "0xffeb00be59f1247901dd0c31b70dd91e11fb9c19ee373fbb9374e3945f6e2927",
+        "value_in_usd": "49992.30",
+        "token_price": "0.999846",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xb8c46532b93417e612a9745067400167cdbd307d",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "44990.87",
+    "illicit_usd_value": "44990.87",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 16:03:23",
+        "block": 20606674,
+        "tx_hash": "0x0f1e63d40854de20062c95b9256625b57384553ac4d57e644f9c6bcd2448552e",
+        "value_in_usd": "44990.87",
+        "token_price": "0.999797",
+        "token_symbol": "DAI",
+        "token_quantity": "45000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xba258b2b0afdbff8a6b4171f2da3ef1ae8071843",
+    "to": "0x825093013c3f89a5f1ea38fac17df80e77437f14",
+    "to_label": "transit_8250",
+    "transfer_count": 2,
+    "total_value_in_usd": "5726246.57",
+    "illicit_usd_value": "5593025.38",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 20:24:11",
+        "block": 20579357,
+        "tx_hash": "0xebed7d316c41aed19d1f1fd2d2da9eeff44f4deff73053b2854f5cf088de25e3",
+        "value_in_usd": "26455.90",
+        "token_price": "2645.59",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-21 20:24:47",
+        "block": 20579360,
+        "tx_hash": "0x65253901bcc0357b2185f982e09bf33d359285cc9bcb1a7972e4c5d5a7e3eb80",
+        "value_in_usd": "5699790.67",
+        "token_price": "2645.59",
+        "token_symbol": "ETH",
+        "token_quantity": "2154.449733475829850000"
+      }
+    ]
+  },
+  {
+    "from": "0xbaebf0400f438ad771401a4daa79f47a4ff96a4c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49983.35",
+    "illicit_usd_value": "49983.35",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 10:23:23",
+        "block": 20604984,
+        "tx_hash": "0x07ba16685f3baeee08f6e222cf6ed40ec97b23947c0ff20382a25879f050f209",
+        "value_in_usd": "49983.35",
+        "token_price": "0.999667",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xbb5b78343e1cd11396db855473bc31f874a92d8c",
+    "to": "0x410189e01724c0ec9d0b60e17386f43a620762d4",
+    "transfer_count": 1,
+    "total_value_in_usd": "100587.40",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:09:59",
+        "block": 20584053,
+        "tx_hash": "0x086672ee59d4cfe0774df80c0075b7656b02f34462b865c11f366569f20a4c1a",
+        "value_in_usd": "100587.40",
+        "token_price": "2641.99",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072588678749736000"
+      }
+    ]
+  },
+  {
+    "from": "0xbc43e47b08dab70d7f44c343a3558ed9a947538c",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "889.27",
+    "illicit_usd_value": "888.46",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 01:45:47",
+        "block": 20681190,
+        "tx_hash": "0x21cef66ce849e0ce0ad8930a8194c2c97e8e2d533c02bdc7cfc02628499bebd3",
+        "value_in_usd": "889.27",
+        "token_price": "2463.23",
+        "token_symbol": "ETH",
+        "token_quantity": "0.361019493751130444"
+      }
+    ]
+  },
+  {
+    "from": "0xbd9971ce31d606e3d5683167c1a4f84da5fe6ad8",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "7283.68",
+    "illicit_usd_value": "7283.68",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 19:08:11",
+        "block": 20679207,
+        "tx_hash": "0x686206254f11e2807529fb32de60882e3182dd77781bfbff7df76a52c6cc39f7",
+        "value_in_usd": "7283.68",
+        "token_price": "2444.85",
+        "token_symbol": "ETH",
+        "token_quantity": "2.979193220090423298"
+      }
+    ]
+  },
+  {
+    "from": "0xbdce311ce503b69e6a4c40a2bcd806173429d403",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:31:23",
+        "block": 20605621,
+        "tx_hash": "0xeb40500c9cbdaa9f5c941395c943e6a796ca94d6601a3b84df8d768a015dc9d2",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xbeda662dc22c972498a18cbddfb22b8ff9fde97c",
+    "from_label": "transit_beda",
+    "to": "0xd2091a85daf4a0349d7aa472212d1bb95077d34b",
+    "transfer_count": 1,
+    "total_value_in_usd": "11368.02",
+    "illicit_usd_value": "11368.02",
+    "transfers": [
+      {
+        "timestamp": "2024-08-27 19:03:23",
+        "block": 20621888,
+        "tx_hash": "0x6ceb6c7c416e9c7f1b255575191a9e6f6a5626196ce2c69f4f7150a6ec7f987c",
+        "value_in_usd": "11368.02",
+        "token_price": "2583.64",
+        "token_symbol": "ETH",
+        "token_quantity": "4.400000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xbeda662dc22c972498a18cbddfb22b8ff9fde97c",
+    "from_label": "transit_beda",
+    "to": "0xd28b9ae47fe61eb0f24d90bdf65f6a679311c2aa",
+    "transfer_count": 1,
+    "total_value_in_usd": "93896.78",
+    "illicit_usd_value": "93896.78",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 06:15:59",
+        "block": 20603757,
+        "tx_hash": "0xbba5285e5702230aaa937e7fbaf1c884cfa8b415d36b1f9263e3b9595f814470",
+        "value_in_usd": "93896.78",
+        "token_price": "2761.67",
+        "token_symbol": "ETH",
+        "token_quantity": "34.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xbfbe186e8892012e992b8eb046ffc6096fd500f3",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58206.49",
+    "illicit_usd_value": "58206.49",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:35:23",
+        "block": 20597600,
+        "tx_hash": "0x75ee0fce49aad05c8fc1c3debfe8f13c0655f7a0643a530911818a199468ac6c",
+        "value_in_usd": "58206.49",
+        "token_price": "2771.74",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999982982232163000"
+      }
+    ]
+  },
+  {
+    "from": "0xbfe1c7db8894bafa0459991bf6e77615db94f287",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58224.55",
+    "illicit_usd_value": "58224.55",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:33:23",
+        "block": 20597590,
+        "tx_hash": "0xacd4547a2c93f4e5a3a16978a9914d5555f614d5a86facbad753abba78215866",
+        "value_in_usd": "58224.55",
+        "token_price": "2772.6",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999982630475548000"
+      }
+    ]
+  },
+  {
+    "from": "0xc01bf2530adf8f053a74e83201e37818dd9f9597",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 15:13:23",
+        "block": 20606426,
+        "tx_hash": "0x52db8c3fa8a0d06c8d2c499ad628fa77b7073401657acf0b9d512ee217a26015",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xc2cc41c4f0f9aa38cb1fa71c39da2121adfa5909",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 1,
+    "total_value_in_usd": "224870.64",
+    "illicit_usd_value": "224870.64",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 01:09:47",
+        "block": 20573619,
+        "tx_hash": "0x852bcc688308198449867946d24a3bccca01019ceecf6584a979c932348f5995",
+        "value_in_usd": "224870.64",
+        "token_price": "0.9994250618303474",
+        "token_symbol": "DAI",
+        "token_quantity": "225000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xc2cc41c4f0f9aa38cb1fa71c39da2121adfa5909",
+    "to": "0x9008d19f58aabd9ed0d60971565aa8510560ab41",
+    "to_label": "CoW Protocol: GPv2Settlement",
+    "transfer_count": 2,
+    "total_value_in_usd": "1973227.40",
+    "illicit_usd_value": "1972806.16",
+    "transfers": [
+      {
+        "timestamp": "2024-09-06 16:46:59",
+        "block": 20692837,
+        "tx_hash": "0x5ee84c595a008bb452330b717a3c6986a4e6dd2e917493bf59b35437babff602",
+        "value_in_usd": "9999.79",
+        "token_price": "0.9999793877087108",
+        "token_symbol": "DAI",
+        "token_quantity": "10000.000000000000000000"
+      },
+      {
+        "timestamp": "2024-09-06 16:49:23",
+        "block": 20692849,
+        "tx_hash": "0xee0d2daaf6d79721f34ff3b2e8bdeb1fa61e10ef9a15570fa0cfa6f65fc85252",
+        "value_in_usd": "1963227.61",
+        "token_price": "0.9990980178137661",
+        "token_symbol": "DAI",
+        "token_quantity": "1965000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xc305ec74795008491b6570b73c782df87d49fbbf",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1576.94",
+    "illicit_usd_value": "1575.53",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 04:52:47",
+        "block": 20682120,
+        "tx_hash": "0x96ab4ffdd736d4ad0d9ad003838f0539587dfc493668e05bb7598ebfed57d6bf",
+        "value_in_usd": "1576.94",
+        "token_price": "2418.02",
+        "token_symbol": "ETH",
+        "token_quantity": "0.652162485149575986"
+      }
+    ]
+  },
+  {
+    "from": "0xc9375fbfc0855b50316e68982001d5b7d0e9d028",
+    "from_label": "transit_c937",
+    "to": "0x9c7a7afde28cd5ab4f5731f8c4a0b51a176a6f86",
+    "to_label": "transit_9c7a",
+    "transfer_count": 2,
+    "total_value_in_usd": "245061.50",
+    "illicit_usd_value": "245061.50",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 18:27:11",
+        "block": 20679003,
+        "tx_hash": "0x1ff82374d97d9a82096ddad9eca55fb0d54f1c8a24513e6a721d52d46e342266",
+        "value_in_usd": "24.50",
+        "token_price": "2450.37",
+        "token_symbol": "ETH",
+        "token_quantity": "0.010000000000000000"
+      },
+      {
+        "timestamp": "2024-09-04 18:27:59",
+        "block": 20679007,
+        "tx_hash": "0x27c3998bf6c16c9e6215a9ed763a1872c8d949ffacd8f8c054d4fa307582619c",
+        "value_in_usd": "245037.00",
+        "token_price": "2450.37",
+        "token_symbol": "ETH",
+        "token_quantity": "100.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xcbcbb92c96dc0600fb0decb8e18cbbef3cb99f93",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "52627.67",
+    "illicit_usd_value": "52531.01",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:23:23",
+        "block": 20597540,
+        "tx_hash": "0x9fa0e4cc969fd0653b722b681b2f02606b3f8957604722a1d67e3312ffd804c9",
+        "value_in_usd": "52627.67",
+        "token_price": "2769.88",
+        "token_symbol": "ETH",
+        "token_quantity": "18.999983354511490000"
+      }
+    ]
+  },
+  {
+    "from": "0xd06f45294fc36bfa922dc42f4bff7af45b9032ba",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "49989.80",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 12:31:23",
+        "block": 20605621,
+        "tx_hash": "0x1104f8aae0d5dbbbd2130857e9904b3fe381325417aaeeb8536782ea42d57370",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xd2091a85daf4a0349d7aa472212d1bb95077d34b",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "11386.29",
+    "illicit_usd_value": "11368.02",
+    "transfers": [
+      {
+        "timestamp": "2024-08-27 19:27:11",
+        "block": 20622006,
+        "tx_hash": "0x4585a9dc3bc47c89e7d3ad7b5fa43155884bd8dc5257e512ff3118b47d1e610c",
+        "value_in_usd": "11386.29",
+        "token_price": "2587.81",
+        "token_symbol": "ETH",
+        "token_quantity": "4.399972284479699000"
+      }
+    ]
+  },
+  {
+    "from": "0xd28b9ae47fe61eb0f24d90bdf65f6a679311c2aa",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "93908.29",
+    "illicit_usd_value": "93896.78",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 06:39:23",
+        "block": 20603873,
+        "tx_hash": "0xf18745e2a2293bbe2b9cb634359eab5fac75d24df02f32e51da54c8bb569af9d",
+        "value_in_usd": "93908.29",
+        "token_price": "2762.01",
+        "token_symbol": "ETH",
+        "token_quantity": "33.999980773701223000"
+      }
+    ]
+  },
+  {
+    "from": "0xd78ca96cb8516d01270017337bf1b5f8f9d4e4fa",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "49977.30",
+    "illicit_usd_value": "49977.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 11:39:23",
+        "block": 20605363,
+        "tx_hash": "0x1fffdcda290419b159f8adce52884bfdc4f354a19f93f6e6af68c165748f8b38",
+        "value_in_usd": "49977.30",
+        "token_price": "0.999546",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xd927a68f47cea9e739f5c1227b18707953ab8b54",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "37761.34",
+    "illicit_usd_value": "37745.25",
+    "transfers": [
+      {
+        "timestamp": "2024-09-02 17:46:59",
+        "block": 20664468,
+        "tx_hash": "0xe2b8b05ba67df53e5573d36ab4686ef4733400e0c71f8cc9d7405198de67dc15",
+        "value_in_usd": "37761.34",
+        "token_price": "2517.46",
+        "token_symbol": "ETH",
+        "token_quantity": "14.999775924094653000"
+      }
+    ]
+  },
+  {
+    "from": "0xdbd4b7f150fa1758f014bb2f95c155d96e07aa5f",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58238.20",
+    "illicit_usd_value": "58236.99",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:37:47",
+        "block": 20597612,
+        "tx_hash": "0x2b8e9aa58f5621d645d96467f990292d68f7817660ded1cdf15e4e7c9559286b",
+        "value_in_usd": "58238.20",
+        "token_price": "2773.25",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999983023097029000"
+      }
+    ]
+  },
+  {
+    "from": "0xdc456baa3ab206a5f93401a86dddbd29eac883c3",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "166798.25",
+    "illicit_usd_value": "166367.13",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 18:53:23",
+        "block": 20593216,
+        "tx_hash": "0x47f7c4e0600230008c7849effbbcf2afc4d7cabbafc9e8c0c6f1ed793db08cc0",
+        "value_in_usd": "166798.25",
+        "token_price": "2734.4",
+        "token_symbol": "ETH",
+        "token_quantity": "60.999944288842666000"
+      }
+    ]
+  },
+  {
+    "from": "0xdd6397104d57533e507bd571ac88c4b24852bce9",
+    "to": "0xc9375fbfc0855b50316e68982001d5b7d0e9d028",
+    "to_label": "transit_c937",
+    "transfer_count": 2,
+    "total_value_in_usd": "19273858.04",
+    "illicit_usd_value": "19273858.04",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 19:34:35",
+        "block": 20593420,
+        "tx_hash": "0x1d4532bec533c0639c0f93a9cbf95a8a86e51d9f172c7fa911e83e88f9ab8078",
+        "value_in_usd": "10000000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "10000000.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-23 19:35:11",
+        "block": 20593423,
+        "tx_hash": "0xd49d36fb496da1d616e60d786911c25aa1a78d3c52af793574a7060298295ead",
+        "value_in_usd": "9273858.04",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "9273858.041800000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xe111c635ea97cc0e5400a95de0b154027db7b8a0",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "625.61",
+    "illicit_usd_value": "623.97",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 00:43:59",
+        "block": 20680881,
+        "tx_hash": "0x5762223f2e42f526d2c79bc84563ab0aba3507f0fb39e425c5fc20af0e7c8738",
+        "value_in_usd": "625.61",
+        "token_price": "2455.42",
+        "token_symbol": "ETH",
+        "token_quantity": "0.254786835177266188"
+      }
+    ]
+  },
+  {
+    "from": "0xe7a2c603965e57f2b7876b0c84e0d7a9447030a2",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "17602.84",
+    "illicit_usd_value": "17602.84",
+    "transfers": [
+      {
+        "timestamp": "2024-08-30 19:30:47",
+        "block": 20643496,
+        "tx_hash": "0xb53b01a98c463625930795a4ff72157b0d7be60521b6148eb443742b80717417",
+        "value_in_usd": "17602.84",
+        "token_price": "2514.7",
+        "token_symbol": "ETH",
+        "token_quantity": "6.999974724508612000"
+      }
+    ]
+  },
+  {
+    "from": "0xe7d9ea25df87067051c039c97ab4bafe6b3050ab",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "50000.00",
+    "illicit_usd_value": "50000.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-25 15:39:23",
+        "block": 20606554,
+        "tx_hash": "0x7202e53045594ef68993c198634bcb9bafaf727c5946c69e290ae1854a42d6c9",
+        "value_in_usd": "50000.00",
+        "token_price": "1",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xe7ef36a59043f4538331c22f4e27e75525d55842",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "25042.35",
+    "illicit_usd_value": "25042.35",
+    "transfers": [
+      {
+        "timestamp": "2024-08-31 18:14:47",
+        "block": 20650276,
+        "tx_hash": "0x1afffbf0598672751f3d154585df46e89293380078f22b59accb8113695eb1a3",
+        "value_in_usd": "25042.35",
+        "token_price": "2504.24",
+        "token_symbol": "ETH",
+        "token_quantity": "9.999980429268547000"
+      }
+    ]
+  },
+  {
+    "from": "0xe7f4b7b741e549cd99d7f1f5abde239c2dbce45f",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "58167.43",
+    "illicit_usd_value": "58167.43",
+    "transfers": [
+      {
+        "timestamp": "2024-08-24 09:23:23",
+        "block": 20597540,
+        "tx_hash": "0x6ee1a988a9a9f374603ecf386d5171209d0e4015faac709c9a2e2367513f1f2d",
+        "value_in_usd": "58167.43",
+        "token_price": "2769.88",
+        "token_symbol": "ETH",
+        "token_quantity": "20.999983354511490000"
+      }
+    ]
+  },
+  {
+    "from": "0xebafb860fc5a561689899c29ca0700fb3c20aecf",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1134.22",
+    "illicit_usd_value": "1134.22",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 05:43:47",
+        "block": 20682372,
+        "tx_hash": "0x615cc03ad2152d1d77962e14299a1e8a53cdaa64503b261fd6548eb50a8aa96f",
+        "value_in_usd": "1134.22",
+        "token_price": "2411.12",
+        "token_symbol": "ETH",
+        "token_quantity": "0.470412640809965219"
+      }
+    ]
+  },
+  {
+    "from": "0xed99272aa2ec35638ce3a5c6c1d66763f067e843",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1935.97",
+    "illicit_usd_value": "1933.28",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 00:15:59",
+        "block": 20680742,
+        "tx_hash": "0xd0770b3c1318838f625629dea0c8eeb6834a2234e4246b5baa03c2dc5b9f8265",
+        "value_in_usd": "1935.97",
+        "token_price": "2454.6",
+        "token_symbol": "ETH",
+        "token_quantity": "0.788710178831248613"
+      }
+    ]
+  },
+  {
+    "from": "0xeed4deaa004b0753d9264ed8dce75720659c946d",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "26475.67",
+    "illicit_usd_value": "26475.67",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 04:24:11",
+        "block": 20681978,
+        "tx_hash": "0x3b5a052a74b6e60357ce5e06150d28aa8234d4ebcaac82a8f859b7ec8c6165de",
+        "value_in_usd": "26475.67",
+        "token_price": "2413.16",
+        "token_symbol": "ETH",
+        "token_quantity": "10.971370617305484758"
+      }
+    ]
+  },
+  {
+    "from": "0xefda87a2b7386d1789a2eb9215fb0aa96de92dd7",
+    "to": "0xb072d9baa8f916df2cf7c146c2a4eb16ad3418bd",
+    "transfer_count": 1,
+    "total_value_in_usd": "100524.12",
+    "illicit_usd_value": "99971.45",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 11:44:47",
+        "block": 20583927,
+        "tx_hash": "0x040245fba90c434322d5d482566579c6d73630d49e736dab53688d59c7353e74",
+        "value_in_usd": "100524.12",
+        "token_price": "2640.34",
+        "token_symbol": "ETH",
+        "token_quantity": "38.072414496908088000"
+      }
+    ]
+  },
+  {
+    "from": "0xf0f686e8b5077bf0e3e2c3430a490b48bfa3661d",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "39267.01",
+    "illicit_usd_value": "39091.04",
+    "transfers": [
+      {
+        "timestamp": "2024-09-03 22:58:23",
+        "block": 20673191,
+        "tx_hash": "0x5ef9fbce01df6965b47f7009c8333b8769e17bb9c02b72d24711f251551c6a47",
+        "value_in_usd": "39267.01",
+        "token_price": "2454.19",
+        "token_symbol": "ETH",
+        "token_quantity": "15.999986769277663000"
+      }
+    ]
+  },
+  {
+    "from": "0xf1f516c17665187d59b47ba85b40d61707f15918",
+    "to": "0x1231deb6f5749ef6ce6943a275a1d3e7486f4eae",
+    "to_label": "LI.FI: LiFi Diamond",
+    "transfer_count": 4,
+    "total_value_in_usd": "248989.52",
+    "illicit_usd_value": "248989.52",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:48:11",
+        "block": 20584244,
+        "tx_hash": "0xbb2c3efdffe6ef6de4fc439a1a8260ccd5e25d6ea357b5f6006c4527b0c346e7",
+        "value_in_usd": "26244.33",
+        "token_price": "2624.43",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000009725643090400"
+      },
+      {
+        "timestamp": "2024-08-22 13:16:35",
+        "block": 20584386,
+        "tx_hash": "0xf2981baa18811e8b1178774af88e22d86efb06171a7f99da870520bbef272784",
+        "value_in_usd": "26211.50",
+        "token_price": "2621.15",
+        "token_symbol": "ETH",
+        "token_quantity": "10.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 13:33:11",
+        "block": 20584468,
+        "tx_hash": "0xbaa7a09358572870ab2d60983c3a3cef37d0ae4d29c7b7ad67c41d084e5eac61",
+        "value_in_usd": "78897.30",
+        "token_price": "2629.91",
+        "token_symbol": "ETH",
+        "token_quantity": "30.000000000000000000"
+      },
+      {
+        "timestamp": "2024-08-22 13:57:35",
+        "block": 20584590,
+        "tx_hash": "0xc892294e7c82615c02f87b842fa33d8362eb3f8177718a31c15596bba1fcbb6d",
+        "value_in_usd": "117636.39",
+        "token_price": "2624.4",
+        "token_symbol": "ETH",
+        "token_quantity": "44.824107452192727407"
+      }
+    ]
+  },
+  {
+    "from": "0xf2ba59c0d4fefe1a69fb03f504b7b243db9d6bf5",
+    "to": "0x45300136662dd4e58fc0df61e6290dffd992b785",
+    "to_label": "KuCoin 17",
+    "transfer_count": 2,
+    "total_value_in_usd": "34158.52",
+    "illicit_usd_value": "34158.52",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:39:23",
+        "block": 20584200,
+        "tx_hash": "0x75fb0d835357d85cca8287d8f8428b5b662d5ded7c4437f245b35a7eb9417003",
+        "value_in_usd": "2629.97",
+        "token_price": "2630.12",
+        "token_symbol": "ETH",
+        "token_quantity": "0.999944126810656000"
+      },
+      {
+        "timestamp": "2024-08-22 14:05:59",
+        "block": 20584631,
+        "tx_hash": "0xfadbc3b5e2f6f24f76ea7c7feca57d2253053135f0706e98dc6294f4b576c7a9",
+        "value_in_usd": "31528.55",
+        "token_price": "2611.59",
+        "token_symbol": "ETH",
+        "token_quantity": "12.072549432813695000"
+      }
+    ]
+  },
+  {
+    "from": "0xf458e9a945eba473fde1769992486c87d978587f",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "390.56",
+    "illicit_usd_value": "390.56",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 10:38:23",
+        "block": 20683836,
+        "tx_hash": "0x400b081e25acdb14bb5569947d7ef6dc389cb7ddcec76527a859d7afef0f0313",
+        "value_in_usd": "390.56",
+        "token_price": "2392.4",
+        "token_symbol": "ETH",
+        "token_quantity": "0.163250908423972464"
+      }
+    ]
+  },
+  {
+    "from": "0xf56889c29704e8477d95f9aed27c685c1163c9cd",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "3406.09",
+    "illicit_usd_value": "3388.74",
+    "transfers": [
+      {
+        "timestamp": "2024-09-04 20:57:59",
+        "block": 20679754,
+        "tx_hash": "0x830cb2d018fca6c65754627beb40b4cde81778850b2186a31904567e254c7af5",
+        "value_in_usd": "3406.09",
+        "token_price": "2458.78",
+        "token_symbol": "ETH",
+        "token_quantity": "1.385277351743143515"
+      }
+    ]
+  },
+  {
+    "from": "0xf621fb08bbe51af70e7e0f4ea63496894166ff7f",
+    "to": "0xb8f275fbf7a959f4bce59999a2ef122a099e81a8",
+    "to_label": "Symbiosis Finance: Portal",
+    "transfer_count": 6,
+    "total_value_in_usd": "110027.34",
+    "illicit_usd_value": "110017.30",
+    "transfers": [
+      {
+        "timestamp": "2024-08-28 01:56:11",
+        "block": 20623945,
+        "tx_hash": "0x15d187a346d79165f0aaff25be7d26c985fdfb22776887847cdf308103c966f3",
+        "value_in_usd": "12213.24",
+        "token_price": "1.001",
+        "token_symbol": "USDC",
+        "token_quantity": "12201.042090"
+      },
+      {
+        "timestamp": "2024-08-28 01:57:47",
+        "block": 20623953,
+        "tx_hash": "0xc0ea086647de2db021cdfca02c6489cceda05c04acb3ad6a2eb7d253256b3d86",
+        "value_in_usd": "24287.19",
+        "token_price": "1.002",
+        "token_symbol": "USDC",
+        "token_quantity": "24238.711073"
+      },
+      {
+        "timestamp": "2024-08-28 01:59:23",
+        "block": 20623961,
+        "tx_hash": "0x436050ee1e65af07e38dff3d50eb2bba2edd72baa14fc2682eac552840eb68f9",
+        "value_in_usd": "24463.05",
+        "token_price": "1.001",
+        "token_symbol": "USDC",
+        "token_quantity": "24438.608306"
+      },
+      {
+        "timestamp": "2024-08-30 17:31:11",
+        "block": 20642900,
+        "tx_hash": "0x42a1757e23034967cde1394c29bff15360dc5afed6428437635ba1de17d553f0",
+        "value_in_usd": "12220.22",
+        "token_price": "1.001",
+        "token_symbol": "USDC",
+        "token_quantity": "12208.009682"
+      },
+      {
+        "timestamp": "2024-08-30 17:33:35",
+        "block": 20642912,
+        "tx_hash": "0x20ee23f6c20a16e66df27176bfa7df67c042c415b88e497e4fe91fd22ecdd7d8",
+        "value_in_usd": "24564.55",
+        "token_price": "0.999503",
+        "token_symbol": "USDC",
+        "token_quantity": "24576.761560"
+      },
+      {
+        "timestamp": "2024-08-30 17:34:47",
+        "block": 20642918,
+        "tx_hash": "0xf94ea7d69453a746f66b15a0733ba619d7df5473b3eda09e7e6f982b39a32568",
+        "value_in_usd": "12279.09",
+        "token_price": "0.999724",
+        "token_symbol": "USDC",
+        "token_quantity": "12282.477141"
+      }
+    ]
+  },
+  {
+    "from": "0xf9a8b3145cef617973f12848d6bec23dae902523",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "1262.19",
+    "illicit_usd_value": "1254.85",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:18:11",
+        "block": 20683139,
+        "tx_hash": "0x75125662246a65760566e9a7d2cc3a4632d76752ef7b23f895ada5642eb6c265",
+        "value_in_usd": "1262.19",
+        "token_price": "2411.39",
+        "token_symbol": "ETH",
+        "token_quantity": "0.523429449555772879"
+      }
+    ]
+  },
+  {
+    "from": "0xfb65a68d4583b6d3a61ccd90655c0b7b4677e9a6",
+    "from_label": "transit_fb65",
+    "to": "0x472eb0b32b403d0744c492545d43a0330b5037ca",
+    "transfer_count": 1,
+    "total_value_in_usd": "2999.79",
+    "illicit_usd_value": "2999.79",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:03:47",
+        "block": 20584022,
+        "tx_hash": "0x5327ceff51242165d8ac5ea720574ce77538107e7f60f9c1c254616c7ec3002e",
+        "value_in_usd": "2999.79",
+        "token_price": "0.9999305941937866",
+        "token_symbol": "DAI",
+        "token_quantity": "3000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfb65a68d4583b6d3a61ccd90655c0b7b4677e9a6",
+    "from_label": "transit_fb65",
+    "to": "0x4ee036077e55632a2a030425cd59fc0f75840b35",
+    "transfer_count": 1,
+    "total_value_in_usd": "4004.00",
+    "illicit_usd_value": "4004.00",
+    "transfers": [
+      {
+        "timestamp": "2024-08-23 20:23:11",
+        "block": 20593663,
+        "tx_hash": "0x4324b4a6b6e5286366579f4297e188969c1555e3c62acaf5c90c442fbd9f6f63",
+        "value_in_usd": "4004.00",
+        "token_price": "1.001",
+        "token_symbol": "DAI",
+        "token_quantity": "4000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfb65a68d4583b6d3a61ccd90655c0b7b4677e9a6",
+    "from_label": "transit_fb65",
+    "to": "0x764c53ac64a2c94b44ed9bd02857a1736d1f6efb",
+    "to_label": "transit_764c",
+    "transfer_count": 1,
+    "total_value_in_usd": "49996.53",
+    "illicit_usd_value": "49996.53",
+    "transfers": [
+      {
+        "timestamp": "2024-08-22 12:03:11",
+        "block": 20584019,
+        "tx_hash": "0x4916e4b5d359dcab4deff789b192744de73f33e6024070d7c0918253f9a43c69",
+        "value_in_usd": "49996.53",
+        "token_price": "0.9999305941937866",
+        "token_symbol": "DAI",
+        "token_quantity": "50000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfb65a68d4583b6d3a61ccd90655c0b7b4677e9a6",
+    "from_label": "transit_fb65",
+    "to": "0x8cc568f3565a7ed44b3b0af8765a7ef67b8bc2dc",
+    "to_label": "transit_8cc5",
+    "transfer_count": 1,
+    "total_value_in_usd": "299687.31",
+    "illicit_usd_value": "299687.31",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 01:05:35",
+        "block": 20573598,
+        "tx_hash": "0x57f3b8064b4eecd1c3d1a8af46c7f7234d7b56ccb3b898d51a4919833d8b5311",
+        "value_in_usd": "299687.31",
+        "token_price": "0.998957692127212",
+        "token_symbol": "DAI",
+        "token_quantity": "300000.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfc4eaa4ac84d00f1c5854113581f881b42b4a745",
+    "from_label": "Fake_Phishing324039",
+    "to": "0xaa862f977d6916a1e89e856fc11fd99a2f2fabf8",
+    "transfer_count": 1,
+    "total_value_in_usd": "335604.10",
+    "illicit_usd_value": "335604.10",
+    "transfers": [
+      {
+        "timestamp": "2024-08-21 01:53:35",
+        "block": 20573838,
+        "tx_hash": "0x68fed4618bb007066b2422b7e4c8dcc6309f23f8338a49a951ec97578f374891",
+        "value_in_usd": "335604.10",
+        "token_price": "2581.57",
+        "token_symbol": "ETH",
+        "token_quantity": "130.000000000000000000"
+      }
+    ]
+  },
+  {
+    "from": "0xfed0ffb23cb2cd7c5cec47c09308a7d5b1681dfd",
+    "to": "0xf1da173228fcf015f43f3ea15abbb51f0d8f1123",
+    "to_label": "eXch",
+    "transfer_count": 1,
+    "total_value_in_usd": "3062.70",
+    "illicit_usd_value": "3062.70",
+    "transfers": [
+      {
+        "timestamp": "2024-09-05 08:48:11",
+        "block": 20683288,
+        "tx_hash": "0x1b70ea66be57288893119926ab07d685997cfb4f61d177c0ab99ba697e49d8e4",
+        "value_in_usd": "3062.70",
+        "token_price": "2401.28",
+        "token_symbol": "ETH",
+        "token_quantity": "1.275446028300147683"
+      }
+    ]
+  }
+]
